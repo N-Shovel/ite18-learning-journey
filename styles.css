@@ -1,0 +1,316 @@
+/* ---------- Reset & Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  color: #1f2937;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ---------- Placeholder Utility ---------- */
+.placeholder-box {
+  background-color: #a8b3c4;
+  color: #1f2937;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+.empty-slot {
+  background-color: #d1d5db;
+  border: 2px dashed #9ca3af;
+  color: transparent;
+}
+
+/* ---------- Header / Nav ---------- */
+.site-header {
+  background-color: #1f2937;
+  color: #f9faf8;
+  padding: 2rem 10% 4rem;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 900;
+}
+
+.logo-college {
+  color: #f9faf8;
+}
+
+.logo-memory {
+  color: #3882f6;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: #e5e7eb;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #3882f6;
+}
+
+.hero-content {
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 0.8rem;
+}
+
+.hero-content p {
+  color: #b3b9c4;
+  font-size: 1.1rem;
+}
+
+.intro-card {
+  max-width: 980px;
+  margin: 3.5rem auto 0;
+  padding: 1.25rem;
+  display: grid;
+  grid-template-columns: 90px 1fr minmax(230px, 0.8fr);
+  align-items: center;
+  gap: 1.5rem;
+  background-color: #293548;
+  border: 1px solid #3a485e;
+  border-radius: 14px;
+}
+
+.profile-photo {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #3882f6;
+}
+
+.eyebrow {
+  color: #7fb0ff;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.intro-copy h2 {
+  margin: 0.2rem 0 0.35rem;
+  font-size: 1.45rem;
+}
+
+.intro-copy > p:last-child {
+  color: #cbd5e1;
+}
+
+blockquote {
+  padding-left: 1.25rem;
+  border-left: 2px solid #3882f6;
+  color: #f9faf8;
+  font-family: Georgia, serif;
+  font-size: 1.05rem;
+  font-style: italic;
+}
+
+blockquote cite {
+  display: block;
+  margin-top: 0.45rem;
+  color: #aab6c8;
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-style: normal;
+}
+
+.second-quote {
+  margin-top: 1rem;
+}
+
+/* ---------- Year Sections ---------- */
+.year-section {
+  padding: 4rem 10%;
+  text-align: center;
+}
+
+.alt-bg {
+  background-color: #e5e7eb;
+}
+
+.year-title {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.year-description {
+  max-width: 700px;
+  margin: 0 auto 2.5rem auto;
+  color: #374151;
+  font-size: 1.05rem;
+}
+
+.memory-lead {
+  max-width: 820px;
+  margin: -1rem auto 2.25rem;
+  color: #64748b;
+  font-size: 0.98rem;
+}
+
+.image-row {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.image-slot {
+  width: 280px;
+  height: 200px;
+}
+
+.bento-grid {
+  max-width: 980px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 175px;
+  gap: 1rem;
+}
+
+.bento-grid .image-slot {
+  width: auto;
+  height: auto;
+  min-width: 0;
+  min-height: 0;
+  position: relative;
+  overflow: hidden;
+  background-color: #cbd5e1;
+}
+
+.bento-feature {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.bento-tall {
+  grid-row: span 2;
+}
+
+.bento-wide {
+  grid-column: span 2;
+}
+
+.third-year-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.third-year-grid .bento-feature {
+  grid-column: 2 / span 2;
+}
+
+.bento-grid img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 300ms ease;
+}
+
+.bento-grid figure:hover img {
+  transform: scale(1.04);
+}
+
+.bento-grid figcaption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 2rem 0.9rem 0.75rem;
+  color: #fff;
+  background: linear-gradient(transparent, rgba(15, 23, 42, 0.88));
+  font-size: 0.85rem;
+  text-align: left;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  background-color: #1f2937;
+  color: #f9faf8;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.95rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 700px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .image-slot {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .intro-card {
+    grid-template-columns: 70px 1fr;
+    gap: 1rem;
+  }
+
+  .profile-photo {
+    width: 70px;
+    height: 70px;
+  }
+
+  blockquote {
+    grid-column: 1 / -1;
+  }
+
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 145px;
+  }
+
+  .bento-feature,
+  .bento-wide {
+    grid-column: span 2;
+  }
+
+  .bento-tall {
+    grid-row: span 1;
+  }
+}
