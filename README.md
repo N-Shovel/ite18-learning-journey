@@ -9,6 +9,10 @@
 
 CollegeMemory is a personal college memory timeline landing page. It presents memories from the 1st, 2nd, and 3rd year of college through responsive bento-style image galleries, personal introduction content, and anime-inspired quotes.
 
+## Live Demo
+
+[https://n-shovel.github.io/Landing_Page/](https://n-shovel.github.io/Landing_Page/)
+
 ## Built With
 
 - HTML5
@@ -30,6 +34,6 @@ Landing_Page/
 
 ## How to View
 
-Open `index.html` in a web browser.
+Visit the [live site](https://n-shovel.github.io/Landing_Page/), or open `index.html` in a web browser.
 
 
