@@ -21,12 +21,14 @@ Open the browser console (F12) for the `console.log` output in 1.2 and 1.3.
 - **Scene**: the container for everything.
 - **Object**: a `Mesh` combines a `BoxGeometry(1, 1, 1)` (the shape) with a `MeshBasicMaterial` (red, not affected by lights), and is added to the scene.
 - **Camera**: `PerspectiveCamera(75, 800/600)` with a 75° vertical view and an aspect ratio matching the canvas. It's moved to `z = 3`, because everything starts at (0,0,0) and the camera would otherwise be inside the cube.
+- **Outline** (added in every activity): `EdgesGeometry` takes the cube's geometry and keeps only its edges, and `LineSegments` with a white `LineBasicMaterial` draws them as lines. It's added with `mesh.add(outline)`, so it's a *child* of the cube and moves, scales and rotates with it automatically.
 - **Renderer**: `WebGLRenderer` draws onto our canvas. `setSize(800, 600)` sets the canvas size and `render(scene, camera)` draws once.
 
 **Likely questions**
 1. *What are the 4 elements every Three.js scene needs?* A scene, at least one object, a camera and a renderer.
 2. *Why is the cube not visible if you remove `camera.position.z = 3`?* The camera would be at the center of the cube, looking at its faces from inside. Faces are only drawn from the front by default.
 3. *What is the second argument of PerspectiveCamera?* The aspect ratio (width / height). If it doesn't match the canvas, the image is stretched.
+4. *Why is the outline added to the mesh instead of the scene?* As a child, it follows every transform of the cube. Added to the scene, it would stay in place while the cube moves. (`linewidth` is ignored by WebGL on most systems, so lines are always 1 pixel thick.)
 
 **Try this**: change the color to `0x00ff00` and `camera.position.z` to `5`. The cube turns green and looks smaller.
 

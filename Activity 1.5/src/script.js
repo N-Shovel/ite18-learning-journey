@@ -40,6 +40,12 @@ const mesh = new THREE.Mesh(
 )
 scene.add(mesh)
 
+// Outline: EdgesGeometry keeps only the edges of the cube, drawn as white lines.
+// Added as a child of the mesh so it moves, scales and rotates with the cube.
+const edges = new THREE.EdgesGeometry(mesh.geometry)
+const outline = new THREE.LineSegments(edges, new THREE.LineBasicMaterial({ color: 0xffffff }))
+mesh.add(outline)
+
 /**
  * Camera
  */

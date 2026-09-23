@@ -9,9 +9,19 @@ const scene = new THREE.Scene()
 /**
  * Objects
  */
+// Outline: EdgesGeometry keeps only the edges of a geometry, drawn as white lines.
+// It's added as a child of the cube so it follows the cube's position, scale and rotation.
+const outlineMaterial = new THREE.LineBasicMaterial({ color: 0xffffff })
+const addOutline = (cube) =>
+{
+    const edges = new THREE.EdgesGeometry(cube.geometry)
+    cube.add(new THREE.LineSegments(edges, outlineMaterial))
+}
+
 const geometry = new THREE.BoxGeometry(1, 1, 1)
 const material = new THREE.MeshBasicMaterial({ color: 0xff0000 })
 const mesh = new THREE.Mesh(geometry, material)
+addOutline(mesh)
 scene.add(mesh)
 
 /**
@@ -69,6 +79,7 @@ const cube1 = new THREE.Mesh(
     new THREE.BoxGeometry(1, 1, 1),
     new THREE.MeshBasicMaterial({ color: 0xff0000 })
 )
+addOutline(cube1)
 group.add(cube1)
 
 const cube2 = new THREE.Mesh(
@@ -76,6 +87,7 @@ const cube2 = new THREE.Mesh(
     new THREE.MeshBasicMaterial({ color: 0x00ff00 })
 )
 cube2.position.x = -2
+addOutline(cube2)
 group.add(cube2)
 
 const cube3 = new THREE.Mesh(
@@ -83,6 +95,7 @@ const cube3 = new THREE.Mesh(
     new THREE.MeshBasicMaterial({ color: 0x0000ff })
 )
 cube3.position.x = 2
+addOutline(cube3)
 group.add(cube3)
 
 /**
