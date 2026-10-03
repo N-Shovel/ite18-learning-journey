@@ -10,6 +10,7 @@
 ## What was done
 
 - Based on the finished Activity 1.11 project (3D text + 100 donuts), personalized: the text reads **'Nimrod P. Pala'** with a smaller centered line **'ITE 18-FNHX1'** under it, and the page title is "Nimrod P. Pala | ITE-18 Three.js".
+- Donuts are re-placed if they would touch the text or overlap it on screen (in front of or behind it) from the starting camera view, so the name and section always stay readable.
 - `vercel` installed with `npm install vercel`.
 - `"deploy": "vercel --prod"` added to the `package.json` scripts.
 - Deployment steps (output directory = `dist`) are in **[DEPLOYMENT.md](DEPLOYMENT.md)**.

@@ -117,6 +117,48 @@ fontLoader.load(
         subtitle.position.y = - 0.55
         scene.add(subtitle)
 
+        // Keep-out zone so no donut touches the text or overlaps it on screen
+        // 1. In 3D: the box around both text lines
+        const textBox = new THREE.Box3()
+            .setFromObject(text)
+            .union(new THREE.Box3().setFromObject(subtitle))
+
+        // 2. On screen: the rectangle the text covers from the starting camera view
+        camera.updateMatrixWorld()
+        const textRect = new THREE.Box2()
+        const corner = new THREE.Vector3()
+        for(const x of [textBox.min.x, textBox.max.x])
+            for(const y of [textBox.min.y, textBox.max.y])
+                for(const z of [textBox.min.z, textBox.max.z])
+                {
+                    corner.set(x, y, z).project(camera)
+                    textRect.expandByPoint(new THREE.Vector2(corner.x, corner.y))
+                }
+
+        const tanHalfFov = Math.tan(THREE.MathUtils.degToRad(camera.fov * 0.5))
+        const toDonut = new THREE.Vector3()
+        const viewDirection = new THREE.Vector3()
+        camera.getWorldDirection(viewDirection)
+        const projected = new THREE.Vector3()
+
+        const isBlocked = (position, radius) =>
+        {
+            if(textBox.distanceToPoint(position) < radius)
+                return true
+
+            // Donuts behind the camera are never seen
+            const depth = toDonut.subVectors(position, camera.position).dot(viewDirection)
+            if(depth <= camera.near)
+                return false
+
+            // Screen-space circle of the donut vs the text rectangle (in front of or behind it)
+            projected.copy(position).project(camera)
+            const radiusY = radius / (depth * tanHalfFov)
+            const radiusX = radiusY / camera.aspect
+            return projected.x + radiusX > textRect.min.x && projected.x - radiusX < textRect.max.x
+                && projected.y + radiusY > textRect.min.y && projected.y - radiusY < textRect.max.y
+        }
+
         // Donuts (optimized: one geometry and one material shared by all 100 meshes)
         const donutGeometry = new THREE.TorusGeometry(0.3, 0.2, 20, 45)
 
@@ -124,15 +166,22 @@ fontLoader.load(
         {
             const donut = new THREE.Mesh(donutGeometry, material)
 
-            donut.position.x = (Math.random() - 0.5) * 10
-            donut.position.y = (Math.random() - 0.5) * 10
-            donut.position.z = (Math.random() - 0.5) * 10
+            const scale = Math.random()
+            donut.scale.set(scale, scale, scale)
+
+            // Outer radius of the torus is (0.3 + 0.2) * scale, plus a small gap.
+            // Pick a new random position until the donut is clear of the text.
+            const radius = 0.5 * scale + 0.1
+            do
+            {
+                donut.position.x = (Math.random() - 0.5) * 10
+                donut.position.y = (Math.random() - 0.5) * 10
+                donut.position.z = (Math.random() - 0.5) * 10
+            }
+            while(isBlocked(donut.position, radius))
 
             donut.rotation.x = Math.random() * Math.PI
             donut.rotation.y = Math.random() * Math.PI
-
-            const scale = Math.random()
-            donut.scale.set(scale, scale, scale)
 
             scene.add(donut)
         }
