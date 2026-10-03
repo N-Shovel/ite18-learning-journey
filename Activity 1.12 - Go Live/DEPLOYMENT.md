@@ -4,7 +4,7 @@
 **Course:** ITE-18 Applications Development and Emerging Technologies, Caraga State University
 **Instructor:** James Earl D. Cubillas
 
-Live URL: ____
+Live URL: <https://pala-nimrod-threejs-go-live.vercel.app>
 
 ---
 

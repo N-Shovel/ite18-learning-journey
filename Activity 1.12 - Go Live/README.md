@@ -13,7 +13,7 @@
 - `vercel` installed with `npm install vercel`.
 - `"deploy": "vercel --prod"` added to the `package.json` scripts.
 - Deployment steps (output directory = `dist`) are in **[DEPLOYMENT.md](DEPLOYMENT.md)**.
-- **Live URL:** ____ (to be added after deploying)
+- **Live URL:** <https://pala-nimrod-threejs-go-live.vercel.app>
 
 ## How to run
 
