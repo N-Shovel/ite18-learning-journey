@@ -96,6 +96,27 @@ fontLoader.load(
         const text = new THREE.Mesh(textGeometry, material)
         scene.add(text)
 
+        // Smaller second line under the name
+        const subtitleGeometry = new TextGeometry(
+            'ITE 18-FNHX1',
+            {
+                font: font,
+                size: 0.2,
+                depth: 0.08,
+                curveSegments: 5,
+                bevelEnabled: true,
+                bevelThickness: 0.012,
+                bevelSize: 0.008,
+                bevelOffset: 0,
+                bevelSegments: 4
+            }
+        )
+        subtitleGeometry.center()
+
+        const subtitle = new THREE.Mesh(subtitleGeometry, material)
+        subtitle.position.y = - 0.55
+        scene.add(subtitle)
+
         // Donuts (optimized: one geometry and one material shared by all 100 meshes)
         const donutGeometry = new THREE.TorusGeometry(0.3, 0.2, 20, 45)
 

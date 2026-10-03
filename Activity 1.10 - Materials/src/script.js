@@ -170,7 +170,7 @@ scene.add(sphere, plane, torus)
 /**
  * Lights
  */
-const ambientLight = new THREE.AmbientLight(0xffffff, 1)
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.5)
 scene.add(ambientLight)
 
 // Deviation from handout: lights use physical units now (decay = 2 by default),

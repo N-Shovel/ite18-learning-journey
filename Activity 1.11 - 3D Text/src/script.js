@@ -67,7 +67,7 @@ fontLoader.load(
     {
         // Text
         const textGeometry = new TextGeometry(
-            'Nimrod P. Pala',
+            'Hello Three.js',
             {
                 font: font,
                 size: 0.5,

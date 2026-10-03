@@ -10,7 +10,7 @@
 ## What was done
 
 - `FontLoader` loads `helvetiker_regular.typeface.json` from `static/fonts/`.
-- `TextGeometry` with the text **'Nimrod P. Pala'**, bevel enabled, centered with `textGeometry.center()` (the manual bounding-box centering is kept as commented code).
+- `TextGeometry` with the text **'Hello Three.js'** (as in the handout), bevel enabled, centered with `textGeometry.center()` (the manual bounding-box centering is kept as commented code).
 - `MeshMatcapMaterial`. A lil-gui dropdown switches between the 8 matcaps.
 - **100 donuts** with random position, rotation and scale. Optimized: one `TorusGeometry` and one material shared by the text and every donut.
 
