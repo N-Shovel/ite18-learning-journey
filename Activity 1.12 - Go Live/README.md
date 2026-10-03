@@ -1,20 +1,18 @@
 # Activity 1.12 - Go Live
 
-**Student:** Nimrod P. Pala, ITE 18-FNHX1
-**Course:** ITE-18 Applications Development and Emerging Technologies, Caraga State University
+**Student:** Nimrod P. Pala
+**Section:** ITE 18-FNHX1
 **Instructor:** James Earl D. Cubillas
-**Reference:** Bruno Simon, *Three.js Journey*, "Introduction to Three.js" handouts (Part 12)
 
 ![Screenshot](screenshot.png)
 
-## What was done
+## What it does
 
-- Based on the finished Activity 1.11 project (3D text + 100 donuts), personalized: the text reads **'Nimrod P. Pala'** with a smaller centered line **'ITE 18-FNHX1'** under it, and the page title is "Nimrod P. Pala | ITE-18 Three.js".
-- Donuts are re-placed if they would touch the text or overlap it on screen (in front of or behind it) from the starting camera view, so the name and section always stay readable.
-- `vercel` installed with `npm install vercel`.
-- `"deploy": "vercel --prod"` added to the `package.json` scripts.
-- Deployment steps (output directory = `dist`) are in **[DEPLOYMENT.md](DEPLOYMENT.md)**.
-- **Live URL:** <https://pala-nimrod-threejs-go-live.vercel.app>
+- My name "Nimrod P. Pala" and section "ITE 18-FNHX1" in 3D, with 100 donuts around them.
+- The donuts never cover the text.
+- The project is published online with Vercel.
+
+**Live site:** <https://pala-nimrod-threejs-go-live.vercel.app>
 
 ## How to run
 
@@ -23,29 +21,6 @@ npm install
 npm run dev
 ```
 
-Then open the URL Vite prints (usually <http://localhost:5173>).
-`npm run build` creates a production build in `dist/`.
+Then open the link it prints in your browser.
 
-To deploy: `npm run deploy` (see [DEPLOYMENT.md](DEPLOYMENT.md)).
-
-## Deviations from the handout (current three.js r186)
-
-- Addons (OrbitControls, etc.) are imported from `three/addons/...` instead of `three/examples/jsm/...`.
-- Same deviations as Activity 1.11 (`depth` instead of `height`, sRGB matcaps).
-
-Each deviation is also commented in `src/script.js`.
-
-## Assets
-
-- **Downloaded:** `fonts/helvetiker_regular.typeface.json` + `LICENSE` from the three.js repository `examples/fonts/` (the npm package no longer includes this folder).
-- **Downloaded:** `textures/matcaps/1-8.png` from [nidorx/matcaps](https://github.com/nidorx/matcaps) (see `SOURCES.txt`).
-
-## Files
-
-```
-src/index.html   canvas.webgl + loads style.css and script.js
-src/style.css
-src/script.js    the Three.js code
-static/          textures / fonts (served from /)
-vite.config.js   root: src, publicDir: ../static, outDir: ../dist
-```
+To publish a new version online: `npm run deploy` (see [DEPLOYMENT.md](DEPLOYMENT.md)).
