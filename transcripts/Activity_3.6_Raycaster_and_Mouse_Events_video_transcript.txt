@@ -1,0 +1,818 @@
+0:00
+Right class day so we will have our 3D scene um interactive. So um well so far
+0:09
+uh we have worked with uh static and animated models. Um but what if we want
+0:17
+users to click or hover on the 3D objects? So that's where
+0:27
+casting comes in. So ang recur
+0:35
+invisible siya na laser pointer gikan sa
+0:41
+camera or mouse kung object
+0:47
+no so for the concept overview
+0:53
+um kaning recs
+0:59
+is um
+1:06
+let's cast an invisible line gitawag na ray no in this case so it is a mukhan
+1:14
+siya no kaang ah mukasya o invisible line or gitawag
+1:20
+na ray in a specific direction so you can use it to detect collisions or walls
+1:27
+like ka ng sa Ah kwan for game physics check if um laser beam hits something
+1:35
+or it detects um mouse hovering no or
+1:41
+click ah mga click events in 3D so mura siya ka ng Reagan or flashlight beam
+1:47
+kung asa siya mo cabalo citygs nga naay object diha okay so just to ano um walk
+1:56
+through aning atong activity. So I hope na na-install na yung node
+2:04
+modules pero ako class no ginabalhin na ako akong node modules. So kabantay mo sa uban nawawala na kaya ko na
+2:10
+ginabalhin para na ako sigstall. So as you can see here no. So mana niyo bantayanan niyo na ha kasi napuno na
+2:18
+inyong mga activity kwan node modules so just kwan lang no i-check lang na
+2:24
+ninyo so karon is um what we have here is
+2:29
+saong script so naka-set up na daanta a certain mesh
+2:36
+na circle or a sphere din no a sphere object ng naay kung ano
+2:42
+same radius and iyang ng wid height segments though
+2:49
+nag-position siya along the xaxis no so na isa nagposition to the position x-2
+2:58
+ang isa is wala na toet though ah default should be zero and the other one
+3:03
+is pos 2 so that ad so obviously the
+3:09
+result would be this one no soong
+3:14
+setting up saong scene class
+3:20
+we will try to shoot array to this spheres no and see if uh which one gets
+3:28
+hit so kung maigo ni siya class maigo ang sphere at siyang
+3:35
+i-highlight or usbone ang color so sama na siya so sa onong script so mag-create
+3:43
+ogog Um let's say here no ako addubos
+3:48
+mag initialize recaster so ayan onong
+3:56
+okay so here maginitialize lang ko kwan ha create
+4:04
+create the rayaster
+4:09
+rayaster so karon is mag-invokeing
+4:15
+kaning constructor na raster. Okay. So nag-initialize sa atong ray. So next
+4:24
+we will define where the ray starts and where it points.
+4:29
+Kay ang ray kay magsugod gikan sa usa ka point let's say the origin mo-travel
+4:36
+padulong sa direction nga ng nga im gusto usually gikan sa camera. padulong
+4:42
+sa imong mouse cursor. So karon no kung ato na siyang i-set up let's say here
+4:48
+noong i-set sa atong origano ang atong
+4:54
+let's say set the direction
+4:59
+so magkan no ah cons akoon class no para madali pa
+5:07
+so so dire so siya so We set the ray rays
+5:15
+origin so and its direction in this case we have
+5:21
+-300 kya ang katong direction naon is na ay
+5:28
+100 so along x no so karon um
+5:35
+we by using normalize so this one normalize ensures the directions vector
+5:41
+length is one so it doesn't depend on how far it goes no so nag kwan lang siya
+5:46
+na ato lang ginure na ang vector sa atong length would be is one no na
+5:52
+normaliz na into one okay so umag ano um let's say think of think of
+6:01
+this like um firing a laser beam from left to right so ang normalize kay
+6:08
+gasiguro nga consistent ang iyang length ah bisan kaay ang imong i-set so ang
+6:15
+pasabotan no so kung karon kung magcle grayon so what we have here t lang
+6:24
+kung mag c theay let's say here
+6:30
+um atong i-try no um
+6:37
+here no um we can test if the ray hits any object
+6:42
+by using this one. So the result is an area of um intersections.
+6:50
+So each item contains the uh contains the details like the distance,
+6:56
+the object he hit and the face index and the collision point.
+7:03
+kungigo sa usa sphere makuha details na object
+7:12
+distance sa ray of origin so
+7:18
+let's sayad reload
+7:24
+na soon data
+7:30
+so actually wala pa naet nagsetay
+7:38
+so reciter kanina so ang money ang naigo
+7:44
+katong gikan kay ray origin kay 3 uh 300 so atong nakita na vector
+7:53
+or mga object na dire somewhat
+7:58
+so manual kanya
+8:03
+kanino from a certain point saong ray origin so nakuha dinya ong mga data na naigo so
+8:11
+tulo ang iyang nahitan so muni siya so zero na ay distance 2.5
+8:20
+F ang katong from origin to no so na siya makita na um spheres no in this
+8:28
+case so pa so karon
+8:33
+umong nakita no katong gingon kanina distance
+8:38
+ang iyang well face index kan so
+8:45
+kaning object he hit un pa ang collision point
+8:53
+okay so money no okay amag kani ang collision point so
+8:59
+dire sa x katong pagka niyo x5 na siya kan siya ang pinakauna no so ang 5
+9:08
+sunod na po ang distance na kung ano so na onong makuha to niya ong another okay
+9:13
+negative kan to siya class ong no so another na po na nakita is um distance
+9:19
+is somehow sa to sa to i-check
+9:30
+okay nakita niya no f obviously kinamat no okay negative man na side so every 5
+9:37
+niya nakita ang katong atong mga sphere no -5
+9:45
+then here so another na 4.5 so onong nakita
+9:53
+pagision niya no point niya every point 5 na pag kwan sa iang ray is object
+10:01
+okay so moto siya sa katong pag-set na to collision point ay collision point ang
+10:08
+kaning rec so karon mubalik ka di
+10:16
+So i-try na to animate ang swears moving up and down no
+10:23
+so para makita na to no kung mag up makita ba nao ong what will be the um
+10:31
+let's say ang iang contents no kung
+10:37
+let's say kung maigo siya atong ray nato no last kanina so karon be kung ato
+10:45
+siyang is lang
+10:53
+kung i-animate na ang object or sphere moving up and down once ig sa rayaster
+11:02
+ba reciter kay mamani ang iyang ang iyang vector
+11:09
+so kung once na maigo siya ang iyang color
+11:14
+so wala ah objective no in this case so kung may
+11:19
+intersect sa array ang katong um
+11:25
+object no soon um if we try toong i-update sign sa animate
+11:34
+so let's say um
+11:39
+let's say object one ka kwan ah
+11:47
+sa ko na lang ni-copy class para dito dito
+11:53
+so so here
+12:00
+okay ako lang sa tanan
+12:13
+Okay.
+12:19
+So karon so ang naadiri is atong gina up and down
+12:27
+ang atong or moving up o moving down ang atong position sa y and sa y sa eacho
+12:35
+object ginagamit tag sign para in case ba kay ang sinosoidal na kwan is kwan
+12:41
+siya no pa pa-increase and decrease pero maglimit lang siya certain
+12:48
+maximum is maglimit siya 1.5 - 1.5 5.
+12:54
+So in this case no kay mag-scale dire so mag-limit na siya o certain point no
+13:03
+so here um sa pa man so kani siya dapat is mag-bouncebounce
+13:08
+na siya noon na m sphere kung karon ka kay nagkamanta ray origin
+13:14
+kung once na maigo siya sa ray sousap ang iyang color mo siya blue in this
+13:21
+case kung dili mubalik na red so i-try
+13:28
+so okay so naigo siya sa katong ray no so
+13:34
+kani at lang ng ang sinosoid lang mga kwan class katunang
+13:41
+kwan siya no slow because of this parameter here ang achieve kayang
+13:49
+kay 0 to one atong magta pinaka pinagkataas na value so karon
+13:55
+lang di class kay ang pinakataas na value niya is atong pa hinayan ang kwan o pila yang
+14:02
+maue sa sign angoduce
+14:09
+1.5 So mga multiplier here so karon so man
+14:15
+siya soong hinay kay uban isa is pasp someh
+14:21
+somehow passp siya is k pinakapasp siya 1.4
+14:29
+So karon is kato naigo siya sa isa ka isa ka rehan sa kwan so
+14:36
+ni kwan siya ni-change ang color so meaning class kung namo mga
+14:41
+let's say magkwala no ka ng mag-racing no so nak
+14:47
+ang imong let's say imong finish line is mag-change o color ang certain object
+14:53
+kung maabot na dito ang imong ah gelap model ito na mo change na color kan siya
+15:01
+na buluean mong na po ng suga kay mo green na po ay
+15:06
+kwan na po green or sa ba no depende sa inyong diskarte or kwan inyong game logic so karon class
+15:13
+is moto no ang rayang kung once na ma-intersect mo kwan din siya change
+15:19
+color okay so karon clas kung atong
+15:27
+will be mouse events let's say akong mouse is arrayaster
+15:33
+so once na akong mouseange
+15:38
+color so actually just ka ng recasting in this case k
+15:44
+coordinate man po ni akong mouse no na certain coordinate kung once na muta siya
+15:50
+certain coordinates akong mouse mo change color So inana si ano so karon ah
+15:57
+we would like to update the atong script so asan na siya iwanan um
+16:05
+iusab so there sa atong kwan no um kung atong
+16:10
+i-check ang atong manual um Ha? Asan to onong
+16:25
+besesa ha? Asan onong
+16:30
+mag-create sa pang-track saong kwan saong mouse no?
+16:37
+So let's say magkimo saako
+16:42
+dili lang sir ko nag-resize na naman eh ah ako magbuhat
+16:48
+so let's say magimo ako track mouse position
+16:56
+so mag listener saong mouse so let's say um
+17:02
+maghold saold two values
+17:07
+in a one vector So, so new
+17:15
+3 vector 2. So, karon ah we will create
+17:21
+window. Event listener mouse event
+17:32
+nacate o kaning mouse coordinates no. So is the mouse coordinates goes from
+17:41
+1 to 1 in web GL siya na approach center would be
+17:48
+ang tough left is let's say 11
+17:53
+ang bottom right is 1-1
+17:59
+okay para dili ta ingon na pixel base. So at-scale ng atong mass coordinates
+18:05
+from here to here negative ang pinakataas na value is one ubos na value
+18:11
+is - 1 para kwan easy angong kwan sa onong webgl na ano most coordinates so
+18:17
+dapat mga ang value between -1 to+ 1
+18:23
+okay kung kwan mang good class pangit kay class kung ang imong kwan is pixel base
+18:29
+so mas kw siya complicated So-convert na to aron compatible sa kanya no kanang 3
+18:38
+3D coordinate system sa 3s. Okay. So karon what we have here is this one no?
+18:43
+So naka-scale na siya from - 1 to 1. So karon is atong i-update ang atong
+18:52
+um update the ray from the camera. So karon um
+18:59
+sama natin si um pwede naman to i-recaster
+19:04
+so na i-set na to ang from camera so mouse from
+19:11
+ayan no mouse then ang camera so narubosong camera so ako
+19:17
+siguro ni class track position magclicate siya sa
+19:23
+initialization So sa ubos
+19:29
+nagtializa daan sa ubos soutang so k mouse camera
+19:40
+mouse and camera so mag intersection
+19:48
+intersect x ah is equal to
+19:55
+be uh let's say array casaster okay sakto na siya
+20:03
+sa ako sa kwan ong object to ako sa manual no
+20:10
+so okay object 1 object 2 object
+20:18
+Sige da no okay sakt intersex intersex
+20:27
+na ba kwan
+20:43
+na ba nagco ah ay okay
+20:50
+nagka-create na cas array no so at ni butang
+20:57
+ah recaster na ako ni pangbalen zero class no
+21:03
+b magcomplicated kuan bae existing na dito atong mga
+21:08
+other recs so dir ako na nahutan ni direi
+21:16
+rec na naman tayo intersect sa kwan to
+21:23
+itong object one saan naman to
+21:30
+enter aan
+21:36
+okay kani so karon is lang i-update na lang magkan
+21:44
+taog
+21:49
+ato na rin disable naman t magamit so
+21:56
+okay i-set naman to sa camera ang atong rec so and
+22:05
+so here nagkanera so set from camera na function no or
+22:12
+method. So this one uh makes the ray start from the camera and go through the
+22:19
+mouse no position in 3D space na to makita kung ang mga um positions.
+22:28
+So karon kung ato ni siyang i-check no b ato daw ni-try check roon no
+22:34
+so dapat mo-console na siya uy what happen
+22:41
+here mouse before initial ako mga mouse
+22:46
+before initialization so check initialization
+22:53
+mouse nawala siya sa ubos so
+22:59
+siya butang somewhere here actually pwede sa taas ano
+23:07
+so okay soon
+23:14
+paur
+23:21
+saong kuan
+23:32
+paay problem naet na mouse
+23:39
+nacreate na hereangete
+23:48
+nat mga kwan dapat i-activate na rec
+23:57
+wala naman nag-save na siya i think we're good ata
+24:11
+Okay. So saha
+24:25
+ko i-check so set naman sa ano
+24:37
+ay might ah okay so dapat sa kwan din na to ku an tama no sa once na moverta
+24:46
+ah okay so dapat sa take din butang class no so let's say here
+24:58
+so well nagwan gapon siya up and down
+25:03
+na kani lang ako lang siya i-disable so hindi mo na
+25:10
+asking well naman na to need to normalize
+25:18
+then atong ray casaster would be set from the
+25:26
+camera no so ah no
+25:33
+so dapat atong rayaster i-set camera mouse ang camera so man na
+25:40
+atong um atong na caster roon no
+25:47
+so karon um
+25:52
+i-update ang for loop sakto so sakto naman kay object to test
+26:00
+okay so changeor
+26:08
+Soon siya
+26:15
+ah okay wala pa pero kung ako na ni hover na
+26:21
+to siya pero kabantayorad
+26:34
+glitch na 'to
+26:40
+kaya gusto nakuwad on glitch kan
+26:49
+i-update sa loop na problem sa loop so
+26:55
+object
+27:04
+if statement ah okay sofollow
+27:09
+once na siya red no kungintersect
+27:16
+siya so dapat intersect kung
+27:27
+ay so nagsectong
+27:32
+gamit na ano um consapat
+27:47
+intersects na siya object to So here
+27:54
+glitch naitabo so intersect yan na siya object to test intersects na
+28:01
+onong mga sa rec na ano
+28:07
+ah intersect
+28:14
+okay so magkan siya
+28:19
+blue siya once na an intersection dapat no so baliktad no sa dapat blue
+28:29
+so next would be ang canap is ang intersect
+28:38
+that object material for cons object na siya okay object
+28:49
+kung magre na siya no object of object test
+28:58
+object so magkan condition
+29:05
+so if kapon class soat so
+29:13
+if nag-intersect oops
+29:26
+kung nag-intersect okay
+29:33
+at sa i-check no so karon um if we move our cursor
+29:42
+ng gi-hover na to siya about above a sphere so it will be turns blue
+29:48
+No. So kung ma-move away it will turns
+29:53
+red again no. So every hover lang natin no na-effect ma-effect nito yang color.
+30:00
+So karon saha kulang direck
+30:06
+yung mga curly braces no. So here um I think we're good na.
+30:13
+So ito naman angisable. nagaster no kara
+30:19
+soisable na to angbatuhat sa everytake lang mag-update
+30:25
+hopefullyana soon obviously wala
+30:34
+mouse soon soon this is a good
+30:43
+method with regards So let's say na may mga object na kailangan highlight
+30:49
+ang mouse angala let's say anglight
+30:55
+so ang focus once saong ku ano let's say this one ay mag-pop up siguro ng mga
+31:03
+um text or whatsoever no so pangemphasize na nakaron ang imong
+31:08
+gtouch so example this one no okay so naay hovering effect no in this case
+31:16
+so pa man atong need
+31:21
+so i think na naman no okay naman na onong mga
+31:29
+ipambuhat no be let's check
+31:35
+m so we already achieve the
+31:41
+once na mag-ber kung mag-click lang class d na iwan like that no once
+31:47
+na-click na siya ah na to iwan na um
+31:53
+mag-change na din siya color dili lang kay mag-hovering lang no so well let's
+32:00
+update the soong button roon so mag kwan taog um
+32:07
+create ta o kaning ah mouse enter and leave events So
+32:14
+let's say here no um na naman tayong kwan sa mouse so let kwan lang magatlaner dire
+32:24
+ah let's say um let current intersect
+32:30
+is null then saan na siya okay natin leftan
+32:37
+so karon is sakto manin no Ah remove lang nako ni
+32:45
+k naman atong i-target ang katong kwan class ones na mo-move siya. So ito pangisabled
+32:54
+sa kon isong target na once na ma-intersect
+33:02
+ong objects so test objects ay okay dapat siya okay so next would be
+33:14
+um para makuha na to ang kwano
+33:19
+mouse entering so daw
+33:27
+siya kung na-click
+33:33
+um let's say if intersect
+33:39
+not length so okay that's not
+33:46
+sunod If ang current intersect
+33:55
+if not current intersectingon siya na console. L
+34:03
+mouse enter yeah
+34:08
+current na intersect is okay zero if currents
+34:14
+okay so un naitabo so we store each object in
+34:20
+a current hover if the mouse enters a new object soprint
+34:27
+siya mouse enter So if it leaves mouse leave no in this
+34:32
+case onong i-try siya so oopsay
+34:42
+m sa tick request animation tick
+34:50
+sa tick again
+34:56
+ah so kulang ano as
+35:05
+okay na aay kani
+35:10
+okay naupdate na so
+35:20
+may effect so naimtan
+35:34
+Mm.
+35:41
+Okay.
+35:58
+Sige.
+36:05
+Okay. Mouseely mouse enter. Okay. Once once na mag-hovert ano
+36:10
+so one siya so d object enter enter enter
+36:16
+na i leave na kung mukha na p enter okay
+36:22
+so test lang nao no ang logic no kung ato langual
+36:28
+ang kwan katong once na ni click
+36:34
+okay sa mag class sa 3s plus wala mang po built in nga mouse enter na kano
+36:41
+advent listener mouse inter sa TD objects so karon mag-create
+36:47
+um event listener so
+36:52
+na siya magimot tag event listener so
+36:57
+be um karon ako sa i-close so dire saong
+37:10
+event listener mouse naga click events so magamit
+37:17
+window double click langck
+37:27
+sos
+37:33
+So if ako kap no soon
+37:42
+so kani is nag kwan create click events
+37:49
+so may naitabo ron so this one so this um let's detect which uh three object
+37:59
+was clicked so perfect g siya class sa mga magkanta mga games no or interactions orang
+38:08
+mga selection tools soang inyo ning i ah praktisan mga add ah ad event listener
+38:17
+so pwede na gamiton kung magog mga 3D button
+38:23
+or gusto ka ah kung gusto na to clickable ang mga
+38:28
+models soon Let's say
+38:35
+um let's say na naman siya no na nabuhat naman ni lang save so dapat mo na siya
+38:47
+once na i-click okay nagmove manck object one object one
+38:54
+always object one na so ana kon na click naman na to
+39:04
+soon class kung how about kung na example
+39:20
+so naman to ang event na listener in this no
+39:27
+so base atong manual
+39:32
+um well nakuha naman to ang click na-click naman to siya
+39:41
+sa kay mao in example mm
+39:54
+Ito na on'tg tong manual B sa may mga bayad.
+40:06
+So in the meantime in style so onceck something
+40:15
+nga ni class no kung inyong once na may function siguro na let's say
+40:21
+once na-click ni siyawas na si pop up na let's say ang planet Venus so gravity yang mga
+40:30
+temporary kung gusto mo na educational na output na pano
+40:37
+class kung let's say naay 3D models no na kwan na siya ng interactive
+40:44
+let's say ako sa ano um
+40:50
+magltfader gapunta so ako lang ni kwan mag-import let's sayong kwan base sa
+40:56
+atong manual mukha lang taog duck so atong i-interactive atong duck So let's say uh
+41:03
+GLTF GLTF
+41:09
+um loader then
+41:16
+magkan ah atong-load ang atong model. So let's say
+41:23
+cons loader.
+41:29
+So let model is equal to null.
+41:35
+So GLTF loaderadong
+41:44
+flight helmet run
+41:51
+GLB GLB
+42:00
+Okay.
+42:08
+So sa pa
+42:14
+sa ag scale na to
+42:20
+sa ma JTF
+42:27
+scale
+42:36
+Ano na lang na be? Ah model is equal to JTFC
+42:47
+an yata lang then ireposition no
+42:54
+sa y axis like let's say negative 1.2
+43:00
+So isa pa
+43:06
+so karon
+43:12
+be daw na siyang eray kason no so na-load naman siya be koad
+43:20
+uy asa ang modelag ni blackra
+43:26
+so sige so matong gamit ang GLB. So karon kay black man siya at try
+43:35
+magcate tag ambient light no. So let's say here fonts ambient light
+43:45
+ambient light okayong intensity somehow3 lang sa
+43:53
+thenag directional light cons directional
+44:01
+light let's sayas intensity No
+44:09
+at position around let's say
+44:14
+13 so
+44:21
+onong ngitngit siya class no gan without lights our model will be pitch black so
+44:28
+ang kan kay nagkamata um it uses the mes standard material So
+44:35
+pagload an so ang GTF models kasagaran standard material naman siya so ma
+44:40
+kailangan ng na para makita siya so karon let's try to load this one uy may
+44:48
+mali so seen before okay so
+44:54
+na siubos ah
+45:00
+okay So kas na tayand no
+45:06
+tag light okay
+45:13
+pwede naman ong sa scene onong scene scene
+45:26
+so somehow lang siguro ubos sa ba so lights
+45:36
+so be so ma-load na day no be conttrol c
+45:45
+okay k no sa kanong
+45:51
+siya sa atong object soon class is
+45:58
+mag sa atong recaster ito sa atong model
+46:03
+so kung overako
+46:09
+siya let's say magoverom effect
+46:16
+So un sa na soong i-try di sa atong
+46:23
+ibat sa be um magag if statement
+46:34
+pwede naman saan ah sa kay mayo ano
+46:49
+ah na lang ni-add sa kwan na lang no sa na
+47:00
+อ
+47:24
+model um
+47:30
+sa sunod um let's say here
+47:39
+so what ano cons ah cons model
+47:45
+intersects
+47:55
+So okay
+48:09
+so next would be
+48:15
+so magi ba if so if model
+48:22
+length niya so mayaya ni ha
+48:35
+so model that ' ba kung once na ma-intersect siya atong iscale
+48:43
+ang atong model to let's say Moin enlarge siya gamay no? Let's say moinlarge siya mga 1.2%.
+48:52
+So elsealik siya sa yangang naka-one ba to? Itong
+48:57
+i-check mo ang scale nag-scale ba daan wala na no? So ang iyang usual na scale
+49:04
+iyang kuan so be mo effect na maka so let's try.
+49:12
+So okay no once na mag-hover no na as you can see here no
+49:17
+once naect ang mouse caster mo
+49:22
+cas so well so that's that's it no so
+49:29
+wala siya ng hovering hover zoom effect so kung na kwan mag-try mo
+49:36
+build ang planet an mo i-hover mo siya na zoom
+49:41
+effect nara sa mo no okay so money ang kwano recasting event so gamit kan siya
+49:48
+usually kung mag magkan mga ui buttons no or 3D buttons sa 3s niya dapat
+49:55
+clickable siya na siya functionality so ma ang inyong tunaan ginyo ang mga mga
+50:01
+event listeners no with regards to this one so mga browser ah browser type na
+50:07
+mga kano ah listeners or window listeners. Okay. So I think that's all
+50:13
+for this um activity 3.6. So I hope that you guys um learn something on this
+50:21
+activity. So thank you for watching this recorded lecture and have a good day.
