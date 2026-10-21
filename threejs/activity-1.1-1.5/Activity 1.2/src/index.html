@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Scene with Local Server</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <canvas class="webgl"></canvas>
+
+    <!-- Info panel: proves the page is served by Vite and that static/ is served from the root -->
+    <div class="info">
+        <h1>Served by Vite</h1>
+        <p>Three.js revision: <span class="revision"></span></p>
+        <p>static/door.jpg is loaded from <code>/door.jpg</code>:</p>
+        <img src="/door.jpg" alt="door.jpg from the static folder">
+    </div>
+
+    <script type="module" src="./script.js"></script>
+</body>
+</html>

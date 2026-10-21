@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITE-18 Activity 1</title>
+    <style>
+        :root
+        {
+            --bg: #f6f6f4;
+            --card: #ffffff;
+            --text: #1d1d1f;
+            --muted: #6b6b70;
+            --border: #e2e2de;
+            --accent: #d62828;
+        }
+
+        @media (prefers-color-scheme: dark)
+        {
+            :root
+            {
+                --bg: #161617;
+                --card: #1f1f21;
+                --text: #ececec;
+                --muted: #9a9aa0;
+                --border: #2e2e31;
+                --accent: #ff5c5c;
+            }
+        }
+
+        body
+        {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: system-ui, sans-serif;
+        }
+
+        main
+        {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 48px 16px;
+        }
+
+        h1
+        {
+            margin: 0 0 4px;
+            font-size: 28px;
+        }
+
+        .subtitle
+        {
+            margin: 0 0 32px;
+            color: var(--muted);
+        }
+
+        a.activity
+        {
+            display: block;
+            padding: 16px 20px;
+            margin-bottom: 12px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: inherit;
+            text-decoration: none;
+        }
+
+        a.activity:hover
+        {
+            border-color: var(--accent);
+        }
+
+        a.activity strong
+        {
+            color: var(--accent);
+        }
+
+        a.activity span
+        {
+            display: block;
+            margin-top: 4px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>ITE-18 Activity 1</h1>
+        <p class="subtitle">Three.js r148 + Vite · Nimrod P.</p>
+
+        <a class="activity" href="./activity-1-1/">
+            <strong>1.1</strong> Basic Scene
+            <span>Scene, object, camera and renderer</span>
+        </a>
+        <a class="activity" href="./activity-1-2/">
+            <strong>1.2</strong> Local Server
+            <span>The same scene served and built with Vite, with a static asset</span>
+        </a>
+        <a class="activity" href="./activity-1-3/">
+            <strong>1.3</strong> Transform Objects
+            <span>Position, scale, rotation, lookAt and groups</span>
+        </a>
+        <a class="activity" href="./activity-1-4/">
+            <strong>1.4</strong> Animations
+            <span>requestAnimationFrame, Clock, sin/cos and GSAP</span>
+        </a>
+        <a class="activity" href="./activity-1-5/">
+            <strong>1.5</strong> Cameras
+            <span>Perspective, orthographic, cursor controls and OrbitControls</span>
+        </a>
+    </main>
+</body>
+</html>
