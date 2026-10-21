@@ -1,0 +1,279 @@
+/**
+ * Activity 1.12 - Go Live (the finished 1.11 3D Text project, prepared for deployment on Vercel)
+ * Nimrod P. Pala | ITE 18-FNHX1 | ITE-18 Applications Development and Emerging Technologies
+ */
+import * as THREE from 'three'
+// Deviation from handout: addons are now imported from 'three/addons/...'
+// (FontLoader and TextGeometry are no longer part of the 'three' core)
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
+import { FontLoader } from 'three/addons/loaders/FontLoader.js'
+import { TextGeometry } from 'three/addons/geometries/TextGeometry.js'
+// Deviation from handout: lil-gui replaces dat.gui (same API)
+import { GUI } from 'lil-gui'
+
+/**
+ * Debug
+ */
+const gui = new GUI()
+
+/**
+ * Base
+ */
+// Canvas
+const canvas = document.querySelector('canvas.webgl')
+
+// Scene
+const scene = new THREE.Scene()
+
+// Axes helper, used while centering the text (kept for reference)
+// const axesHelper = new THREE.AxesHelper()
+// scene.add(axesHelper)
+
+/**
+ * Textures
+ */
+const textureLoader = new THREE.TextureLoader()
+
+const matcapTextures = []
+for(let i = 1; i <= 8; i++)
+{
+    const texture = textureLoader.load(`/textures/matcaps/${i}.png`)
+    // Deviation from handout: matcaps are color textures, flag them as sRGB (three.js r152+)
+    texture.colorSpace = THREE.SRGBColorSpace
+    matcapTextures.push(texture)
+}
+
+/**
+ * Material (shared by the text and every donut)
+ */
+const material = new THREE.MeshMatcapMaterial({ matcap: matcapTextures[0] })
+
+const parameters = { matcap: 1 }
+gui
+    .add(parameters, 'matcap', [1, 2, 3, 4, 5, 6, 7, 8])
+    .onChange((value) =>
+    {
+        material.matcap = matcapTextures[value - 1]
+    })
+
+/**
+ * Fonts
+ */
+const fontLoader = new FontLoader()
+
+fontLoader.load(
+    '/fonts/helvetiker_regular.typeface.json',
+    (font) =>
+    {
+        // Text
+        const textGeometry = new TextGeometry(
+            'Nimrod P. Pala',
+            {
+                font: font,
+                size: 0.5,
+                // Deviation from handout: the 'height' option was renamed to 'depth' (three.js r163)
+                depth: 0.2,
+                curveSegments: 5,
+                bevelEnabled: true,
+                bevelThickness: 0.03,
+                bevelSize: 0.02,
+                bevelOffset: 0,
+                bevelSegments: 4
+            }
+        )
+
+        // --- Centering by hand with the bounding box (kept for reference) ---
+        // textGeometry.computeBoundingBox()
+        // textGeometry.translate(
+        //     - (textGeometry.boundingBox.max.x - 0.02) * 0.5, // Subtract bevel size
+        //     - (textGeometry.boundingBox.max.y - 0.02) * 0.5, // Subtract bevel size
+        //     - (textGeometry.boundingBox.max.z - 0.03) * 0.5  // Subtract bevel thickness
+        // )
+
+        // The easy way
+        textGeometry.center()
+
+        const text = new THREE.Mesh(textGeometry, material)
+        scene.add(text)
+
+        // Smaller second line under the name
+        const subtitleGeometry = new TextGeometry(
+            'ITE 18-FNHX1',
+            {
+                font: font,
+                size: 0.2,
+                depth: 0.08,
+                curveSegments: 5,
+                bevelEnabled: true,
+                bevelThickness: 0.012,
+                bevelSize: 0.008,
+                bevelOffset: 0,
+                bevelSegments: 4
+            }
+        )
+        subtitleGeometry.center()
+
+        const subtitle = new THREE.Mesh(subtitleGeometry, material)
+        subtitle.position.y = - 0.55
+        scene.add(subtitle)
+
+        // Keep-out zone so no donut touches the text or overlaps it on screen
+        // 1. In 3D: the box around both text lines
+        const textBox = new THREE.Box3()
+            .setFromObject(text)
+            .union(new THREE.Box3().setFromObject(subtitle))
+
+        // 2. On screen: the rectangle the text covers from the starting camera view
+        camera.updateMatrixWorld()
+        const textRect = new THREE.Box2()
+        const corner = new THREE.Vector3()
+        for(const x of [textBox.min.x, textBox.max.x])
+            for(const y of [textBox.min.y, textBox.max.y])
+                for(const z of [textBox.min.z, textBox.max.z])
+                {
+                    corner.set(x, y, z).project(camera)
+                    textRect.expandByPoint(new THREE.Vector2(corner.x, corner.y))
+                }
+
+        const tanHalfFov = Math.tan(THREE.MathUtils.degToRad(camera.fov * 0.5))
+        const toDonut = new THREE.Vector3()
+        const viewDirection = new THREE.Vector3()
+        camera.getWorldDirection(viewDirection)
+        const projected = new THREE.Vector3()
+
+        const isBlocked = (position, radius) =>
+        {
+            if(textBox.distanceToPoint(position) < radius)
+                return true
+
+            // Donuts behind the camera are never seen
+            const depth = toDonut.subVectors(position, camera.position).dot(viewDirection)
+            if(depth <= camera.near)
+                return false
+
+            // Screen-space circle of the donut vs the text rectangle (in front of or behind it)
+            projected.copy(position).project(camera)
+            const radiusY = radius / (depth * tanHalfFov)
+            const radiusX = radiusY / camera.aspect
+            return projected.x + radiusX > textRect.min.x && projected.x - radiusX < textRect.max.x
+                && projected.y + radiusY > textRect.min.y && projected.y - radiusY < textRect.max.y
+        }
+
+        // Donuts (optimized: one geometry and one material shared by all 100 meshes)
+        const donutGeometry = new THREE.TorusGeometry(0.3, 0.2, 20, 45)
+
+        for(let i = 0; i < 100; i++)
+        {
+            const donut = new THREE.Mesh(donutGeometry, material)
+
+            const scale = Math.random()
+            donut.scale.set(scale, scale, scale)
+
+            // Outer radius of the torus is (0.3 + 0.2) * scale, plus a small gap.
+            // Pick a new random position until the donut is clear of the text.
+            const radius = 0.5 * scale + 0.1
+            do
+            {
+                donut.position.x = (Math.random() - 0.5) * 10
+                donut.position.y = (Math.random() - 0.5) * 10
+                donut.position.z = (Math.random() - 0.5) * 10
+            }
+            while(isBlocked(donut.position, radius))
+
+            donut.rotation.x = Math.random() * Math.PI
+            donut.rotation.y = Math.random() * Math.PI
+
+            scene.add(donut)
+        }
+    }
+)
+
+/**
+ * Sizes
+ */
+const sizes = {
+    width: window.innerWidth,
+    height: window.innerHeight
+}
+
+window.addEventListener('resize', () =>
+{
+    // Update sizes
+    sizes.width = window.innerWidth
+    sizes.height = window.innerHeight
+
+    // Update camera
+    camera.aspect = sizes.width / sizes.height
+    camera.updateProjectionMatrix()
+
+    // Update renderer
+    renderer.setSize(sizes.width, sizes.height)
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+})
+
+window.addEventListener('dblclick', () =>
+{
+    const fullscreenElement = document.fullscreenElement || document.webkitFullscreenElement
+
+    if(!fullscreenElement)
+    {
+        if(canvas.requestFullscreen)
+        {
+            canvas.requestFullscreen()
+        }
+        else if(canvas.webkitRequestFullscreen)
+        {
+            canvas.webkitRequestFullscreen()
+        }
+    }
+    else
+    {
+        if(document.exitFullscreen)
+        {
+            document.exitFullscreen()
+        }
+        else if(document.webkitExitFullscreen)
+        {
+            document.webkitExitFullscreen()
+        }
+    }
+})
+
+/**
+ * Camera
+ */
+const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
+camera.position.x = 1
+camera.position.y = 1
+camera.position.z = 4
+scene.add(camera)
+
+// Controls
+const controls = new OrbitControls(camera, canvas)
+controls.enableDamping = true
+
+/**
+ * Renderer
+ */
+const renderer = new THREE.WebGLRenderer({
+    canvas: canvas
+})
+renderer.setSize(sizes.width, sizes.height)
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+
+/**
+ * Animate
+ */
+const tick = () =>
+{
+    // Update controls
+    controls.update()
+
+    // Render
+    renderer.render(scene, camera)
+
+    // Call tick again on the next frame
+    window.requestAnimationFrame(tick)
+}
+
+tick()

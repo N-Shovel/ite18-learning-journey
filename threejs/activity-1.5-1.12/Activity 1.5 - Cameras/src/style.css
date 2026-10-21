@@ -1,0 +1,4 @@
+/* Activity 1.5 - no CSS reset yet; the canvas is a fixed 800x600 (fullscreen comes in 1.6) */
+body {
+    background: #111111;
+}

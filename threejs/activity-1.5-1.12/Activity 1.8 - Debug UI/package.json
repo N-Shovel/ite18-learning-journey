@@ -1,0 +1,21 @@
+{
+  "name": "activity-1-8-debug-ui",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Activity 1.8 - Debug UI - ITE-18 Three.js activity (Nimrod P. Pala, ITE 18-FNHX1)",
+  "author": "Nimrod P. Pala",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "three": "^0.186.1",
+    "lil-gui": "^0.21.0",
+    "gsap": "^3.15.0"
+  },
+  "devDependencies": {
+    "vite": "^8.3.2"
+  }
+}
