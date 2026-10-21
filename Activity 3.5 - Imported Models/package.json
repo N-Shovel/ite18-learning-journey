@@ -1,0 +1,20 @@
+{
+  "name": "activity-3-5-imported-models",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Activity 3.5 - Imported Models - ITE-18 Three.js activity (Nimrod P. Pala, ITE 18-FNHX1)",
+  "author": "Nimrod P. Pala",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "lil-gui": "^0.17.0",
+    "three": "^0.148.0"
+  },
+  "devDependencies": {
+    "vite": "^4.0.4"
+  }
+}
