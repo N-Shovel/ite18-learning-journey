@@ -1,0 +1,6 @@
+Case ID | actual result | pass/fail | correction made
+T1 | Shows 4 tasks, summary displays "4 tasks, 115 minutes" | Pass | None
+T2 | Displays 3 pending tasks, summary "3 tasks, 85 minutes" | Pass | None
+T3 | Displays 1 completed task, summary "1 tasks, 30 minutes" | Pass | None
+T4 | Updates all tasks to completed status; pending filter yields an empty list with message "No tasks match this filter." | Pass | None
+T5 | Restores the original 4 tasks with their starting completion states and resets the dropdown to "All" | Pass | None

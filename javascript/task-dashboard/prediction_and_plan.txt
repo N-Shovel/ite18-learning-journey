@@ -1,0 +1,93 @@
+Topic 2: Study Task Dashboard
+==============================
+
+1. Predict and Explain
+-----------------------
+
+A. Object method and `this`
+
+When `task.describe()` is called, JavaScript treats it as a method call on
+the `task` object. That call gives the method a `this` value pointing to the
+object before the dot, so `this.title`, `this.completed`, and `this.minutes`
+refer to the values stored on that particular task. Each task can therefore
+describe itself using its own data.
+
+B. Arrow function scope
+
+Arrow functions do not create their own `this`. Instead, they inherit `this`
+from the surrounding scope where the arrow function was written. This is
+useful for short callbacks such as `task => task.describe()` because the
+callback does not need a separate method context. It also means an arrow
+function should not be used when a method needs its own dynamic `this` value;
+the ordinary methods in `createTask` are what allow `task.describe()` and
+`task.complete()` to refer to the current task.
+
+C. Array `map`
+
+`map()` visits every item in an array and builds a brand-new array from the
+values returned by its callback. In `buildTasks()`, it converts each record in
+`initialData` into a task object by calling `createTask()`. The new array has
+the same number of elements as the original array, so `map()` changes the
+shape or value of each item without changing the original array's length or
+mutating the original records.
+
+D. Array `filter`
+
+`filter()` checks each item with a callback that must produce a truthy or
+falsy result. Items that pass the condition are copied into a new subset
+array, while items that fail are left out. Here, `filterTasks()` keeps either
+pending tasks (`!task.completed`), completed tasks (`task.completed`), or all
+tasks when the selected filter is `all`. The original `tasks` array remains
+unchanged.
+
+E. Array `reduce`
+
+`reduce()` combines all items into one result by carrying an accumulator from
+one callback call to the next. The total study time starts at the explicit
+initial value `0`:
+
+	 0 + 25 = 25
+	 25 + 30 = 55
+	 55 + 45 = 100
+	 100 + 15 = 115
+
+For the four initial tasks, `visible.reduce((sum, task) => sum + task.minutes,
+0)` therefore produces `115`. If a filter hides some tasks, the same process
+adds only the minutes belonging to the visible subset.
+
+2. Plan Before Coding
+----------------------
+
+State management
+
+- Keep the original task records in `initialData` so they are never changed.
+- Use `createTask(title, minutes, completed)` to make task objects with the
+  `complete()` and `describe()` methods.
+- Store the live task objects in the `tasks` array.
+- Use `buildTasks()` as the initial clone function. It uses `map()` to create
+  fresh task objects, which also lets Reset restore clean objects instead of
+  reusing objects that may already have been modified.
+
+DOM references
+
+- `statusFilter` selects the current view: all, pending, or completed.
+- `completeAllBtn` triggers completion for every stored task.
+- `resetBtn` restores the initial task data.
+- `summary` displays the number of visible tasks and their total minutes.
+- `message` displays feedback when no tasks match the filter.
+- `taskList` contains the rendered task descriptions.
+
+Execution flow
+
+1. Initialization creates `tasks` with `buildTasks()`, attaches the event
+	handlers, and calls `renderTasks()` for the first display.
+2. A filter change runs `renderTasks()`, which selects the matching tasks,
+	maps them to descriptions, totals their minutes with `reduce()`, and
+	redraws the list and summary.
+3. Complete All calls `complete()` on every task, then re-renders the page
+	without changing the selected filter.
+4. Reset calls `buildTasks()` again, restores the filter to `all`, and
+	re-renders the dashboard from fresh task objects.
+
+The central pattern is: update the state first, then call `renderTasks()` so
+the DOM always reflects the current state.

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Study Task Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="card">
+    <h1>Study Task Dashboard</h1>
+    
+    <div class="controls">
+      <label for="statusFilter">Filter:</label>
+      <select id="statusFilter">
+        <option value="all">All</option>
+        <option value="pending">Pending</option>
+        <option value="completed">Completed</option>
+      </select>
+      
+      <button id="completeAll">Complete All</button>
+      <button id="resetTasks">Reset</button>
+    </div>
+
+    <div id="summary"></div>
+    <div id="message"></div>
+
+    <ul id="taskList"></ul>
+  </div>
+</body>
+</html>

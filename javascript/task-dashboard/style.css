@@ -1,0 +1,42 @@
+body {
+  font-family: sans-serif;
+  background-color: #f4f4f9;
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+.card {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 400px;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+#summary {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+#message {
+  color: #888;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style-type: square;
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 6px;
+}
