@@ -18,7 +18,7 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
 // {
 //     texture.needsUpdate = true
 // }
-// image.src = '/textures/door/color.jpg'
+// image.src = 'textures/door/color.jpg'
 
 // --- Step 2: LoadingManager + TextureLoader ---
 const loadingManager = new THREE.LoadingManager()
@@ -42,13 +42,13 @@ loadingManager.onError = (url) =>
 const textureLoader = new THREE.TextureLoader(loadingManager)
 
 // Door textures (all loaded so the LoadingManager progress can be seen in the console)
-const colorTexture = textureLoader.load('/textures/door/color.jpg')
-const alphaTexture = textureLoader.load('/textures/door/alpha.jpg')
-const heightTexture = textureLoader.load('/textures/door/height.jpg')
-const normalTexture = textureLoader.load('/textures/door/normal.jpg')
-const ambientOcclusionTexture = textureLoader.load('/textures/door/ambientOcclusion.jpg')
-const metalnessTexture = textureLoader.load('/textures/door/metalness.jpg')
-const roughnessTexture = textureLoader.load('/textures/door/roughness.jpg')
+const colorTexture = textureLoader.load('textures/door/color.jpg')
+const alphaTexture = textureLoader.load('textures/door/alpha.jpg')
+const heightTexture = textureLoader.load('textures/door/height.jpg')
+const normalTexture = textureLoader.load('textures/door/normal.jpg')
+const ambientOcclusionTexture = textureLoader.load('textures/door/ambientOcclusion.jpg')
+const metalnessTexture = textureLoader.load('textures/door/metalness.jpg')
+const roughnessTexture = textureLoader.load('textures/door/roughness.jpg')
 
 // Deviation from handout: since three.js r152, color textures must be flagged as sRGB
 // or they look washed out. Data maps (alpha, normal, height...) stay linear.
@@ -73,16 +73,16 @@ colorTexture.colorSpace = THREE.SRGBColorSpace
 // colorTexture.center.y = 0.5
 
 // --- Step 4: filtering and mipmapping with the checkerboards (kept for reference) ---
-// const checkerboardTexture = textureLoader.load('/textures/checkerboard-1024x1024.png')
+// const checkerboardTexture = textureLoader.load('textures/checkerboard-1024x1024.png')
 // checkerboardTexture.colorSpace = THREE.SRGBColorSpace
 // checkerboardTexture.minFilter = THREE.NearestFilter // minification: sharp but moiré
 //
-// const checkerboardSmallTexture = textureLoader.load('/textures/checkerboard-8x8.png')
+// const checkerboardSmallTexture = textureLoader.load('textures/checkerboard-8x8.png')
 // checkerboardSmallTexture.colorSpace = THREE.SRGBColorSpace
 // checkerboardSmallTexture.magFilter = THREE.NearestFilter // magnification: crisp pixels
 
 // --- Step 5 (final): minecraft.png with NearestFilter, no mipmaps ---
-const minecraftTexture = textureLoader.load('/textures/minecraft.png')
+const minecraftTexture = textureLoader.load('textures/minecraft.png')
 minecraftTexture.colorSpace = THREE.SRGBColorSpace
 minecraftTexture.generateMipmaps = false // not needed with NearestFilter as minFilter, saves GPU memory
 minecraftTexture.minFilter = THREE.NearestFilter

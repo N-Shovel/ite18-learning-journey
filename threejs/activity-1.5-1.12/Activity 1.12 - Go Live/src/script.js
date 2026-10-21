@@ -37,7 +37,7 @@ const textureLoader = new THREE.TextureLoader()
 const matcapTextures = []
 for(let i = 1; i <= 8; i++)
 {
-    const texture = textureLoader.load(`/textures/matcaps/${i}.png`)
+    const texture = textureLoader.load(`textures/matcaps/${i}.png`)
     // Deviation from handout: matcaps are color textures, flag them as sRGB (three.js r152+)
     texture.colorSpace = THREE.SRGBColorSpace
     matcapTextures.push(texture)
@@ -62,7 +62,7 @@ gui
 const fontLoader = new FontLoader()
 
 fontLoader.load(
-    '/fonts/helvetiker_regular.typeface.json',
+    'fonts/helvetiker_regular.typeface.json',
     (font) =>
     {
         // Text

@@ -37,7 +37,7 @@ const scene = new THREE.Scene()
 // Draco compression (p.10-11): the DRACOLoader is created before the gltfLoader
 // Deviation from handout: the decoder comes from node_modules/three/examples/jsm/libs/draco/ because examples/js/ was removed in r148
 const dracoLoader = new DRACOLoader()
-dracoLoader.setDecoderPath('/draco/')
+dracoLoader.setDecoderPath('draco/')
 
 const gltfLoader = new GLTFLoader()
 gltfLoader.setDRACOLoader(dracoLoader)
@@ -46,7 +46,7 @@ let mixer = null
 
 // Load the model in Three.js, first version (p.4-5): with the success, progress and error callbacks
 // gltfLoader.load(
-//     '/models/Duck/glTF/Duck.gltf',
+//     'models/Duck/glTF/Duck.gltf',
 //     (gltf) =>
 //     {
 //         console.log('success')
@@ -66,7 +66,7 @@ let mixer = null
 
 // Then only the success callback (p.5)
 // gltfLoader.load(
-//     '/models/Duck/glTF/Duck.gltf',
+//     'models/Duck/glTF/Duck.gltf',
 //     (gltf) =>
 //     {
 //         console.log(gltf)
@@ -161,7 +161,7 @@ const helmetAddMethods = {
 const loadHelmet = () =>
 {
     loadModel(
-        '/models/FlightHelmet/glTF/FlightHelmet.gltf',
+        'models/FlightHelmet/glTF/FlightHelmet.gltf',
         (gltf) =>
         {
             helmetAddMethods[debugObject.helmetAddMethod](gltf)
@@ -180,7 +180,7 @@ let foxAnimations = null
 const loadFox = () =>
 {
     loadModel(
-        '/models/Fox/glTF/Fox.gltf',
+        'models/Fox/glTF/Fox.gltf',
         (gltf) =>
         {
             // Deviation from handout: p.14 uses 0.03, but p.12 and the instructor's video use 0.025
@@ -196,10 +196,10 @@ const loadFox = () =>
 }
 
 const models = {
-    'Duck (glTF)': () => loadDuck('/models/Duck/glTF/Duck.gltf'), // Default glTF
-    'Duck (Binary)': () => loadDuck('/models/Duck/glTF-Binary/Duck.glb'), // glTF-Binary
-    'Duck (Embedded)': () => loadDuck('/models/Duck/glTF-Embedded/Duck.gltf'), // glTF-Embedded
-    'Duck (Draco)': () => loadDuck('/models/Duck/glTF-Draco/Duck.gltf'), // glTF-Draco
+    'Duck (glTF)': () => loadDuck('models/Duck/glTF/Duck.gltf'), // Default glTF
+    'Duck (Binary)': () => loadDuck('models/Duck/glTF-Binary/Duck.glb'), // glTF-Binary
+    'Duck (Embedded)': () => loadDuck('models/Duck/glTF-Embedded/Duck.gltf'), // glTF-Embedded
+    'Duck (Draco)': () => loadDuck('models/Duck/glTF-Draco/Duck.gltf'), // glTF-Draco
     'Flight Helmet': loadHelmet,
     'Fox': loadFox
 }

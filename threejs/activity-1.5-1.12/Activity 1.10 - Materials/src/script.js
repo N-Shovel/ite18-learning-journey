@@ -33,15 +33,15 @@ const scene = new THREE.Scene()
 const textureLoader = new THREE.TextureLoader()
 const cubeTextureLoader = new THREE.CubeTextureLoader()
 
-const doorColorTexture = textureLoader.load('/textures/door/color.jpg')
-const doorAlphaTexture = textureLoader.load('/textures/door/alpha.jpg')
-const doorAmbientOcclusionTexture = textureLoader.load('/textures/door/ambientOcclusion.jpg')
-const doorHeightTexture = textureLoader.load('/textures/door/height.jpg')
-const doorNormalTexture = textureLoader.load('/textures/door/normal.jpg')
-const doorMetalnessTexture = textureLoader.load('/textures/door/metalness.jpg')
-const doorRoughnessTexture = textureLoader.load('/textures/door/roughness.jpg')
-const matcapTexture = textureLoader.load('/textures/matcaps/1.png')
-const gradientTexture = textureLoader.load('/textures/gradients/3.jpg')
+const doorColorTexture = textureLoader.load('textures/door/color.jpg')
+const doorAlphaTexture = textureLoader.load('textures/door/alpha.jpg')
+const doorAmbientOcclusionTexture = textureLoader.load('textures/door/ambientOcclusion.jpg')
+const doorHeightTexture = textureLoader.load('textures/door/height.jpg')
+const doorNormalTexture = textureLoader.load('textures/door/normal.jpg')
+const doorMetalnessTexture = textureLoader.load('textures/door/metalness.jpg')
+const doorRoughnessTexture = textureLoader.load('textures/door/roughness.jpg')
+const matcapTexture = textureLoader.load('textures/matcaps/1.png')
+const gradientTexture = textureLoader.load('textures/gradients/3.jpg')
 
 // Deviation from handout: since three.js r152, color textures (map, matcap) must be
 // flagged as sRGB, otherwise they look washed out. Data maps stay linear.
@@ -58,12 +58,12 @@ gradientTexture.generateMipmaps = false
  * Park2 cube map by Emil Persson (Humus), from the three.js repository
  */
 const environmentMapTexture = cubeTextureLoader.load([
-    '/textures/environmentMaps/0/px.jpg',
-    '/textures/environmentMaps/0/nx.jpg',
-    '/textures/environmentMaps/0/py.jpg',
-    '/textures/environmentMaps/0/ny.jpg',
-    '/textures/environmentMaps/0/pz.jpg',
-    '/textures/environmentMaps/0/nz.jpg'
+    'textures/environmentMaps/0/px.jpg',
+    'textures/environmentMaps/0/nx.jpg',
+    'textures/environmentMaps/0/py.jpg',
+    'textures/environmentMaps/0/ny.jpg',
+    'textures/environmentMaps/0/pz.jpg',
+    'textures/environmentMaps/0/nz.jpg'
 ])
 environmentMapTexture.colorSpace = THREE.SRGBColorSpace
 
