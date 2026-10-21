@@ -1,0 +1,109 @@
+TOPIC 1: CAMPUS CANTEEN CALCULATOR
+
+PREDICT AND EXPLAIN
+
+A. String concatenation and numeric addition
+
+console.log("2" + 3) prints "23" because the first value is a string. When
+the plus operator is used with a string, JavaScript converts the other value
+to a string and joins the two values together. This is called string
+concatenation.
+
+console.log(Number("2") + 3) prints 5 because Number("2") converts the text
+"2" into the number 2. Both operands are then numbers, so the plus operator
+performs numeric addition: 2 + 3 = 5.
+
+B. Updating a const array
+
+quantities.push(2) works even when quantities was declared with const. The
+const keyword locks the variable reference, meaning quantities cannot be
+reassigned to a different array. It does not make the array contents
+read-only. Methods such as push() can still change the contents of the same
+array. Since the array starts empty, quantities.push(2) adds one item and
+returns the new length, which is 1.
+
+C. Comparing a boundary value
+
+If subtotal is 100, the expression subtotal >= 100 evaluates to true. The
+>= operator means "greater than or equal to," so equality at the boundary is
+included. Therefore, a condition such as this will output "A" when subtotal
+is exactly 100, as well as when subtotal is greater than 100.
+
+D. Tracing total += i
+
+Assume total starts at 0 and the loop runs with i = 0, 1, and 2:
+
+	i = 0: total += 0  -> total becomes 0
+	i = 1: total += 1  -> total becomes 1
+	i = 2: total += 2  -> total becomes 3
+
+The final log is 3 because the loop adds 0 + 1 + 2 to the starting value of
+0.
+
+E. Array indexes and the loop condition
+
+If prices has three elements, its valid indexes are 0, 1, and 2 because
+JavaScript arrays are zero-indexed. A loop using i <= prices.length also runs
+when i is 3. At that point, prices[3] does not exist, so its value is
+undefined and undefined is logged.
+
+Changing the condition to i < prices.length stops the loop before i reaches
+3. The loop then visits only indexes 0, 1, and 2, so no undefined value is
+logged.
+
+
+PLAN BEFORE CODING
+
+1. Variables and declaration choices
+
+- menu: a const array of menu objects containing each item name and price.
+	The array reference does not need to change, so const is appropriate.
+- customer: a const object containing the customer's name and category. The
+	object stays the same object, while its properties can be updated.
+- quantities: a const array that starts empty and receives quantities with
+	push(). The array reference stays fixed, even though its contents change.
+- stopped: a let boolean because the program changes it to true when the user
+	cancels or enters invalid input.
+- subtotal: a let number because each item total is added to it during a
+	loop.
+- rate: a let number because it starts at 0 and changes based on the selected
+	customer category.
+- discount: a const value because it is calculated once from subtotal and
+	rate.
+- total: a const value because it is calculated once from subtotal minus the
+	discount.
+
+2. Program sequence
+
+The program will follow this sequence:
+
+input -> trim and validate -> calculations -> output through alert and
+console.log
+
+First, ask for the customer's name and category. Trim text input so extra
+spaces do not affect validation, and stop if the name is blank or the user
+cancels. Next, ask for a quantity for each menu item. Convert each quantity
+to a number and validate that it is a whole number from 0 through 10.
+
+After valid input is collected, calculate each line total and add the values
+to subtotal. Select the discount rate from the customer's category, then
+calculate discount and total. Finally, show the receipt with alert() and log
+the same receipt with console.log(). If every quantity is zero, report that
+no items were ordered instead.
+
+3. Quick prediction
+
+For a student ordering 2 Rice meals, 1 Chicken meal, and 3 Juices:
+
+	Rice meals:   2 x PHP 50 = PHP 100.00
+	Chicken meal: 1 x PHP 80 = PHP  80.00
+	Juices:       3 x PHP 20 = PHP  60.00
+	Subtotal:                    PHP 240.00
+
+A student receives a 10% discount:
+
+	Discount: 10% of PHP 240.00 = PHP 24.00
+	Total:    PHP 240.00 - PHP 24.00 = PHP 216.00
+
+Expected result: Subtotal PHP 240.00, Discount PHP 24.00, and Total
+PHP 216.00.

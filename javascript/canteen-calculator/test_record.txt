@@ -1,0 +1,17 @@
+Case ID  | actual result                                                                 | pass/fail | correction made
+---------|--------------------------------------------------------------------------------|-----------|----------------
+T1       | Student; 2, 1, 3 -> Subtotal 240.00; discount 24.00; total 216.00             | Pass      | None
+T2       | Staff; 1, 1, 1 -> Subtotal 150.00; discount 7.50; total 142.50               | Pass      | None
+T3       | Guest; 1, 0, 2 -> Subtotal 90.00; discount 0.00; total 90.00                 | Pass      | None
+T4       | Visitor; 1, 0, 0 -> Category becomes guest; total 50.00                     | Pass      | None
+T5       | "Student"; 1, 0, 0 -> Category becomes student; total 45.00                 | Pass      | None
+T6       | Guest; 0, 0, 0 -> "No items ordered." displayed                             | Pass      | None
+T7       | Guest; 10, 10, 10 -> Accepted; subtotal and total 1500.00                   | Pass      | None
+T8       | Guest; first quantity abc -> Error shown; program stopped cleanly           | Pass      | None
+T9       | Guest; first quantity blank -> Error shown; program stopped cleanly         | Pass      | None
+T10a/b/c | First quantity -1, 1.5, or 11 -> Three subcases rejected with an error       | Pass      | None
+T11a/b/c | Cancel on name, category, or quantity -> Three subcases stopped with a       | Pass      | None
+		 | cancellation message                                                         |           |
+T12      | Blank or spaces-only name -> Error shown; stopped before category           | Pass      | None
+T13      | Blank category; 1, 0, 0 -> Defaults to guest; total 50.00                  | Pass      | None
+T14      | Guest; first quantity Infinity -> Error shown; program stopped              | Pass      | None
