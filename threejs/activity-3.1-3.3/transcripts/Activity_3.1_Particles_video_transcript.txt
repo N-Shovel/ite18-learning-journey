@@ -1,0 +1,717 @@
+0:00
+Good day everyone. Um today we're going to um explore particles in 3GS. So where
+0:07
+it is a very um exciting topic that um allows us to simulate um effects like uh
+0:15
+stars, smoke, rain, dust or even fire. No in simple terms um particles are
+0:22
+small uh small points or sprites
+0:28
+and it is rendered in 3D space no so they might look um small individually
+0:35
+but um but when combined so they create beautiful dynamic effects. So kumbaga
+0:44
+ang particles kay mga gammay kayong elements na pwede na to pwede na to
+0:51
+magamit para sa mga effects sama sa kaning kwan ah stars or ulan or mga
+1:00
+whatsoever no na mga mag-create tag particles so particles are powerful
+1:06
+because um we can have hundreds of thousands of mgao
+1:13
+um this particles on screen and still uh maintain a good frame rate no if na
+1:20
+optimize good siya soon class um we will try to
+1:26
+set up na no so let me um anoun na ako na siya kadali
+1:33
+so karon class is dapat kanan nin yung manual casa para dili mo mawala pero ako
+1:40
+lang i-try ka ng kwan lang no um somehow madali lang siya
+1:46
+sabot no actually taas manual then
+1:52
+um here ako lang ng i-guide lang kung sa manipulate okayon
+2:00
+class is um i-check kung na-download na sakto ang
+2:07
+soalimot na mag npm install sa inyong um each
+2:14
+um activities no okay so ako kay um na
+2:19
+naman node gs nainstall na mga nasa package jason so let me run na lang npm
+2:28
+run okay so current class is as you can see
+2:33
+here no so when we start the default scene we only show a cube in the middle.
+2:42
+So this cube is just for testing uh just to check that everything works before we
+2:48
+move to our particle system. So later we will remove this cube and replace it
+2:54
+with a sphere made of particles. Okay. So current class if you check the manual
+3:02
+um let me na lang dire no. So here um we will need to um remove
+3:09
+this one or na lang i-comment out.
+3:16
+So we will create our first kind of particles in this case. So let's say um
+3:23
+magkan tayo geometry here then caron class. So
+3:30
+um so every kwan no um in 3GS every object
+3:38
+starts with geometry no so right now we will use the um
+3:44
+the sphere geometry in this case no so consomang
+3:50
+buatong class is kwan siya no sphere made of particles no is this guys so
+3:56
+right now is let's say particles geometry
+4:03
+then new 3.
+4:09
+geometry then um nat 1
+4:15
+32 32 so sa may pasabot an ay okay cons
+4:23
+sa class okay so meaning so we are creating a
+4:31
+sphere with a radius 1 and subdivided
+4:37
+into 32 wid height segments so kat ong wid segments
+4:44
+no so as you can see here so 32 atong wid segments and height segments na to
+4:50
+is 32 so soon classong magcate kwan sphere
+4:57
+made of particl so each vertex of this geometry becomes one particle okay so
+5:06
+naay 3 ah 32 segments so dagan k siya mga
+5:12
+vertices so kada vertices or vertex no mahimong usa
+5:19
+ka particle okay soon we will try to create the material
+5:26
+so ang particles class um particles need a special kind of
+5:31
+material points material so it controls
+5:37
+Each particle looks size, color and visibility depending on the distance. So
+5:44
+let's say um sa material
+5:51
+ako niemove is mag color so karon is akong kwan is size
+5:58
+ah size is onong manual is 0.02 02
+6:07
+size attenuation
+6:13
+so here so size sets um how big each particle
+6:21
+appears and size attenuation so kung true siya class means particles
+6:28
+farther from the camera appear smaller so kung layo siya sa camera gamay siya
+6:33
+tanwon kungol mas dako siya so ang property na need in this case so karon
+6:41
+um since nakakit na tag material so to actually display the particles so we use
+6:48
+the point class instead of mesh no katong usual na gigamit so here ah let
+6:56
+me lang no so here ah
+7:03
+para mo siya certain mesh no instead of mesh you use the points no so karon is
+7:11
+ato siya i-add sa scene so ang need naman na to class no kay ah let's say
+7:16
+the geometry and the particles material or atong material here so mamaya ang
+7:23
+need no so okay so let's scan at i-check
+7:31
+work no okay I think kulang
+7:37
+size okay ako checkong code
+7:44
+uy na ang so dapat points material sorry points materal
+7:57
+points So obviously
+8:08
+well no um there you go. So you will see a particle sphere instead of cube on
+8:15
+ganina. So maoni ang atong unang particle system works siya usa ka kwan
+8:21
+work si usa ka bola nga na ay libo na particle points in this case. Okay.
+8:30
+So now um moving on. So let me check the manual. Okay. Soon
+8:38
+is we will create a custom particle, no? So let's make our own particle positions
+8:45
+instead of using a square. So we can start with um ako lang um comment out.
+8:55
+Okay. Then this one also. So kon uh we will try to create
+9:03
+a custom geometry in this case. So we can start with using a buffer
+9:09
+geometry. So which gives us more control soon uh let me lang no um
+9:16
+ako lang ni class no para madalta cons.
+9:22
+Okay. So pasabot ano no? So
+9:29
+here natay counts 500.
+9:34
+So here no positions no so each particle has um x y z or coordinate no soon class
+9:45
+ngong nagta umtimes 3 kay tungod kayuman ka values perle
+9:56
+ang isa ka um vertex so that's why we create um naghimot na ari na ang size
+10:03
+niya is 5,000 times ay 500 * 3 so naay
+10:08
+1,500 ka values inside of this one o ang size karon sa atong ari is 1,500
+10:14
+so k tungod kay mag-create naman t 500 ka kwan class no vertices na na ay
+10:20
+certain points no na na siya three values per vertex okay so ma nagbuwat no
+10:29
+na ang positions na x y Z so nanayon siya 1,500 okay
+10:39
+so karon class ang mag content sa loop so here
+10:45
+ako na lang class ha so
+10:52
+here loop soon class siya gibuhat siya parael
+11:00
+i-fill na ang atong positions random na values
+11:07
+soon class each index sa
+11:12
+1500 man ang data nafil so
+11:21
+then rand values in this is obviously
+11:27
+maglimitan na siya sa ah somewhat ah let's say 10 na
+11:34
+so karon um particles
+11:40
+iset na attribute
+11:48
+position is sa sig na loop anon
+11:55
+so tanan positions an class is ma
+12:02
+ah random na ano na sao pa um random ang ilang mga positions here so mura siya
+12:07
+kaang nag-scatter na mga particle sa space well you can experiment naman no
+12:13
+5,000 50,000 let's say 5 million so just be aware
+12:20
+that uh more particles slower ang performance so especially labi na kung
+12:25
+dili kayo good GPU no or mobile phones no in this case so karon ang sama na pag
+12:32
+no um magag material so ako lang ni
+12:38
+let's say magta consal
+12:43
+let's say here attenuation langapit ong kanina no eh ah cons
+12:55
+um i-add no material so ato si i-ad so onongat
+13:04
+para makita okay so this one is the output no soong
+13:11
+size attenuation equals true okay sana no nagkadal ka sa camera siya pero
+13:18
+magkalayo motong kano gamay no na siya kano pag once na mag-move move to no in this case is kwan
+13:26
+siya umation na may tabo okay so going back here
+13:36
+so class gusto to i um let's say kanino na lang ni i
+13:44
+Um inano na lang na para kaang magtawag-tawag na ta um
+13:52
+let's say at ni consqual
+14:08
+So oopsze
+14:14
+attenuation
+14:22
+ay ano del mali dapat
+14:27
+okay since object particles that size of course property
+14:34
+here dapat is equal mga auto correction class so okay
+14:42
+so pwede man siya inanon no soon class gusto ko mag-add po color
+14:48
+so particles colored
+15:01
+samplec
+15:07
+at side check okay naay somehow siya gross color no or
+15:14
+pink okay so karon class um na-try nam color no
+15:22
+pwede mag class magad magload texture let's say folder
+15:30
+textures mga textures here no as you can see here no kanina
+15:37
+no nags novaay
+15:42
+some stars okay
+15:48
+so dinownload na textures in this case so gusto mo try sa kani kaning second na
+15:57
+kani this one so karon we need to update the namutang
+16:05
+na texture loader okay this one no so class
+16:13
+magload mga texture so ako sa kumplet para soy
+16:21
+manual
+16:27
+Okay. Na-copy na.
+16:35
+CL what we have here isadure [Musika]
+16:43
+by means of using this constructor texture loaderadong
+16:51
+imageure image
+16:56
+soon
+17:02
+particles map material map
+17:11
+ang katong it's instead ofong color so i-comment out ni instead na
+17:19
+atong gamit kay kwan ang kanina color ang texture ang
+17:26
+ano ni classung kay
+17:35
+ang pag-create na to sa kuan sa lang
+17:41
+karon is no particles
+17:46
+this case kung result
+17:52
+okayung siguro sa initialization na initialization
+17:58
+So balik ni ato sa ubos
+18:05
+nag-initialize points particle so ako langik
+18:13
+naibutang so obviously
+18:20
+gagmay no saha pagattinate na to daw niadako
+18:28
+one na lang. 1
+18:33
+para siya. Okay. So siya no. So kabantay mo ang kwan um
+18:41
+atong gigamit each point nagrender na siya texture in this case.
+18:46
+So sa pa so kabantay mo class no. Maam kung akong
+18:52
+i-move no kung tana niyo natay circle here natay
+18:58
+kanina circle siyave mawala siya no tungod kay wala man pa na plaster
+19:06
+texture some squareetantay
+19:18
+squarequare age man siya na mga edges. So dapat ato na siya i
+19:25
+i-fix so natin siya pag-fix so we need to
+19:30
+um add transparency in this case.
+19:38
+So particles particles material
+19:49
+transparent is equal to true o kaning alpha particles texture kung na
+19:56
+to gamiton kan siya class para ma-transparent ong ang atong image orong texture and this
+20:05
+one Kung na to gamit ng alpha map makita na to nga murag square ang particle so ma
+20:13
+siya na ah ma siya na ang gamit sa alpha mapap para makita ang visible na part so in
+20:20
+this case class kay katuwa onong texture class no kay alpha channel man siya class binary naman siya no zero to sort
+20:28
+of certain value 0 to 255 no in this case
+20:33
+ang iyang button class ang katong visible na kuan mura to iang i-render ang visible na part so karon class naman
+20:41
+nabutangong i-check no so karon as we can see here um
+20:50
+somehow nikwan na siya no na siya certain effect
+20:56
+na kani kabantay no kan side no ni makita na nato siya no na nilapos na no
+21:02
+na so na-transparent na siya Okay pero na ba masinati na kuan naguban
+21:11
+no like this one na na to mabantayan no
+21:16
+sa ubans kung layo na kayo mukha na siya so karon class napatay buhaton na
+21:25
+transparency fixes no in this case so be pwede man na to ni
+21:33
+before ko mag-fix ako ano pwede pa ni adan color so pwede po siya class no k
+21:39
+naman to na color sa onong kuan sa sa atong texture pwede po mo siya i-add
+21:45
+color ka ako langactivate so okay going back here okay man siya
+21:54
+pero class no para makaro gin okay na transparency
+21:59
+kung kanong tanon for certain part
+22:10
+ang mga dark ah so area na mga problem regarding
+22:19
+transparency so siya pagfix no or so magkan depth ano
+22:26
+umang mga mag-overlap kanoverlap
+22:31
+na mga problem pa with transparenc So un na to na pag-fix
+22:37
+so karon um be ako sa i-checkong ano
+22:45
+so magamit alpha test no in this case so to fix
+22:50
+that so here i-add
+22:59
+so lang particles
+23:05
+particles material alpha test let's say okay 001
+23:10
+then isa pa okay
+23:18
+siya class pang kwan siya no kanang i-check na to kung
+23:25
+may kung ni work ba atong kwan sa alpha test na in this case para kwan siya pang kwan sa mga overlapping na transparency
+23:32
+So at siya i-check so somehow nanay
+23:38
+alivyo. Okay. So na klase klase na to na ano um
+23:45
+way around of fixing the um
+23:50
+transparency pero kani klas namantayaning dark portion
+23:56
+sa circle na niwan sa iyang kwan no. So napot tay gamitan na depth test no. So
+24:03
+atong i-remove ong mga zero pixels no or zero alpha in this case saakong atong
+24:10
+texture. So karon atong kwan no um i-activate ang property na depth test.
+24:18
+Ito na siya i-false always through na siya class na
+24:25
+material. So saong material ay okay here
+24:31
+it lang siya i false ang test toan
+24:36
+false soang button
+24:43
+ang iyang effect soon cl
+24:50
+somehon
+25:03
+ang test kung deptest
+25:09
+some shadow shadow effect
+25:16
+soon okay then
+25:26
+So na problema labi na kung
+25:33
+kaning mag-compare no I mean kanang maglibog ang imong
+25:41
+pag kwan o sa transparency kinsa ang nag-atubang kay kasagaran mang good no ang
+25:50
+lambi na ka ng nasaluyo ang kanino kanina image say maglibog ang imong
+25:58
+tgs kung kinay una niya pag um let's say may sakto pagkak na demo
+26:16
+k may class na ang si tgs kay kwan kaang sige compare kung ang nasa front
+26:25
+kon mga front sige siya compare so kwan siya kanang
+26:32
+gabi kan siya heavy computation no karon kay sige siya check sa camera roon o kinsa ang mga particles na within the
+26:39
+front kung gusto n kwan para ma-optimize n
+26:44
+dili kayo makwan ang performance so karon imong i-disable si
+26:50
+Um si depth right no in this case. So
+26:56
+particles natin gam ni depth right no.
+27:03
+So here ato load run. So somehow na kayo kwan
+27:10
+ang kwan in this case si 3GS na siya sig kung kisay front.
+27:18
+So ang depth right false soagarang pinak solus
+27:25
+kay makita sa mga part naasuyo in this case
+27:33
+makita nagluyo siya okayon
+27:39
+class kung ibalik daw ang kwan para magay i-test
+27:44
+karon so Um be let's go back saong ano kung atong
+27:50
+ibalik atong cube let's say kani no itong test cube.
+27:59
+Okay na mali so i-add
+28:07
+so aman onong kwan output
+28:14
+karonas no makabantay mo na nag-overlapping no um nainutang na overlapping in this case
+28:25
+okay pagana ano pagtanon mo sa
+28:31
+somehow particlesoverlap so
+28:38
+ang pagfix issue soon is mag
+28:45
+add blending in this case so para magan class mag um
+28:56
+magover overlapping no so here let me activate the um as on textures so
+29:06
+mag-add na i-blending na to na addive blending
+29:12
+soon pagcheck na to saong kuan wala na no so
+29:17
+na-remove na ong or na-blend na to seen
+29:22
+reload so wala na no na-remove na na-fix na ang
+29:29
+issue padakon pa daw na ang kwan para ma-empize padako na to ang particle
+29:37
+let's say five siguro na po kay
+29:43
+as you can see here okay naapo
+29:48
+um
+29:55
+I think siya okay na siya kong nag
+30:03
+lapuslapos ang katong mga particles soon is since obviously this one is solid
+30:11
+naapat blending solid
+30:17
+maglaposlapos ang tanle okay
+30:26
+so kon we will try to okay na natin i-remove kwan no particle
+30:34
+i know i mean the geometry kaning test cube na to so here
+30:43
+is aha Okay so na ibalik be kung wala taywan
+30:50
+okay kinata so karang kaso mabantay na niyo no naapos-lapos na atong tan sa kwan no in
+30:57
+this case na kwan naman no mga na-fix
+31:03
+naman nao ang mga transparency issues okay so right now um
+31:11
+we will try to mag-add
+31:16
+different colors per particle so we can assign unique colors to each one of them
+31:23
+soon na siya so umong
+31:29
+loop no mag-add lang um
+31:35
+let's say holder sa toa values kay rgb man siya no soapon
+31:41
+no same gapon no kay rgb value man i-try kwan class butang unique color na
+31:48
+randomize ang value so karon lang
+31:54
+k since i-match gato class no kay 500 man ka points
+31:59
+so sa each kuan no um sa each point no sa kwan mga ah each particle mag-hold
+32:08
+siya tulo ka valuesang sameapon 1 500apon
+32:14
+soon sa i-update date so mag-add let's say at lang random no na tanan na
+32:24
+color is na random lang soon class beforeyaamit
+32:32
+ang colorsivate ang property vertex color is equ
+32:43
+material dot vertex colors
+32:52
+equ to true para um ma-apply um atong each vertex na color
+33:00
+no maapply ong whatever kwan na to color na gi-assign
+33:06
+so karon um be okay particles material
+33:12
+actually na siya ibutang okay basik magerror siya sa
+33:17
+initialization so direita no actually pwede na na i-remove
+33:25
+nag naman tao kwano ah certain kwan na color sa isa sa tanan no so karon atong
+33:33
+i-check uy na problema be ano wa manir-render
+33:41
+be natulang Well, let's check beons color
+33:47
+position. Ay, okay. I think napatay ko lang ang
+33:56
+attribute. Asan to?
+34:02
+Okay. Ang kani i-set pa din na to no. Kalimotset. So ang particles geometry
+34:08
+pa. Particles geometry. Okayetan
+34:15
+color would be random based on
+34:21
+an attribute saongate buffer particles geometry okay
+34:30
+so okay so each particle has
+34:40
+different assigned na color this case so randomiz
+34:46
+siya so na na-target as you can see here parepare color okay
+34:55
+so karon somehowag rainbow light effect this case or
+35:01
+natural gradient na sa style so na siya o galaxy na ll color kada particle okay
+35:10
+So karon class kung gusto n mo i-add og animation. So let's say particles
+35:20
+okay here particles okay kung gusto mo
+35:29
+let's say animate sock
+35:39
+side soon
+35:45
+is gusto i-rotate whole system
+35:52
+froman sa iyang axis wala siya ka na mag-spin ng bola sa
+35:59
+outer space no so karon here ako ang i mag-add ko dire ka ng
+36:07
+ah let's particle rotation no so kung atong i-check no i-update na ang particles by
+36:14
+means of rotating the y axis
+36:21
+saong mga particles no soon kay
+36:27
+every frameotate soon gusto somehow hinayin akoale
+36:34
+to let's say no para ang i movement hinay
+36:39
+lang dili na paspas na base siya sa fram per second no kung nailapse time so
+36:45
+let's say ako na siya i-add so siya no nat somehow
+36:51
+iang yangang rotation niya along y axis is 2
+36:59
+so siya no ang iyang kuan so meaning tanan ha tanan particles
+37:05
+na object isotate along axis
+37:11
+pero kung gusto mo ng wave effect let's say
+37:17
+umwav lang so
+37:25
+update let's
+37:34
+So at ni comment out na to na wavy nag-wave lang
+37:40
+no so ato lang i-modify ang position over time sa atong particles let's say kung
+37:47
+wb man class ba kaang magamit na sine no and cosine in this case.
+37:54
+So karon class kung gusto na to sinusoidal lang no or sign lang na wave atong
+37:59
+no so let's say here no kanina example here
+38:05
+so magrate wavel floating particles in this case pero careful lang no kung
+38:13
+kay kung kada daghan kayo ang particles class kung let's say niabot na kag 20,000 plus masow mas slow down ang
+38:21
+imong animations So later maaturan ng mga kwan no ma
+38:28
+ah sinati no pag kwan sa let's say pag kwan na to custom shaders
+38:35
+so karon um here so may resulta so
+38:41
+ang rotation sa mga kwan class let's say sa mga position saong every particle
+38:48
+geometry na to nagi is mag-utro mag kwan siya mag sinosoidal
+38:58
+so iwan i i i-run na script so siya so
+39:04
+meaning ang ma-update ang each position of every
+39:11
+particle here nagfollow siya sinosoidal na pattern so every update
+39:18
+particles geometry attributesaray So meaning mga
+39:27
+indices sa atong position
+39:34
+update ang iyang posison so dong whatever na set daan na random sa katong
+39:40
+kibuhato kanunay si update ang iyang value so
+39:45
+nagin siya okay so nag-base siya sa elaps time plus
+39:51
+katong X so ang xong cling con
+39:58
+code gikuha sao ang information sa position
+40:03
+array something no let's sayong
+40:08
+points no let's say 500 man toimes na to 3ong 1,500
+40:15
+so karon is gina-check ron let's katong asa na position onong nasa
+40:22
+atong array before katong saong buffer array ang katong na value
+40:30
+karonupdate ang class ang position that areupdate
+40:36
+ang value to certain this in this katong
+40:43
+na siya sign plus katong elapse time let's sayong let's say a second karon or
+40:50
+millisec plus katong position value toong iyang
+40:56
+karaan no so nakaron iyang current na value so sige na siya update no so
+41:01
+meaning nag-follow lang siya atong maximum ni na position class is katong asa siya gikan no katong iyang karaan so
+41:08
+let's say nag-ana siya gikan siya kan time kay pag kwan sinusoidal k ba ang
+41:15
+iyang iyang buhaton sa sinosoidal kay paana ang sign ana no
+41:24
+exponentially siyafollow siyoidal pattern soonganam-anam
+41:31
+siya saka so magbouncebounce no so makabantay kung
+41:39
+let's ang maximum position let's say magfollowing
+41:45
+somehowing yellow yellow siya cl ang maximum height class isong iyang
+41:52
+previous na bong xang kwan ka kung na po ng time
+41:59
+paative na po na siya k ba sign sinosoidal pattern pa ah from zero
+42:07
+siya diba na siya no ang sinosoidal nafollow siya pattern pero katong iyang
+42:13
+previous na kwan gikan sa buffer ar ang x no pinakataas soang nataas then bas
+42:22
+negative atong x soang wala siyang nagbouncybouncy
+42:29
+so ang somehow ang iyang iyangat is sinosoidal pattern so as you can see
+42:35
+here okay so that's it for activity 3.1
+42:41
+so later on um na sa activity 3.2 So thank you foring
+42:48
+this recorded video and I hope learnings about this activity. So thank
+42:53
+you very much. M.
+
