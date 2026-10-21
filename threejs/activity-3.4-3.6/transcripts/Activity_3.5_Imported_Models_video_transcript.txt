@@ -1,0 +1,518 @@
+0:01
+Good day everyone. So right now um now that we can
+0:07
+render geometries and low textures from our previous laboratory
+0:14
+or activities so let's take it up a notch. So this time we will import um
+0:23
+real 3D models. So the kind built from well from
+0:30
+professional software like vendor Maya or katong 3DS Max no
+0:38
+and well um ' ba sa 3GS uh lets you
+0:43
+create many shapes using built-in geometries like cubes
+0:48
+um spheres, Taurus etc. But
+0:55
+when the model gets more complex, say let's say in our example here, no.
+1:01
+So we have models here which is in our static
+1:08
+example mga dark na no or other 3D character. So it's much no better to use
+1:16
+external 3D models. So sa kwan pa lang no kung gusto kung gusto ta mga mas
+1:24
+realistic nga 3D objects so di lang katong mga usual na geometries na
+1:29
+ginagamit like cube or Taurus so mas maayon nga gamiton nao ang mga premade
+1:36
+models gikan sa 3D software so right now so when let's check our manual here
+1:46
+so throughout time um many 3D formats have
+1:52
+been developed so each uh with its own advantages in this
+1:58
+case so some are lightweight some include animations
+2:04
+others are designed for specific software so here no money ang mga ah
+2:11
+popular formats in this cas so ng kay OBJ so it is um a simple geometry and
+2:18
+material and it is a very common one and FX is used in animation and game
+2:24
+engines. STL is for 3D printing. common siya sa 4D printing
+2:32
+and Plyy is polygon format for mga scan data
+2:38
+colada or katon d dae ah supports animation and materials also
+2:46
+na po tay 3DS um sa autodesk 3D studio and this one is the the modern kwan siya
+2:53
+no kaning gtfan siyaang uh modern na webly format ni
+3:00
+siya na ah 3D model so daghan kayo kasi sa TD model formats pero ang
+3:06
+pinakarecommended para sa web kay kaning GLTF kay dalira siya i-load ng gam size o
+3:15
+compatible sa TGS so kaning kwan no ang GLTF is stands for GL transmission
+3:22
+format kan develop siya sa chronus group so same na same people behind the open GL
+3:31
+kaning bulkan kaning web GL so well it's fast ah lightweight and
+3:39
+perfect for kan real time 3D rendering and well it's supported includes photom
+3:46
+geometry materials and textur lights camer animations skeletons or
+3:53
+bones so anglt kay standard na karon sa
+3:59
+3D models for web apps almost tanan king kwan no tanan 3D models for
+4:08
+blender unity or unreal kay kabalo mo export an na format
+4:15
+so dire no you can check naman with this chronoscope kung mga example gtf sample
+4:23
+models here so dito nagkuha lang mga static modules like this one knak
+4:29
+so um well no types of gtfes so what we have here isay
+4:36
+gtf here which is the default format so nasa mga references for katong mga
+4:42
+separate bin niya katong mga pinj files para sa iyang texture
+4:47
+so naput tayo gltf binary or glb na siya so na ang na-incorporate na in one file
+4:54
+no all data mesh plus texture inside in one file so kaning
+5:01
+draco so siya is a compressed version using the draco uh algorithm
+5:08
+and this one can gtf embedded so well it is a jason format with embeded na basis
+5:16
+c4 ni data so well kaning each type of
+5:23
+kanin na each type has pros and cons. So if you want just one portable file so
+5:31
+use GLB. So if you want to um anger modification
+5:37
+and debagging use the usual GLTF. So if you want smaller files, so use VCO
+5:44
+compression. So depende sa purpose. So kung gusto
+5:49
+kaang i-upload i-load so glb
+5:55
+ah editable ang ang file so katong GLTF gamit. Okay.
+6:04
+So let's no let's try right now no kung how we will use GLTF in this case. So in
+6:13
+our setup no kung nakuha na ninyo no na-install ninyo tanan ang need na nasa
+6:19
+package Jason and in our setup here
+6:26
+kay siya no naka nalantay plane same as katong gibat last time noay plane no
+6:35
+so karon um in this activity we will try to load
+6:44
+GLTF materials no in this case so karon
+6:50
+what we what should we do is we need to load be kung atong i-check ngong node node
+6:59
+saong cre examples JSM dapat makakita tag loaders or here
+7:07
+and I GLTF dapat dire no so na mag-load mga re GLTF loader so
+7:16
+lang i-import so karon so how we will import this one so
+7:22
+mag-add ng ta um import um GLT loader then kung asa naulod ong
+7:33
+na GS na ah file sa GLTF uploader so karon
+7:39
+umcreate lang tao um let's say cons
+7:46
+um GLTF loader then at ang constructor
+7:52
+so okay soay class na GLT uploader by means GLT
+8:01
+loader na container here no or alias okay so angfader class is like the
+8:08
+texture loader So, so it's uh it is how 3GS uh read the GLTF or the GLB models.
+8:18
+So si translator ni siya no ah gikan sa file na ng sa 3GS object ng masabtan sa
+8:26
+browser. Okay. So karon ah we will try to load
+8:36
+the GLTF. So let's say here ah t no ah
+8:42
+GLTF kan lang corny panggamon guys ks
+8:50
+nga nag-capslock um GLTF
+8:56
+na um GL TF
+9:02
+loading para lang Oops.
+9:13
+Okay. Para dali onong pag-create so right now um base sa manual um
+9:25
+so we will load the our kwan no GLTF here. So ako lang sana unclass na. So
+9:32
+ako ni-copy. So what we have here is this one.
+9:40
+So ako ng i-copy. Okay. So we have a loader here na na mga
+9:47
+different ah callback function. So let's say kung
+9:53
+success so gawas kung in progress so magkan siya kung mag-loading pa ang kwan
+9:59
+ang GLTF. And this one kung siya ma locate or certain errors so i-call back.
+10:09
+Okay. So when successful the callb is this katong full model na inside the
+10:14
+GLTF object. Soon class um so in this case it
+10:20
+contains the scenes the materials and animation in this case. So kung makita
+10:25
+mo na nasa con success so meaning naad na angong model. So ang pinaka-important
+10:33
+ng part aning GLTF object is scene property.
+10:38
+So karon ah let's have nakuha naman siya
+10:43
+no i nag naman siyaove
+10:53
+lang kung let's say gusto naad
+11:01
+lang no sige at lang try
+11:08
+so karon k nagi-add sa scene po ng kwan pero kung ano so una na siya
+11:15
+nag-load na si so okay so
+11:22
+lang i the meantime ako lang i-remove kanan class
+11:30
+then Isa pa at pang-remove ni mga console. So
+11:36
+isadong
+11:43
+baseck child
+11:53
+that kan zeroong so na zero So
+12:03
+same that children
+12:09
+zero okay so so of course so we add the first child
+12:16
+of the loaded model into the main scene. So kung so kanina code kay mu-add sa
+12:23
+atong main scene ang 3D kaning 3D object sourag nagbutang tao katong actor sa
+12:29
+stage so karon dapat moad na siya so as you can see here so man ang atong actor
+12:36
+or the na-loaded na GLB okay so
+12:43
+so what else so
+12:50
+saong hierarchy kailang class
+12:56
+um as to kwan kaning sa kuan ba this one
+13:07
+so kung atong i-inspect ng katong ba
+13:14
+nag-inspect kanina so ang iyang
+13:19
+actual 3D object no so the mesh is the actual 3D
+13:26
+object saong group ba groupina no
+13:32
+pero wala naman wala na siya na siya makita
+13:37
+naman so so makita no kunga i-console that so
+13:47
+ang so sometimes models include nanayong
+13:54
+camera perspective camera or lights
+14:00
+from the original software so you can ignore those no kung naanay ka ng kani
+14:06
+ah kanina may perspective camera sa model so lang ka mag kw ah bala an so pwede naman
+14:15
+pwede mo mag-add kao pwede naman
+14:20
+umean perspective camera na setup
+14:26
+so kailangan
+14:37
+ka um let's say try
+14:50
+na try na lain na gelf siguro magt
+14:58
+let's say magtitan
+15:03
+um okay na potay
+15:09
+pagload jelb jelb saong kwan
+15:17
+sa atongay klase-klase na data no jlb so i-try lang
+15:23
+ninyo ong mga ways around of loading gltf no okay
+15:31
+and sa pa kung gusto tayo na pataglay na model kaning GLTF na flight helmet. So ako
+15:39
+lang ika-class so
+15:45
+here ako i comment
+15:51
+out gtf loader load
+16:00
+as
+16:10
+si
+16:18
+okay
+16:28
+asan saali
+16:33
+So isa ha na lang nao
+16:39
+so for a while setulangan
+17:01
+Okay. So karon is muload siya flight helmet.
+17:09
+Asan? Saan getender an? So I think in progress pa.
+17:16
+Mhm. Ano kaha? Tungod kayong
+17:22
+gikan ah zero ong children zero raman siya kung how about kungan um tanan na
+17:31
+to no. Socheck code
+17:39
+na lang so per parts naman to so
+17:46
+isah na lang tanan so siya
+17:51
+sa GLTF mang good no siya kwan by parts na pagka kwan example is one no
+18:01
+katong sada klase na parts sa atong GLTF here so
+18:09
+klasikase soon so na klase for no mga children
+18:17
+so ang kwan sa materials lenses okay ang part saang bondy kung rubber
+18:28
+so okay na i-map dito saong imong
+18:34
+GLTF later on. Okay. So here um as naman to onong kwan
+18:42
+so motong onong sa child zero katu ang na-render kaning ubos kanis siya.
+18:49
+So kung i-render texture siya
+18:55
+so as you can see hereender blender thenad
+19:01
+by using gtf
+19:06
+by parts okay so
+19:11
+morning sa katong kwan class kung imong isa-isahon ang kwan imo lang i-d children ang same no sin children
+19:20
+So kung na um kung gusto mo ang kabuan mo GLTF. Okay.
+19:27
+Mas dali kungit na lang mo paraan components ma-add.
+19:33
+So kung magdample
+19:40
+fox siguro si
+19:47
+well you can you can tryard
+19:52
+with regarding the gusto tayo dr
+19:58
+so sa pa man
+20:04
+so when kung gusto magload
+20:09
+foxong fax so let's Um
+20:17
+ako na kapon kan
+20:25
+m So i-try lang to ninyo ong kan gel
+20:31
+loader for ah draco be here
+20:37
+dako kayong fax sa dako kay siya no so na to ni
+20:44
+scale dapat dako
+20:50
+so of course so how to deal with it is just using here noong ad mag-add lang
+20:59
+um let's say ako naon oops
+21:09
+so here know atong iscale ang GLTF let's say ito lang
+21:16
+pag noong 25 ah 025
+21:22
+this case okay so let's try
+21:31
+okay so niirescale na si ano into our platform
+21:37
+soon class kung gusto n mo
+21:43
+na mga GLTF class animation daan let's say
+21:52
+kaning sa atong no ah let's say
+21:58
+um sa iyang pag-create an sa blender basya movement like walk dagdagan or un
+22:05
+sa ba so ato siyang i activate kung sa may kwan
+22:13
+mga animations inside so right now so naon so maghimo lang taog
+22:22
+itawag na mixer so let's say um
+22:29
+ako lang sa humano no so umcreate
+22:35
+naman tao kani ka-set naman so ma-create mixer so let's
+22:40
+say um um let uh mixer is equal to n
+22:50
+so mixer is equal to ako lang kan class ha i-try
+22:57
+so sa kwan class sa gltf ngang collection of um
+23:07
+kaning na ay no
+23:16
+saan sulod sorry so
+23:28
+here
+23:37
+angilutan gsan meson
+23:44
+kay po compartment saong gtfang action soong pitaan so
+23:51
+umamit animation mixer
+23:57
+to control the animation clips inside the model so each clip can be played
+24:03
+posted or blended smoothly in this case so kung
+24:08
+animation mixerang music player sa animation clips so ang
+24:14
+fox model kay na built in walk animation so maon ng ma kina i-play kada frame. So
+24:24
+karon kay ato nangad no so i-try na to ang katong index zero sa animations kung
+24:30
+unaan na siya so karon is matutas onong animation loop
+24:36
+so dire atong i-update ong umaha
+24:45
+na to i-update onong fax movements o fax animation so dire no so here kung
+24:53
+na-activate na mixer so if mixer is true so mixer update
+24:59
+delta time so sige siya ko ano katong tawagon whatever na sa atong mixer sa
+25:07
+atong model okay para magpadayon ang animation so
+25:13
+kailangan na i-update siya kada frame kaya sa pag-play sa kanang
+25:19
+video nag-update per second so na siyang i-save
+25:25
+so okay mo ang zero no so per second animation soagancheck
+25:39
+ang animations number two number two manual number two number
+25:49
+number one okay nag-walk inani so makaan na dinola
+25:56
+so na klasik na mga animation per naincorporate no sa iyang index so index
+26:02
+zero is katurang idol lang na nag kyang face king number one is nagwalk lang
+26:11
+kung duto sa kwan number two so motong
+26:19
+Okay nagan kwan siya no kanang galop galop ba tawag so nag-run no run ayan
+26:24
+nag-run siya soay siya so moto ang i-activate lang n mo no kung
+26:31
+let's say kung magkan ka class let's say ang if mag-press kag na
+26:37
+magdagan siya so man class na ang kaning position na
+26:43
+magdagan siya direi through time sa kanina plane so well that will be kwan
+26:48
+na lang no exercise no kung gusto ka mag-press kag w sige siya kwan walk
+26:55
+or let's say kung inanil animation pwede naman ng camera atong dulaan no camera
+27:00
+nagdagan siya sa dakay na plane let's say the na plane
+27:06
+ang camera maglihop para na animation ang camera na nagan
+27:14
+away no camera lang ang maldula an o pwede mo kung magwi nagpress ka kuan
+27:20
+so ang im lang ang camera an kay mag-lock pente sa kanina object so ang
+27:25
+effect na siya nag kani siya nagdagan lagi siya pero ang camera ra ang nags
+27:31
+nag siya nareistic na nagdagan siya through through displ so nana sa kung
+27:37
+saan pagtira ang so kasagahan no ginabuild ang naan is sa mga katong mga
+27:44
+blender sa asa ka mag-create kwan mga TV animation
+27:50
+unya class uh well you can check naman no with regards to
+27:56
+kaning sa 3s na editor
+28:01
+so kung mag-upload ka o kaang gusto ka mag-upload ka o kaning
+28:10
+ah pili import no let's say mag-import na o
+28:16
+Ah ito models.
+28:22
+Ay nito. Let's say ang kaning fox
+28:31
+B-load ba niya
+28:43
+k na load na nakain be
+28:55
+ah bugatan na siguro Siya. Okay. Itong open pa.
+29:05
+Ah Jung pangit
+29:15
+ito lang embeded naan ah. Okay
+29:20
+kungan ah one lang kwan
+29:31
+nagloading akong nagloading
+29:39
+problema
+29:50
+ah kay kwan man
+29:59
+loading solid lang normize
+30:10
+okay magloading sait
+30:24
+moan sa gt ba i-edit mo posisyon pwede mo
+30:33
+kung asa siya sa pa scale soon
+30:42
+soon soon
+30:48
+naxa
+30:59
+ako let's say one
+31:05
+okay so kanina sakto 100% naniwang
+31:12
+so pwede na pwede mo na siya i 25% perong base guys ha So dapat constant
+31:19
+tanan 25 sunod 0.25 25 soam pa siya so no pwede
+31:28
+ka mag-edit sa 3s no so once na kwan okay na ka i
+31:36
+export no so nana kay scene okay so sa karon class so lang saong class regards
+31:43
+to activity 3.5 5 is just to how to load GLTF
+31:51
+sad DJS. So thank you for this recorded lecture and have a good day.
+31:57
+M.

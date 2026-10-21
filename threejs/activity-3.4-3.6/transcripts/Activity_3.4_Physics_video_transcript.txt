@@ -1,0 +1,1214 @@
+0:00
+Good day everyone. Today we're going to explore um one of the most exciting
+0:06
+parts of this 3D development. So this uh physics simulation in 3GS
+0:13
+using um we use a library called Canon GS here no so we have learned before how
+0:23
+to build um objects um galaxies
+0:28
+and scroll based nao animations. But what if we want to
+0:36
+we want our objects to fall to bounce or collide no in
+0:44
+like in the real world so atong kwan no ang gamit non is this physics no so
+0:51
+that's where physics comes in so ang ang physics kay maon na ang naghatag realism
+0:58
+sa atong traded environment kung gusto nao nga ang atong let's say atong
+1:04
+example here no it is a okay na run naman ako no so this one is a ball
+1:11
+so gust na ang bola mo bounce mo or mofall so onong
+1:19
+magamit physics in this cas so okay here um
+1:26
+bong manual so the main the main idea here No for
+1:32
+physics is that we will create a physics world in this case. So it is an
+1:38
+invisible simulation where objects uh move according to um the forces gravity
+1:46
+or collisions in this case. So then um
+1:51
+every frame so we update the P6 worldcing
+1:56
+its data no like position kaning rotation with their corresponding mesh
+2:02
+in this case so my money ang kaning concept no
+2:09
+ang physics world d um na to siya makita pero siya ang nag-control sa movement sa
+2:16
+atong mga objects in our GSC no kung asa sila mahulog sa ilang
+2:23
+kakusog sa pag-collide ka magang kollisyon sa sila pag-roll. Okay. So
+2:31
+well um choosing a physics library here. So there are many physics libraries
+2:36
+available for 3D for 3D no um the most popular ones are this amo GS.
+2:45
+So sa GS is somehow heavy but very realistic
+2:53
+soing canon um this is light lighter siya and easier to use siya na kwan um
+3:02
+library napay oil mo so lightweight ni siya but less active no so lang siya
+3:09
+good lang ni siya for mga simplier na mga projects so in the time we will use
+3:15
+canon gs for this case so just lang class no uh
+3:20
+npm install siya though sa akong case is actually nainstall nao siya so dapat
+3:28
+siya no maad siya sa inyong package jon okay so okay to
+3:37
+to start make sure that you have import the canon in this
+3:44
+So ang canon.gs GS so atong gamiton para dili siya para dali r siya i-connect
+3:49
+saong 3s dalira ma-understand ang movement of collision logic in this case no dalira g
+3:55
+siya class kung kan ong gamit no so karon class since we import na no so we
+4:02
+will set up our world in this case so um t magkuan i think na t mag-set up
+4:10
+world ah So mag-set up tag world ka roon no.
+4:17
+So para ma kwan to no mag-create physics world. So let's say conson
+4:31
+ah canon oops canon that world
+4:38
+saha canon that world.
+4:43
+Soon we will add this one parameters so
+4:52
+this sets the gravity downward to to the yaxis in this case
+4:58
+so ba ang atong gravity pa-downward man manupad so positive man ng paup sa y so
+5:07
+ang gravity is pa-down ta so ang 9.82 82 so nagrepresent na siya saong
+5:14
+gravity sa earth no so in meters per second soay naet naong gravity
+5:22
+along ya axis kung gusto n mo na mas hinay ang falls gamay lang ang values no
+5:29
+kung gusto n mo na murag ka ng para sa mars no na let's say ang mars manata kay
+5:35
+ah ang iyang kwano or ang iyang gravity So
+5:41
+mo lang i-set kung gusto kag martian na kwan no gravity
+5:46
+so iung pag-set kaon sa world no so we have now its gravity so karon class we
+5:53
+will try to create save nion wala pa ni siya effect sa
+5:58
+atong kwan sa atong element kay pa man na siya na-add mga physics objects na
+6:06
+iwan ni i-pair no so karon ah we will try to create let's say naka-create
+6:13
+namag sphere daan so we need to add uh sphere physics in this case. So so at
+6:20
+i-connect ang atong 3GS na sphere dito sa iyang physics body.
+6:26
+So let's say ako sa manual class para madali. So ako
+6:33
+so here so na-set upon so
+6:40
+nagkwan class um nagtawag
+6:46
+constructor here na sphere mailhan na ang atong physics na i-create is a
+6:53
+sphere karon atonggi um since mano Um is the radius
+7:05
+soon class king siya is dapat mag kung naka-pair na object dapat parag sila
+7:11
+parameter like say radius this one5
+7:16
+then sa kaning sphere body ang iyang physics na elements let's say one ang
+7:24
+mass so means maaffect dapat siya sa affected by the gravity
+7:29
+And this one is the position sa iyang um let's say let's say ang sa physics ni
+7:37
+kung asa siya the pitos x y z so na siya sa three units above the kwan origin
+7:44
+then getarget day na to ang kwan sphere shape no in this case so
+7:51
+dayon ang kani so ang gikuha ang radius
+7:58
+or kani atong-create na kwan shape in this case so so kung atong sphere sa 3gs
+8:05
+kay adun radius na 5 moang parehas ko dapat no ang radius atong physics
+8:11
+version accurate ang iyang kw let's say colision no
+8:16
+so karon we will update atong animate no kay mamaya angong
+8:23
+para in in every frame per second sige -update ang atong kwan atong
+8:29
+physics so karon class kay we need to set up ang katong kwan no um
+8:38
+ang every step sa world na na siya mabuhat in every frame no let's say dire
+8:44
+no let's say update physics so ako lang i-try to kwan lang class no ah
+8:50
+okay so magkan ko world let's say no world that step
+8:57
+1 / 60 delta k 3 so ipasabot aning isa step
+9:05
+so ipasabot class kaning sa atong physics no so para ma para
+9:11
+kung saan siya pulos ay na line so kani siya is for our physics simulation so
+9:18
+atong physics here so physics updates every frame using the step method so we
+9:25
+will calculate the time difference between frames let's say katong delta
+9:30
+time na dire so karon kaning 1 / 60 here is the fixed time
+9:38
+step for let's say kwan siya 60 frams per second no in this case and the delta
+9:44
+time here is the actual time since the last frame no so in this case and three
+9:50
+class is the number of iterations to keep the simulation accurate so mura nag
+9:55
+update sa world kada segundo kada framehing nato na ang physics world nga
+10:02
+mag-adjust sa movement o collision so karon sana ipag-synchronize sa atong 3gs
+10:09
+atong up na canon gs so karon so kung ato lang i-try lang no kungwork baong
+10:17
+pag set up saong canon 3s canon so
+10:25
+okay So kung gusto na akong i-try ba kung sphereget
+10:33
+na sphere naateagarget na so sphere position
+10:39
+at i-copy lang ang katong whatever na na-create saong canon so kaning sphere
+10:45
+body that position so dapat class
+10:50
+ang mahitabuan is Since na naman ang kwan class kaning
+10:58
+na may position ang atong kwan karon ang atong kaning gikan sa physics physics
+11:06
+so dapat katong ba pag first ni kwan is dapat na-set man siya somewhere zerero
+11:12
+saong origin kay wala man tay position so karon kay position sa atong physics
+11:19
+so obviously kan siya is kung napair na siya na-copy niya ong
+11:24
+ang position soon dapat units above socheck
+11:30
+dapat nagp okay so
+11:37
+naopy niya ang katong physics na position soon class kagan ni is ni kwan
+11:44
+siya niuyon siya atong iyang axis na 3 so meaning i-work na gini siya so karon
+11:50
+class kay nag-set naman sa atong script na mag-update through time.
+11:59
+So na naman tayong script. So let's say at siyang i-move.
+12:05
+So meaning gusto na i-update ang atong
+12:14
+position everytime is set up scon
+12:23
+class kay once na sige siya kwan step magsig update ang iyang position
+12:28
+so automatically mag kwan siya m down hunod sa huntod
+12:35
+refresh soya nif okay so meaning segundo saong umong
+12:46
+script mag-update ang position sa atong um
+12:52
+sphere this case so based aning ano atong-set up sa physics
+13:00
+so base sa Mas mam po no so meaning class k naman tay mas nagibutan maffect naman
+13:07
+siya sa world na kwan no let say nag-set man tag 3 na position niya sa taas so
+13:13
+karon class sig ginig update ang position because naman tay gravity so minimo hulog siya ba kay katonget up na
+13:21
+kay 9.2 man ang millisec sa gravity so meaningulog siya kay naposition man sa taas daan so
+13:30
+meaning sige update ang position k pa-fall man siya so kung atong iwan no
+13:35
+butangan position console i-console no ang kaning
+13:45
+let's say here okay na siya
+13:51
+so so munaog from three
+13:59
+siya no k since nag gravity nagamit gravity so hantod sa onong frame no
+14:05
+infinitely mukang na siyaulog katong kanina class ng pondo na to siya
+14:11
+kay man kwan wala pa man to naffect sa kwan gravity in the first place p siya
+14:18
+wala man siya na gina ginupdate onong ano katong world per second na kwan so
+14:24
+meaning every frame mag-updateong iyang kwan ah iyang
+14:29
+mesh kung let's say ibalik no para makasabot ang tanan so
+14:35
+kung ako ibalik ako ang position
+14:41
+na siya
+14:46
+here So karon magpundo dapat ni siya pero nag
+14:54
+sigig kuan ang iyang kwano sa karon in this case three ragapon kay wala man na class ginaupdate ang
+15:03
+katong position saong wala pa si naupdate by means of using the animate
+15:11
+kungate saan naman siya ano naman ong dire
+15:21
+so here naka naman siya no so ibalik so meaning muid ang atongo um posison sa
+15:31
+atong based sa time na i-render no based in this one no so
+15:41
+so sig update atong world So matong piment ma-set
+15:48
+ang position sa atong sphere body. So update well pahulog ang basong
+15:59
+object so update position parameter herebute
+16:09
+problem here is floor is
+16:17
+someh moend na dapat bola pero ang problema
+16:24
+kas physics mof siyaod sa antod so but siya somewhat physics na element
+16:33
+saong floor soon itong buhaton so so going back to our angong code here
+16:42
+naka-create naman floor daan soon we add a physics ni element so
+16:51
+karon is ako lang i-copy kwan class ha
+16:56
+so what we have here is thatonget
+17:02
+upong floor canon is it is aeid
+17:12
+body here Then gi-set nato na
+17:17
+ang atong floor body is kwan siya kanang static siya meaning dili siya mahulog
+17:25
+siya maapektuhan sa atong gravity soet na zero kung atong one ni siya so
+17:31
+meaning muhulog ni siya no kay na may maapektuhan man siya sa gravity in this case so karon kung once na-set beto daw
+17:39
+ni tayo set so Mayitabo
+17:47
+na lagpot na onong kuan so
+17:53
+onong camera somehow layo beadjust onong cameraong camera
+18:09
+ang zess somewhat let's say Ay why man so
+18:25
+kamantay mo siyang ni-repel no kay tungod kay natay problem sa atong um sa
+18:33
+atong plane wala na to-set up kung asa man ang face sa
+18:41
+face sa atong um plane no so isa ka problem here
+18:49
+so man karon no para ma main maan dire
+18:54
+na dire ang face sa atong plane so dire magamit ong gitawag na quarter yon okay
+19:02
+at i-orient atong pla um pag-create class no kanino kan
+19:09
+pag-set up an atong plane here na-rotate ni siya somehow 90° no so karon class
+19:16
+dapat atong plane class na physics world sa physics world dapat mag-orient po siya sa asa ang plane na na position so
+19:25
+karon un na siya pag um
+19:30
+pag-orient atong physics is using the this one no kaning gi-set na atong floor
+19:36
+body sa iyang quarter yon so kaning gibuhatin na clong
+19:47
+floor so magta o kwan um this one
+19:55
+so gibuhati soon class is
+20:01
+atonget atong floor body namo yon siya saong gcreate na floor na
+20:08
+nakaan siya naka-rotate man siya 90°otate
+20:14
+pod siya somehow 90° in this case so kwan na siya class no um kanang
+20:22
+right hand rule na ni siya na nagamit na kwan
+20:29
+na rotation in this case sa um sa canon gs so atongo pang-set up na
+20:37
+onong P6 na floor kung wala naorient
+20:44
+into 90 so lahi ang iyang posison soongelong
+20:54
+ang face sa floor soon kung so
+21:03
+effect so naorient ang physics na for thee or floor to 90°
+21:12
+so something wala nagrepel pa
+21:17
+so i-correct later ona naman siya w siya nagzerozerero no
+21:27
+beato dang iwan um saan mo na effectect kung atong iwan na
+21:33
+lang di kung zero daw na
+21:38
+an -0 pa ba siya ah okay so meaning oo ang
+21:45
+iyang kwan so meaning ang pasabot koo is ang angle gito siya
+21:50
+so kung 9 -1 class no pasabot an is negative
+21:57
+ang rle of tam is naka - 90 okay
+22:04
+so karon Um be un sah
+22:10
+mochila be
+22:16
+napabatay sa na kulang mm
+22:23
+dapat mo siya no mm
+22:34
+sa kwan eh pag kwan na an masan
+22:41
+class on no sa butangan other parameters later on
+22:48
+sa manual no so dapat mo touch man dapat ni siya
+22:54
+mmh i-check ko lang din lang ko na view
+23:02
+so karon na successful naman na to ang kwan No.
+23:09
+So sa may mga cool pa nila
+23:19
+ang floor masy zero naman sila
+23:27
+ng balikan dapat to the planeuroase
+23:36
+material siguro yata lang class ibalikan
+23:43
+kung ang
+23:49
+balikan okay so na sa kwan um contact material
+23:58
+okay so here kaning contact material kung gusto na
+24:04
+naay kaang mag-add bounciness and fric saong
+24:17
+r check why
+24:23
+siya basi siguro sa atong position sa atong floor i think wala siya na to na-set to proper na zer
+24:35
+Mes
+24:41
+ah okay of course nga nong nilutaw siya kay
+24:47
+to kwan man ta 5 kung sizeroas
+24:53
+so okay so karon ni touch na siya no so
+24:59
+obviously because atonget na kay ne5 so meaning niubot siya saong erer so
+25:07
+karon ni-touch na siya so as you can see here okay so moto no ang isa ka
+25:13
+parameter na gi-update so karon mag-add tag bounciness
+25:19
+pagbo bounciness so mag-create material dire no so let's say
+25:26
+floor physics material
+25:31
+let's say um delate sa kwan no unahan na to
+25:37
+um ang sphere no kay B na lang siguro
+25:45
+sige ah let's create um kaning material no um physics material say ah
+25:56
+physics material so karon um atong gina-set
+26:04
+ang atong mga material class let's say concrete siya plastic ang iyang um canon
+26:11
+material so karon is let's say magdeclare tag con
+26:17
+concrete concrete material
+26:24
+ako na lang ako na sa kapon class no fromalit nagan so let's say here no
+26:30
+money ang concrete material um
+26:36
+material here no concrete na-set na plastic ang isa ka material so class kay
+26:46
+kung magcontact material class so buhaton
+26:52
+so ang control sa ilangis
+27:01
+or bounc or magkantag friction let's say class no
+27:07
+namay friction na one naay restitution
+27:14
+so kaning restitution class is ang material bounce ba siya ano so ma ang
+27:22
+mag-control sa bounce kung one siya class super bouncy ang material kung
+27:28
+zero siya rubber nga dili mo bounce no somehow kwan siyaang hindi kayo mo
+27:34
+bounce no ang sa bagay ang uban rukama no so somehow kayo
+27:41
+mo bounce no in this case so karon kung atoing iuan
+27:46
+ibutang binuna man atong kuan physics
+27:51
+na man to kabantay mo na somewhat
+27:57
+nibalik gamay no bata i ong camera ibalik to 3
+28:02
+onong camera balik na to ni 3
+28:09
+oops effect bounce gamay
+28:17
+So ko i1 ko onong i1 so balik t
+28:28
+ay one
+28:36
+kayo bones
+28:42
+ato
+28:48
+bina-add contact na ba to? Okay.
+28:59
+So karon mura kwano wala kayo pay effect onong kao
+29:09
+gam gamay kayo no gamay kay ang bounce in this case masking because of siguro
+29:15
+concrete floorate
+29:25
+atong umatong material sphere
+29:33
+sphere body here so atong let's say atong sphere body iso siya um mag-adag
+29:42
+material which is kung material na to is um saong gdeclare na material here
+29:51
+katong isa mag-error siya based sa ano
+29:58
+kanisya so ako butang sa taas no kung sa word na lang okay mag-error siya sa
+30:04
+iyang kaning
+30:10
+magerror siya maginitialize soastic
+30:16
+materal So katong kanina no kay ay
+30:25
+sa plastic material
+30:32
+so kanina class kong gemo kanina w naeffect aning somewhat dire tungod kay
+30:40
+ang gibuhatina is ang default na materyal
+30:45
+soon class kayong sige ko akong gina-try na effect because
+30:53
+sa pag-set up classing nag-add material
+31:00
+sphere so effect so default default material so na
+31:08
+siya friction daan restitution so karon class k nag-set up
+31:13
+manong gamit plastic na mga kwan ang kaning i friction restitution
+31:21
+so karon dapat somehow mukan siya ma-effect though
+31:27
+kulang pa no kay angupdate ang sphere na body so sa atong floor mag-add ta no
+31:35
+mag-add ta material so material concrete material siya
+31:43
+so sa may tabo um Bea ha
+31:51
+nasa ko i-check kadali
+31:59
+be kung na ba ni effect kaon okay so nanay iyang bounce no so in this
+32:08
+case nana ang na-apply na ang friction and ah reconstitution ang restitution in
+32:15
+this case no so ni yang result so class kung if you want to
+32:21
+play around kung one so one sa atong material here bounce one so obviously
+32:30
+grabe gin ka bounce no as you can see here no bouncy siya
+32:38
+dugay siya mo kwan um kaang mo punong no in this case so sa
+32:46
+gabi makabang material soong nindotong 70% bounce lang
+32:51
+so 0.7 7 mas kwan siya realistic grabe to kadugay kwan
+32:58
+wala ito si pingpong no kung atong kung mag sa pingpong
+33:04
+okay so karon is na siya no um
+33:09
+nagkwan na nag-ste lang so karon pagdop niya is mura to no sa with kw na within
+33:16
+the y axis lang so karon class kung mag-apply taitawag
+33:22
+na force no applying forces so well we can add ka mga forces or impulses to
+33:30
+make theo let's say mahuhulog ang sphere in move sideways let sayang mag effect so
+33:41
+add certain
+33:47
+body so let's
+33:56
+May truth time at nasa checkl
+34:03
+how about kung magbutan um local force no
+34:12
+so once na mawan siya somehow mpush na local force na mpush sa iong let say
+34:19
+natay wind Soag bouncean let's sayve
+34:26
+side soon next
+34:31
+namanay matal so
+34:45
+body skill body
+34:53
+sphere body okay hereon mag add
+35:01
+uming local force siya
+35:15
+so kabantay something dako kay na force no sa so ako saan ang camera no
+35:23
+i orient to somewhat a degree
+35:32
+let's say
+35:38
+So gikan from 3 na applied force somewhat na 150
+35:45
+150x okay as we can see here
+35:53
+na
+35:58
+here force nive
+36:04
+pero ang problema kayas zerous
+36:15
+soon class
+36:21
+constant force langush
+36:26
+or force para effectse
+36:31
+So default lang siya so gusto mo na ka ng wind effect let's say so kung atong
+36:40
+ikwan ah i-update ni
+36:47
+um let's say
+36:54
+it kanina kay pait ko katon nag-applyag course gikan sa 150
+37:00
+let's say kung mukan na siya somehow mo drop na to certain level
+37:09
+to n experiment mo nasa ch
+37:34
+I think okay naman onong so
+37:42
+i-add ni siya everytime na kwan no kaning win effect ' Bale mag kwan po ng
+37:49
+position ng ba mag-update po position not like katong apply force katong
+37:58
+update din position so para win effect
+38:06
+in this
+38:13
+magadang
+38:20
+Pin
+38:29
+kapon is effect
+38:42
+so here so i-check
+38:51
+so windikan no so as can.5
+38:58
+man lang ibalik camera paravisualize na lang so balik na
+39:23
+so ba gikan tag naay force ganan si wind
+39:30
+effect so win effect class no so nag kwan siya naay force from
+39:38
+-5 while nag-set na siya paong sa zero na siya ba kay atong giapply force kay
+39:44
+dapat mo stop siya sa zero aman tat onong kuan
+39:56
+dire no So na force di pagana ' ba kat lagpot siya dito kanya somehow
+40:05
+sa zerero niwan siya some force peroel
+40:11
+na po na force from 5 so
+40:18
+wala siya effects winder
+40:26
+na siya kung ano in this force na sa -5 na
+40:33
+x-axis so moto siya no ang isa ka way around in
+40:38
+this case no so actually movement tag 90° so actually
+40:44
+kong yong negative negative x axisong
+40:50
+zoove man 90° so nagiouch
+40:55
+or force.5 this case
+41:01
+so okay so moto ang certain effects no with regards to applying force
+41:08
+soong kada frame no na siya win effect so karon class un na to pag um
+41:18
+apply o ano kaang i-automate na din sila
+41:24
+so karon Um let's say ba reusable function so
+41:33
+here um atong utiles no mag create um
+41:40
+create object na well na certain kwan siya no um na siya
+41:47
+certain mass na na siya'y certain parameters daan
+41:54
+so karon uh we will try to create a sphere na lang no so in this case no so
+41:59
+let's say we have this utility here na mag-create sphere
+42:05
+so radius and certain ano so once na ma-call ni
+42:12
+siya sige tagcate sphere let's say mag tag create create
+42:17
+tag sphere naone ang iyang parameters kung asa siya butang na radius na 5 ang iyang posison
+42:27
+based sa atong gim na script so mag so so sabuhat kanin utility
+42:33
+mag-create siya mesh so siya
+42:42
+na siya certain ah material so iang i-add then nadan siya'y
+42:50
+ka-partner na physics in this case so karang siyang i-save
+42:56
+so naay certain object na
+43:02
+so under siya sa well na siya no zero niya
+43:09
+ang y niya kay 3 niya zero so naay certain
+43:16
+object here na na-create na no so kung ato daw na siyang iwan
+43:23
+be daw naog siya mas okay na siya mas na siya
+43:29
+position kung asa siya gik ano
+43:35
+mm
+43:42
+kuho daw ang butangan let's say
+43:48
+an naman tayetup naman na Ayan
+44:01
+okay actually pwede na kapan
+44:12
+so standard
+44:17
+materal.4 for see at environment
+44:25
+let's say okayal map texture sameina no then
+44:32
+magkanta o magkantag
+44:45
+meshla kasado kalalan
+44:52
+K saan sa pacopy
+45:01
+din tama soong
+45:06
+iyang canon so body
+45:16
+shape is
+45:23
+okay Safe save dapat kwan isya ah safe safe
+45:31
+nga let's say kung kwan lang ano um nag-create ba tag default
+45:57
+lang Yan.
+46:12
+Let's try material
+46:39
+data default material dapat maglult material
+46:47
+akong ibuhat kay
+46:59
+plastic contact materal
+47:07
+Okay.
+47:16
+Let's say at try na lang na plastic asan to
+47:43
+spare plastic lang yon
+47:51
+ha so wala pa no na-set na to kay nagcopy position man so kung ato na siyang ibutang
+48:01
+ba kay nag na ket man siya ong kuan
+48:12
+so mti siya mag dito dito sa asa na position siya na nabutang noong gset
+48:20
+kan siya so p na siya dito stay
+48:27
+so karon kung ato poing iwan class umang
+48:37
+sa may maayo ano yung so karon kay be nag-create naman tag
+48:43
+object. Mmm. So kay maayo ha. So
+48:57
+al game so mag kwan ni siya maglutaw ni siya na kwan
+49:02
+grabe naglutaw pagapon ko win effect layo na kay siya.
+49:12
+So because
+49:20
+kung let's say na object by means of this
+49:28
+utility function create object parameters
+49:34
+how aboutate na lang um array of objects or update i-update
+49:41
+na ong objects no so karon umangimo
+49:48
+langag utility function na po or let's say naay kwan ma-create tag
+49:55
+object na once na mag-create tag sphere so di siya
+50:02
+masulod na of ka ano array No, let's say let's say cons
+50:08
+ah create ano objects objects to update no let's say like that
+50:16
+na naman tayo an soon class no kung once naay um somewhat
+50:24
+objectsate so let's
+50:29
+dapat magta
+50:35
+okay so tag for
+50:40
+angay magloop
+50:52
+manual radi
+50:59
+Okay. atong i-push
+51:05
+m so once nam tag body mess of body
+51:11
+mess of body so atong ikya i-push saong objects update
+51:19
+i-try Mm.
+51:33
+So objects ay no dapat sa kwan na siya
+51:47
+nagkit body so dapat sa
+51:54
+kan so pwede na to no or katong naka
+52:00
+naka-set ka iang ah properties so magcate object
+52:06
+langush aray solection of
+52:14
+sphere kung
+52:21
+object per frame here no mag-update sa atong kuan
+52:27
+saong tick so let's say mag-ad for loop na let's say
+52:34
+um for conscopy
+52:40
+na to ang iyang object so na kwan din so
+52:48
+so every loop sa atong no um sige Sige
+52:55
+add kwan new objects no so sige na gitawag ong direi ong cons
+53:04
+uming sa sphere no create sphere
+53:15
+kung na ko na-miss out m h naman siya
+53:22
+so orientation ku ano
+53:29
+ah okay so how about kung ako n i-remove ong kuan be
+53:35
+kani so obviously siya kwan
+53:41
+so wala na kwan wala nahimong kwan so nagwan siya green effects
+53:49
+okay kung magkan
+53:55
+magimo na tag function siguro na sila create kwan siguro sphere so let's say
+54:02
+ako lang ni i-remove no mag-alang ko g so naman tay
+54:08
+so
+54:15
+naman tayo g then t magbutang
+54:22
+lang ah after na siguro siguro tan hassle
+54:29
+kwan magebatongbuild
+54:37
+mago tawag magag function na magetra sphere
+54:45
+default soay
+54:51
+so maghimo lang folder sa mga object so the back
+54:59
+object in this case so there sa bank saan naman to creag sphere
+55:09
+tag debug object create sphere
+55:18
+so let's say katurang nga onong gibuhat ganina noong sphere
+55:24
+5 yang property is 0
+55:29
+y say mag default na inani siya
+55:37
+so go with that add create sphere so karon dapat ibuhaton isa
+55:47
+dapat tanggalon saong siya mag-ada ano
+55:53
+okay siya walay nanay somewhat gravity so nanay
+56:02
+something force na nian sa so create na mapush naang uban
+56:12
+so nag-follow lang sila certain direction kung asa sila paong so
+56:17
+something somewhere naadya po na semento
+56:23
+na to na dili in angong orientation sa kwan lain na po kayo class no so d siya realistic so meaning forces na nag both
+56:33
+sides naadct so gusto na to na
+56:40
+oh well nagfollow naman siya class pagdoply
+56:46
+du ka force sa du ka ang wind effect ano
+56:52
+soang ninana siya ni aligned so karon kung
+56:58
+atong it's glass ganahan na inet ko certain gusto ko i-random so why not
+57:07
+um ano na lango no so mag-random ko
+57:13
+let's say fear here let's say maximum na
+57:22
+magrandom ko between 0 to 0 to 1
+57:28
+pero ang pinaka-maximum is katong radius na 5 na-set
+57:35
+ba ma ang role anong math na ano so karon kung gusto na magkan ko sa akong x
+57:42
+and y Let's say here
+57:49
+so sahang. So akaton is magrandom
+57:56
+any um sphere from 0 to5
+58:04
+then anything na from 0 to
+58:10
+um 3 na position. Okay. From -5 to
+58:18
+or no3 to3 sobat. So let's say na
+58:26
+so well katbuhatina so kon magrandom na siya asa so nag size no.
+58:34
+So nakanindot ni class kay random man ang kuan ang certain
+58:41
+distance or position. So ang lahi na iyang kuan so nagnan tay wind effect so
+58:47
+mura si ni blow mura si nag sa outer space no naglutaw
+58:53
+so actually kung maghimubog mga kwan no galaxy galaxy so dapat kung na certain
+59:00
+objects na kuan is in magmove slowly like this one certain force ba ba kung
+59:07
+an sa astronaut kung nakuel nakilabay dito sa sa space ' ba somewhat
+59:15
+mumove ka certain point so well ikwan na lang nian yung ano
+59:21
+experiment on how to ano isa pa yung mga maayo pa na experiment okay so un sa pa
+59:29
+um nag-create naman tag ko ano how about kung mag-create boxes
+59:37
+bong b ong ano manual no ah box na punta
+59:44
+so saan kayo may tabo so isa ha um
+59:50
+kasama onong nag-create namanag box so
+59:59
+magunction So nagimutagils di
+1:00:09
+lang po kung magan magimo certain function
+1:00:15
+box geometry boxetry
+1:00:23
+so function so let's say
+1:00:35
+Sobat so
+1:00:40
+angong parameters na is
+1:00:45
+height depth or zala mo na siya Z no then position so
+1:00:53
+kato ang certain position na ano need so naka na naman tay
+1:01:00
+nagkwan naman tao detailed na sagong
+1:01:13
+magkan siya um well mag-set scale no sa kata onong mesh
+1:01:22
+so karon isang kuan ah let's try to
+1:01:29
+atang himu na nato ni kwan go daan para ditulat na so let's say ah ma-create ko
+1:01:38
+debug object
+1:01:45
+so create box okay this one so meaning sa may gigibuhat so 'di ba natay
+1:01:54
+parameters na ah with height and depth so siya then
+1:02:00
+ian position is based langapon sa atong ah let's say um
+1:02:08
+mag-adlant ka ng asa ang kwan ang box magsugod so let's say no one
+1:02:16
+1.5 5 2
+1:02:24
+x zero okay na ka na
+1:02:29
+let's say pag create na to box na certain box na katong ong kanina no
+1:02:35
+naay k na i-save so naay certain box na na positioned
+1:02:43
+between this one no so karon kung
+1:02:49
+ah magkanta be naad ni o somewhat
+1:03:01
+lang ha nasa checkad ba canon gs na umag wala pa ako inaad
+1:03:08
+okay nana so karon
+1:03:22
+kung daw na mga certain
+1:03:30
+shape material um
+1:03:35
+let's say na lang mag-add lang
+1:03:42
+material niya so ang material niya is
+1:03:47
+kung concrete kay ano kung concret
+1:03:54
+okay ng
+1:03:59
+sige soon class nag-create mo tao helper function
+1:04:07
+so nagposition tag isa so i-push saongcreate na objects to
+1:04:16
+update para
+1:04:26
+new data for new information create this case
+1:04:33
+so naitaboon okay sige so nam siyang i-save
+1:04:42
+firstate box
+1:04:47
+so force
+1:04:52
+spare
+1:05:00
+Okay. So actually no pwede na mo kild game an labi ka ng magkita kong mga stock na mga
+1:05:08
+game this case
+1:05:14
+sa pa um
+1:05:23
+siguro mag-add sir taog ang quarteron saong kwan be training
+1:05:29
+kwan sa rin na sign
+1:05:38
+let's say ang quarter yun ang mga kwan saong object
+1:05:48
+sila rotation saong certain bounce na
+1:05:56
+so
+1:06:05
+Okay. So as you can see here na siya noang
+1:06:10
+na siya adding one.
+1:06:16
+Okay. So class no um that's how collision
+1:06:21
+works in this case no. So just play along na lang with the kwan sa what are
+1:06:27
+the things to be kwan actually dagan kayo may mga kwan
+1:06:32
+experiment no with regards to creating a certain as you can see here no nagbangga
+1:06:39
+so karon wala siyang niful well kay kanik at manget na plane na
+1:06:45
+ang not affected by um atong plane is not affected by
+1:06:51
+gravity paan paubos so limit lang kung asa siyaopag
+1:07:01
+siya nagfollow na siya okay so kung gusto mo na mag-add sounds
+1:07:13
+sounds bacheck kung naong static k sounds na hit no
+1:07:21
+so kung madungog ninyo na so siya
+1:07:28
+so kon ato na siyang asan na siya i-create so mag-create kaning function
+1:07:37
+so let's say um lang ko maghimo sa taas No k magano
+1:07:45
+initialization error here no sounds so let's say what we have here is no
+1:07:53
+um this one
+1:07:58
+so we can add sound when object collides no
+1:08:05
+so here naay we will use this one no audio
+1:08:10
+which is an html an na sa daan na kw ano element
+1:08:17
+then once na play hit sound so let's say if there is aision
+1:08:24
+so umus
+1:08:31
+impcter sound in this case soonly
+1:08:43
+So at siang ibutang saong
+1:08:48
+pag-create box no asan onong create box let's say here create box create box
+1:09:00
+then magkan sa inyong kaning body mag-add lang taog ah
+1:09:10
+pwede naman code na ano eh
+1:09:16
+B sa may maayon add na lang so magkan ah body
+1:09:22
+add listener kung there's a certain kwan no point na
+1:09:29
+kwan siya kanang kataong gingon ganina no regards to impact
+1:09:36
+so so naay greater impact So pusogid ang
+1:09:41
+volume so 9.5 1.5 lang naision in this case impact
+1:09:47
+strength so kung na siyang itry
+1:09:53
+so magkabantay na kwan so sa crate box na siya na kwan so as you can see here
+1:10:01
+nanay impact sounds pero kung sa sphere
+1:10:07
+okay tungod kay kwan man ang sphere ni kwan man sa sa box matutingog Kung wala to
+1:10:17
+actually wala may kwan sa kan sa sa sphere walay sounds so buhat para sounds
+1:10:23
+ang sphere so i butangan
+1:10:29
+ang create
+1:10:35
+spherection sphere sphere to okay here so mag-add
+1:10:45
+ah body collide lang yapon no
+1:10:52
+so here n sounds aning kuan this case
+1:10:59
+so we create sphere so as you can see here na sound sa
+1:11:05
+inyong okay Sound sa pachieve
+1:11:12
+nam sa pa man
+1:11:19
+okay magbat lang ta helper function or na move reset so iyang i pang-remove tan
+1:11:26
+objects so karon um lang tanong maging walang taog
+1:11:33
+ah let's say d na lang sa ubos na lang siguro
+1:11:39
+So here maging ta reset
+1:11:46
+reset so let's say um debug
+1:11:51
+object so let's say
+1:11:59
+mag kwan lang ta um for for
+1:12:09
+CL so karon is iyang i-check tanan objects
+1:12:17
+tanan sa atong here
+1:12:25
+so i-remove nao tanan mga body na existing
+1:12:31
+so nagkwalang tao um
+1:12:36
+splice update let's say mawala kan siya no ang gibuhat is to just to remove all
+1:12:42
+the mesh and all the body nagi butang sa world sa scene okay so kay kung kaso
+1:12:51
+class kung wala nia-appel ang world class nagist on mga physics
+1:12:57
+ang sa atong kwan is we need to remove both world and scene in this case so ato
+1:13:03
+na siyang gi-add as a reset. Soon kung na siyang i-loadet
+1:13:09
+na ba? So nawala no nawala ang sa box naetupan
+1:13:16
+wala paong siya kayagan spare
+1:13:22
+so siya na element is nag-create manadaan no manang nawala siya na wala
+1:13:28
+so nag-create matadaan ah i-add na to sa daan
+1:13:35
+So aman to si atong sphere this one no
+1:13:41
+so kung atin na siya i-remove kata onong box na initial
+1:13:49
+so siya ay noahacate
+1:14:00
+box Wala nam ata sige ata na sa night try m
+1:14:08
+uy na box daan so asa gikan so hong
+1:14:15
+pangita kung asaisting boxan
+1:14:21
+so naad na to sa sphere so
+1:14:28
+okay sphere here and box create daas
+1:14:43
+ah function man actually pwede wala na ibalik na noira
+1:14:51
+naka sa so niemove so here
+1:14:58
+ong kuan so wala so nice fear
+1:15:06
+okay then reset wala okay so gi-destroy na an no mga na-exist na mga kwan pati
+1:15:13
+ang iang body okay i think that's all for this activity no so you can kwan
+1:15:18
+naman no um play around with this one so i think maka try na mag-build mga games
+1:15:25
+regarding to this one no l na kong mag let's say magstockstock ko ano um
+1:15:31
+like this oneag na may game ata ka ng kayo ko kawan sa pangalan sa game katong
+1:15:38
+let's say na a certain um boxes na dapat muhulog ang certain
+1:15:47
+kani mesh dapat mag-stock lang siya huntod sa hunod or kalimot k sa
+1:15:52
+pangangan na naging so well
+1:15:58
+pwede mo katay create an kung magkan na um let's say magimo mo
+1:16:04
+um product for activity 3 so try tayo lang magbuild
+1:16:10
+somewhat applications na pwede na okay so that's it for activity 3.4 I
+1:16:18
+hope na nakuha activity.
