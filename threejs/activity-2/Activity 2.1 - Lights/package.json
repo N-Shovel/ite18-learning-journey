@@ -1,0 +1,20 @@
+{
+  "name": "activity-2-1-lights",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Activity 2.1 - Lights - ITE-18 Three.js activity (Nimrod P. Pala, ITE 18-FNHX1)",
+  "author": "Nimrod P. Pala",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "three": "^0.148.0",
+    "lil-gui": "^0.17.0"
+  },
+  "devDependencies": {
+    "vite": "^4.0.4"
+  }
+}
