@@ -1,0 +1,14 @@
+1. Which variable is retained by the counter closure, and why does its value survive between accepted requests?
+The variable retained by the closure is the local count variable defined inside the makeCounter() factory function. When makeCounter() returns the inner function, that inner function maintains a direct reference to its outer scope where count lives. Because the event listener keeps a reference to this inner function, JavaScript preserves the count variable in memory instead of deleting it, allowing the value to persist across clicks.
+
+2. Why do B and C appear before D in the execution trace?
+'B' appears right away because it is synchronous code running directly on the call stack. 'C' runs next because Promise.resolve().then() schedules its callback into the microtask queue, which executes immediately after the current synchronous code finishes. 'D' prints last because setTimeout places its callback into the macrotask (timer) queue, which has to wait for a full tick of the event loop after all microtasks are cleared.
+
+3. What exactly pauses at await, and what can still happen while the request is pending?
+Only the execution inside the async submit handler function pauses at the await statement while waiting for requestResources() to complete. The browser's main thread remains completely unblocked, meaning the webpage stays responsive to user events. Because of this, users can still click the "Test page response" button and update its ping closure counter while the simulated delay is running in the background.
+
+4. How do catch and finally differ when a request fails?
+The catch block executes only when the promise is rejected, which allows us to handle the error state and display the failure message on the screen. In contrast, the finally block runs unconditionally after the request completes, regardless of whether it succeeded or failed. This makes finally the right place for cleanup tasks, such as resetting the busy flag and re-enabling the submit button.
+
+5. What do extends, super(title), and super.describe() each contribute to TimedResource?
+The extends keyword sets up class inheritance, making TimedResource a child class of Resource. Inside the constructor, super(title) calls the parent constructor to set up the inherited title property before initializing minutes. Lastly, super.describe() calls the parent class method to grab the formatted title string so TimedResource can append the minutes duration without duplicating code.
