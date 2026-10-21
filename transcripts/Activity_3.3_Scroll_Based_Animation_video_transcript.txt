@@ -1,0 +1,1096 @@
+0:00
+Good day everyone. Welcome to activity 3.3 and today we will explore how to
+0:08
+make our three 3GS experience interactive with kaning scroll scroll
+0:14
+and mouse movement. So uh in this um well in the previous
+0:21
+activities so we focus on creating particles and galaxies all within a 3D
+0:29
+environment but in real world mga real world web applications. So we
+0:35
+often we often need to combine 3GS with normal
+0:40
+HTML pages. for example a 3D animation that um reacts while the user scrolls
+0:48
+i-scroll down niya ng site niya no so na effect or 3D animation so ato pa so sa
+0:55
+ato pa karon karon ma-cuton nao unon pagbutang sa 3s nga background sa usa ka
+1:02
+website so maa ano kaang react siya based sa
+1:07
+imong pag-scroll mouse movements in this cas so karon Um kanina lesson will teach
+1:14
+us on how to integrate 3GS with a scrolling web page making the camera
+1:21
+move with the scroll and po tagong paralx effect based on mouse
+1:29
+movements and trigger animations for different sections. Okay. So current
+1:35
+class we need to check our code no kating atong starter pack no so dapat
+1:42
+make sure that you kno install your node modules
+1:48
+and what else we need to set up ang katong ah let's say here no saong
+1:55
+stylecs so we start with a sa atong mga niagi na
+2:01
+mga activities so we start with a simple html structure containing multiple sections initially kan siya so dag mga
+2:10
+multiple sections kon no karon class kay we need to
+2:16
+um ako sa i-run ang script in this case
+2:24
+so as you can see hereroll down
+2:30
+sections
+2:35
+atong disable sa atong style.css CSS
+2:41
+so here at ni ah comment out para ma-activate ong ang
+2:48
+scroll no so we can we remove this overflow hidden soon obviously saong
+2:57
+web page here isoll na siya scrollable okay so makita html sections
+3:05
+okay soon class to ours appear behind the the
+3:13
+HTML. So we need to allow transparency
+3:19
+in the renderer. So current class ato paing i um napatay i-twick sa atong
+3:26
+um script here no sa atong render. So un sama na to ni pag kuan no mag-add lang
+3:33
+dire og alpha true para ma-activate ang
+3:39
+transparency then mag-add t render
+3:44
+renderer d set clear alpha
+3:52
+zer so this makes the webgl background
+3:58
+transparent So allowing um HTML background or katong HTML background
+4:04
+color to show through. Okay. So ako save then ako um somehow kasi mag-add lang
+4:14
+HTML color no. Let's say um background
+4:20
+background lang no background would be um this color so base saong manual 1
+4:28
+A20. So here
+4:35
+then we check the output so somehow in so bas
+4:41
+naparent na ang background saong scene thoughly onong html background na color
+4:48
+so siya so karon so makita niyo na
+4:54
+ang background sa html angine kay nag-blend nicely so smooth na kayo tanon
+5:00
+Soon um we need to create some 3D shapes
+5:07
+ang purpose sa mga 3D shapes class kya for each section na 3Desent
+5:14
+[Musika] 3D na
+5:22
+so karon we just have to create mga 3D objects saong script so here ato
+5:30
+lang i-disable ni atong test cube then we need to add this mga type of
+5:39
+mesh no so let's say cons ako na lang sir i-copy nasa class one
+5:44
+para madali So makita tulo ka mesh. So naay mesh
+5:50
+one, mesh two mesh 3. Ang unang mesh is
+5:56
+at taus. So taus geometry naayang
+6:04
+radius pila ka number of tubes
+6:09
+yang radial segments naon no tubular na segments in this case so mga need na
+6:16
+parameters sa taurus sa cone is natay iyang iyang radius iyang height ang
+6:24
+iyang radial segment so let's say 32 ang katong radial segments no na slice na
+6:30
+lang siya one na radius so atong gi-add ang each geometry into a
+6:37
+mesh basic material anday color red so sa taos knot so sa may need sa taos no
+6:45
+taus geometry so um8
+6:50
+for its radius so naput sa iang tube number of tubes
+6:55
+then naput tubular segmentsar ka segments no
+7:01
+tay radi uh segment so kan 16 ang radial
+7:06
+segments in this case so karon at siyang gstock into mag-add in the scene so karon let's check no
+7:14
+kung sa result so here no money ang nahitabo na wala pa
+7:21
+to g-set ng position saong mga object so karon is na kwan si ano within the
+7:26
+origin so nag nag-stock
+7:31
+so ang purpose an class na kanin mga objects na nadi so this represent our
+7:36
+section markers so one shape one shape per scroll section so ang kada object
+7:44
+mag-represent oa ka section sa imong web page muna siya chapter heading na naayd
+7:51
+element so karon ah we need to Um
+7:58
+soon atong magtryon lain na mesh material which is mesh tone material. So
+8:06
+here thisangremove
+8:14
+instead of using mesh basic materialing
+8:20
+mesh materalate
+8:28
+materal matal
+8:35
+is equal to new um 3
+8:41
+mesh tune kaya parameters na to is katong material
+8:47
+color sa nagkwan na po na akong fonts
+8:53
+so kaning color na to isaong na-declared na materal color okay
+9:00
+soon class atong i-add material
+9:06
+then material soiton material
+9:15
+so let's check so karon class imbes na siya color daan
+9:21
+base sa katong kani material color man siya ni black raman siya so ang problem
+9:29
+an class k mga mesh stone material katong mga mesh standard material na
+9:35
+type no na mesh is kailangan siya light no so karon sa atong exercise or saong
+9:42
+activity we need to add light no in this case so karon um
+9:49
+mag-add ta directional light no let's say magtay lang tayo directional light so cons directional
+9:58
+para makita na to ang atong mesh tone class need um i directional or not directional not
+10:06
+necessary directional light basta light no so let's say ako position within
+10:13
+one x x1 y1 zero na z axis so ako din siya
+10:21
+gi-add sa scene so karon ngatay some nakita na siya no so somehow sa na
+10:29
+nadion siguro sa let's say one one nad side ang directional light na niana sayo
+10:38
+kabantay mo no pag an sa light na padong
+10:44
+ang katung naigo sa lightong somehow na mag-shadow okay
+10:50
+so ganina class without light the tune material looks black so this directional
+10:57
+light ensures visibility So diliwas ang tone effect kung walay light soad na ang directional light soon
+11:06
+class at siyang i-add sa magata
+11:12
+nobutang magad
+11:19
+ako niemove taas kaning
+11:26
+so katong gipakita naigo naman to na na-install na ang
+11:32
+gatuli. So karon kay atong i kwan mag-add lang
+11:37
+ko so ako mag-add mga other parameters so color
+11:46
+add color ko sa dui na one ang parameters
+11:52
+so materials then sa okay nak kulang
+11:58
+okay so material color katong na declare na parameters
+12:07
+So on change so parameters. Color-set
+12:14
+so maupdate to siya so karon akong it off load. So karon is pwede na ako
+12:21
+mag-change. So on change no kwan din siya ang ma-target ong parameters that
+12:27
+material color. Okay. So ma ni day iyang result.
+12:34
+Soon classad let's say
+12:41
+um mag-add ka texture so karon um here saong
+12:48
+lang sir ko mag-add of texture the pit na side let's say here
+12:54
+um let's say cons
+12:59
+ba magamit tao magan tawag texture magamit texture loader soon class naman
+13:07
+naadaan na textures so we will just utilize this one no so atong isa ka
+13:12
+texture na from gray to white kay number three number five kay
+13:18
+black to white no so na siya 1 2 3 4 5 lang ka kwan no imong epic na color
+13:27
+ang gradient no lima lang kabuok so karon ah texture loader. Okay.
+13:35
+Nag-add na po ko ano consent texture ako gitawag na ko ong three
+13:42
+then nagamit na mag-filter
+13:47
+para mag para mas smooth no katay na mag-filterong ma-crispier paong
+13:54
+kwan ang iyang uments na but texture so class naupdate so siya
+14:04
+material color then maggadient map pa so gradient map gradient texture naarget
+14:13
+so karon nam siya so somehow texture as
+14:18
+you can see here no base siya sa katong kwan so meaning the darkest kwan portion
+14:23
+saong texture is katong gray na masyado then white then somehow
+14:30
+kayo somehow na scatter na light may somehow gray no
+14:37
+um barely green naan color so here no money ang resulta no pag-add
+14:44
+na to no so n gradient no kini ang gradient na kat number three na wala na
+14:49
+siya cartoon smooth shading na ang appeal kaysa saong magkan plain color
+14:57
+so karon umo magtay daw tagline color so na-apply ng gradient A katong gradient
+15:04
+or katong texture so in lang iyang style.
+15:12
+So we need to position objects.
+15:18
+So class we need to check our code here.
+15:25
+Siya out ang each mesh.
+15:31
+So karon um since naka kwan naman ta no
+15:37
+ah naka-create naman ta kaning object di ako karon class akong ipang let's say
+15:45
+mag-declare ko kwan ah cons objects
+15:51
+magkwan lang ko ang distance sa mga objects ah is four daan it's say kat distance 4
+16:02
+then so sa every object is face out by four
+16:08
+ah four units apart vertically kay yong so meaning kada scroll saada scroll
+16:16
+object akong makita so purpose here soon akoave
+16:24
+so as you can see this is sama siya na ang mesh one ang taoros no
+16:31
+then karon kay ano ha
+16:37
+asa kulang
+16:43
+nilayo so na
+16:50
+gradient
+16:59
+CL so karon naman ang
+17:05
+set Check
+17:12
+karon na space out naman siya so karon sa makita na siya
+17:21
+socheck
+17:28
+manual space na si four
+17:37
+so nakare result
+17:42
+ah okay mhm
+17:53
+okay dire ko diretso katong class kung buton kung nag-set ko
+18:00
+akongescale na ako 2.5 5 somehow inang result
+18:08
+ang two let's say gikan paid siya ah ang visible
+18:15
+so karon class kay akong gibuhaton niunct lang kung ano nag akong ipangdistance
+18:23
+ang position between this mga objects let's say since naposition man to yung
+18:31
+ang mga objects as ba kay in origin nasa origin tanan ang mga mesh
+18:39
+or katong tone mesh no so karon kayalter na ang ilang position
+18:47
+saong object distance
+18:56
+negative din saha negative dapat ni
+19:02
+saha kay dapat mag-ubos sa ubos ang iyang
+19:09
+outputon so karon no wala pa man na napapay
+19:16
+so karon is akongat is
+19:23
+nag nag-space ko ah - 4 on each ko ano
+19:28
+let's say here ang mesh one kay narap mo siya sa zero
+19:34
+sa zero y soong naas siya direi sunod na is nasa ubos -4
+19:43
+ba kay four man no so -4 ang answeron so ang position sa m 2 is ubos aning kung
+19:49
+ano in uh four units 4 units so ang mesh 3 is -8 na siya so
+19:57
+ubos atong mesh 2 so karon class kay pa na siya makita na sa pag um
+20:07
+napag-scroll na to no makita day na to ang iyang kwan pa pa na siya basta sa makita
+20:15
+so karon ikans na no siya ag once na mag-scroll
+20:21
+na is makita day nao ang
+20:27
+mga animation or mga elements soon pa siya makita
+20:34
+masing or soon is
+20:41
+soad ang camera scroll na animation
+20:52
+code
+21:02
+upag some event listener
+21:08
+so here magin no um
+21:16
+rin mag-add lang um para na siya gitawag na
+21:24
+once na ang camera mave with a scroll magkan po ong kuwanong
+21:30
+mo-moveong camera no once na ako na i-move ang scroll in this case. So karon um let's say camera score animation
+21:45
+animation so let
+21:51
+scroll y equ windows scroll
+21:58
+karon magk lang um
+22:04
+mag-add ko add listener so karon mag window d asa ha
+22:14
+um window can scroll no so karon is
+22:23
+once na magkan ako sa kwan scroll anayor
+22:30
+sa scroll mocrease akong ano scroll y na na value karon class magbutang koon sa
+22:38
+tick once naitab
+22:43
+na instance of scrolling ma-update camera
+22:49
+positionera position let's say ang
+22:55
+base atong scrolly then mag-base na rin ko sa height times
+23:01
+object distance meaning katong four kinclare man tag four ang na object
+23:07
+distance kay four kan siya ang height is katong saong kuan
+23:14
+sa sizes
+23:19
+so kanino No. So asan naman ong kuan
+23:29
+onong height saong kw pes pa hary
+23:52
+save ba error wala be kung gana na ba ni okay so no so karon class once na na
+24:00
+event na na-scroll so mo-move dayon ong camera with the respect to the object
+24:09
+distance okay so my roon no sa pag-scroll na ako roon na ma-move na din
+24:15
+ako ong ma-move ang camera soangject siya sa atong um certain section
+24:24
+so wala na siya nag story story telling sa scroll kada page
+24:29
+scroll na laing object na ipakita so karong class kay kwan um let's say
+24:36
+magnano sao nao overlay sa color lang at
+24:42
+update later no gusto na to mag-add o paralx effect with
+24:48
+mouse movement so magamit na depth illusion so hereong
+24:57
+add event scenar so nagag scroll y magag another event
+25:07
+listener here no let's say um si ako lang sa ni kwan ho cons course
+25:14
+store let's say ang kanang ng class ba effect sa atong uy
+25:21
+ano po ni atong mga mali sa consagtype ano lang na class para save space
+25:30
+so x okay so naay objecti na cursor
+25:38
+na parameters na x and y na zer so makuha na to ang kwan na siya i-check na
+25:45
+to ang kwan sa cursor no mouse move para makawan tag paralx event
+25:51
+so karon is atong gina maghimutag listener nacheck
+25:58
+sa coursor movements
+26:03
+soon class kay once na um
+26:09
+once na event like this one so Okay
+26:19
+kanang gibuhat na to para ragnay iluson sa depth sa katong atong kwan
+26:26
+let's say atong sa katong mga sections no or katong sa
+26:32
+atong um sa onong mesh bata daw i-check
+26:41
+so somehow napay I need to fix no so ik
+26:47
+ang camera na something sa camera so ano napatay kulang an okay let's say pa na
+26:57
+to no so na-apply naman na to ang kwan class katong ma-check ang cursor
+27:02
+movement base sa katong saong browser so makita
+27:08
+na kung movement saong sizes thatong browser let's say na lang tay somewhat
+27:15
+kwan no ah 5 na kwan threshold para pag kwan sa coordinate sa x and y karon kay
+27:23
+we will apply the cursor movement to the kaning camera group pero siya saong
+27:31
+camera directlyter so let's say maghimo sa
+27:36
+camera to new
+27:42
+3.goup group so mag-add ko o group camera
+27:50
+so magimo ko groups of camera class akong gibuhat karon so karon mag-add ko
+27:57
+mali ni ah mag-add ko um nagka um camera
+28:06
+group camera okay so mag-create na po ako camera Then
+28:17
+camera that position ano dili siya pwede sa scroll y dapat
+28:25
+kung sa x axis
+28:31
+so every movement sa akong kuan naay paralx effect nanaon ko ang akong mouse
+28:37
+na may tabong paralx effect dito sa atong mga section So iyang kaon as
+28:43
+parameter is ngong for.x X minus katong camera position niya kung
+28:51
+asa na ang camera roon then let's say tag as our kwan lang no parameter lang
+28:58
+ni pwede nack class no so kaning delta time is let's say ang time frame delta
+29:11
+delta type so camera position delta time-declare
+29:18
+din na delta time
+29:31
+ha napatay
+29:37
+scoll y nakuha naman ni
+29:45
+so nag-add ng tag cursor event obviously mag siya no
+29:52
+console so itong xy soon
+29:57
+event cursor sa tick nagad na side check no
+30:07
+okay wapatan nagbutang kwan ang cursor x of y
+30:14
+model ong mga wala pao ano nabutang
+30:25
+so i-add pa naato ning canid naganay na
+30:30
+limtan an for a while sa i-check
+30:38
+ah okay iangosition
+30:46
+ako sa load
+30:51
+wala pa [Musika] okay
+30:58
+nave Sino ba ni?
+31:04
+So okay na problem with the kwan nawala na ng so tay kulang an
+31:12
+so here ang nabuhat no kung check na toong manual
+31:19
+is nag-create taog um
+31:24
+advent add listener paracheck sa atong cursor so lang ikano ako sa i-remove ni
+31:31
+kuan class ito sa i-check good na nag-working onong
+31:37
+cursor toon no so at lang oo console
+31:44
+console console logsor
+31:49
+so karon k so karon kung mag once na mag-move na
+31:56
+kon na onong x and Okay, this is good.
+32:03
+So working atong event listener for kuan no so karon class uh we need to
+32:10
+add on our tick no saong tick nao um
+32:16
+here ang cursor let's say
+32:23
+consalx effect siya
+32:29
+so karon
+32:34
+check so nanay paralx effect
+32:40
+pero na problema karono kay na mag ma-work ong camera kay namatay paralx
+32:47
+effect na nak ma-synchronize ong x and y sa atong
+32:52
+camera so ang na roon no para ma-fix ang kana siya is
+33:00
+ma-create camera group so onong gibuhat onong camera group
+33:07
+so asan um na to ibutang sa
+33:12
+umat onong camera daan
+33:20
+camera camera matag-create camera daw
+33:27
+So okay naman base camera here so maging
+33:32
+group so let's say dire no
+33:40
+so camera group three group magcate tag camera so karon is na position naman so
+33:49
+isahon na giisa na to ang tanan camera class no sa
+33:55
+in case para mawan siya ma-add on paralx na
+34:01
+illusion no or paralx effect
+34:06
+so karon is mag camera that fan okay na baka ni
+34:16
+so karon no wala pa wag pa certain effect pa No sa karon lang is nakuha na
+34:22
+nato onong atong um na-set up lang nao no ang atong camera
+34:29
+group in this case soon is not update saong tick no this
+34:34
+case soon i-adding
+34:44
+i na lang
+34:50
+sige daw ni sa manual po yungot na kwan
+34:56
+m okay nak naman siya na-add naman denuk
+35:07
+nailat na siya So kaya lang class
+35:17
+nga yan dapat na somehow effect
+35:33
+ako mga
+35:47
+So ako lang ang portfolio sa X kay 2 ang 2 kay 2
+35:57
+center changes
+36:04
+here at sa mesh on mesh position
+36:11
+sa so magkan lang ko [Musika] then mesh mesh mesh okay
+36:20
+mag-add mesh position so mesh 1 position
+36:25
+x = 2 sah 2 paan so na to
+36:34
+So okay so na ni na siya so naay tay problem sa pag paralx effect
+36:42
+no
+36:48
+so karon na ba nalimptan siguro no agag
+36:53
+siguro sa camera position sa i-check so karon umong
+37:02
+camera that position
+37:08
+camera that position that why
+37:13
+okay nakuha naman so camera position y object distance
+37:20
+so naupdate [Musika]
+37:27
+soursor for atong coursor na
+37:35
+okay nagset ko here
+37:41
+nakuha naman na ong ma-print naman na to onong cursore na to
+37:47
+ng nag mouse event pa kita
+37:53
+so na naman account
+38:00
+mouse move
+38:11
+so be so sack
+38:22
+here object height distance
+38:28
+nag-add lang somewhat kuan lang effect
+38:36
+so sauro mag-add na parx x na cursor
+38:42
+as
+38:49
+[Musika]
+38:56
+invert sa cursor. So as on
+39:02
+mag-create lang sa zero code ng another paralx cursor here.
+39:08
+integre na lang ako i-create. So let's say cons ah
+39:15
+cons parx x um is equal to
+39:22
+kaning cursor and para ay
+39:30
+so paralx yes
+39:43
+[Musika] cons
+39:55
+parx y negative
+40:04
+ato lang camera at position
+40:10
+soutang
+40:20
+sa atuntik asan naman to siya kanya no
+40:27
+nakuha naman siya mm
+40:39
+na group na po na
+40:45
+ay okay dapat dili ka sus na mali soong kulang Dapat camera group
+40:59
+na to. Okay. So here we go. So nakalong na.
+41:06
+paralx effect so
+41:11
+in this case kung gusto na to na ay um sa pa may
+41:17
+kulang na to an so na-set up naman na to no
+41:31
+be kung butan na to ni somewhat para siy mag-rotate
+41:36
+Mm. Tama siya ah. Magtuyok-tuyok ta ni atong kuwan
+41:46
+be. Um mag-rotate lang no maging walang tao
+41:51
+kwan. Umm let's say
+42:00
+siguro pwede naman t ma-tate direi o cons mesh dire sa ano
+42:06
+para mag-rotate dire lang ta magcate dire on somewhat
+42:16
+ah mag-try tayo create o ka
+42:21
+[Musika] pangit na to be to kanina no mesh isipat ko mesh one mesh 3
+42:32
+soon um for every um cons
+42:39
+ofction meses
+42:47
+every rotation is equ to
+42:54
+ah okay nagamit time sige lang
+43:01
+sack
+43:06
+soon
+43:22
+get time here so ito lang siya i-add para sa para ang
+43:31
+mesh pero gdeare ang katong
+43:39
+atong kani no so ang katong four kwan na siya for rotation
+43:48
+beak tabo an so as you can see naay naitabo no
+43:53
+rotation between akreload no so paralx effect pero magtuyok-tuyok siya
+44:01
+so wala ong permanent rotation ni so wala siyang nag-float sa space no
+44:07
+kung so siya so paan sa kulang since na naman
+44:19
+persection nave persection section markers which is this mga images
+44:27
+like Taurus con and kaning Taurus na
+44:33
+sapangan pa ang this one
+44:40
+teka toros not
+44:46
+kan siya Taoros so kwan na siya no nagnut na Taurus in
+44:52
+this case. So sa pa um
+44:57
+well gusto na to mag-add um dep sa atong kwan class
+45:05
+kaning atong sa um here no
+45:13
+i-add na ong depan atong positions aning kwan
+45:22
+i know na naman na-deep right Let's let's say mag class okay let's say
+45:30
+space so let's say magad tag particle soon
+45:36
+mag star so
+45:42
+mag particles I think
+45:50
+so let's para na tayong mga let's say
+45:58
+let's say mga sa outer space so let's
+46:03
+say we have this one particles
+46:09
+holder position we have here to
+46:15
+um
+46:21
+positions kap
+46:33
+so herecate loop
+46:43
+so here mag assign valueso sa atong
+46:49
+particles so magry siya karon certain
+46:55
+position so karon ato pa siya i-render pa
+47:01
+sa um since kwan pa siya positions pa eh
+47:07
+o nag-create geometry so cons particles geometry
+47:17
+so bas set attribute basong positions na mabutang no so na atong ipasabot na
+47:27
+ang positions na three values so karon is mag-create tag points material so
+47:36
+material
+47:42
+ang size kay 0.3
+47:48
+ang color kay base lang sa parameters materialet
+47:54
+mag-attenuate sa good po na siya no set ah size attenuation
+48:00
+oops so karon ah well naklimintag ka no
+48:07
+so karon atay ah ito na sa kung ano i-create ang ang
+48:13
+points so particles points
+48:18
+add particles
+48:24
+okay remove naghan okay
+48:30
+so ang mga particles stars nga naghatag illusion sa sa
+48:36
+atong scene no so wait na to siya so karon uy basinay reload sa
+48:46
+Uy what happen nakahawa man si effect check onong kwan dapat error
+48:56
+ako sir-remove na yung kuan kaning console
+49:03
+man ong console d lang dire console lang sa kwan to siya event sa
+49:11
+atong mouse no So asan onong event listener sa ong mouse
+49:18
+animate okay get elapse
+49:23
+camera group okay d this one i-remove lang na to ni be
+49:30
+so karon para makita na to naayong k errors ah
+49:37
+okay na soon na tay problema
+49:42
+sao Dapat na siya every dire no scatter pait siya
+49:49
+so every every scroll nao um
+49:54
+katong particles so na to siya na kuan um
+50:02
+so every school para mailan na to ba na um
+50:09
+para mailan din sa atong tgs na kung once na new section like this one bagong
+50:15
+scene let's say katong kan siya no ang mga par ang ang particles siya kung once
+50:22
+na mag-move so gsap in this case so pang
+50:27
+animate na so here check gs here wala so
+50:35
+akock gsage [Musika]
+50:43
+Okay. So sa man na to ni so mag-import
+50:48
+GSAP be ako lang i-package
+50:56
+so siya ian so npm install
+51:01
+GSAP
+51:07
+mali sa CS S
+51:14
+N D
+51:21
+so walaat lang ta kuan okay so naasa onong packagejon
+51:26
+so karon sales lang ta so here mag-add lang taog um
+51:36
+mag-import lang taog um gs so import gs AP from GSAP
+51:46
+sa ubos mag-create katong scroll sections na to so
+51:55
+langapit oops
+52:01
+so here mag-add ko diron um
+52:06
+para triggered ma-trigger ang kwan ah trigger the
+52:13
+scroll sections. So karon um nag-import naman. So so let
+52:22
+let's say current section equal to zer magimo ko
+52:29
+event listener sa scroll no. So we should scroll
+52:52
+sige lang ah mag lang taglain try
+53:00
+So
+53:13
+okay karon is let's say um con new
+53:19
+section atong gina-check ang kwan class no kung
+53:26
+saan na yang section na siya asan na siya i-map na to ba asan Apit na siya. So
+53:33
+so if ang kani current section
+53:41
+sa ako lang sa ipang-paste tanan class no. Okay. So karon
+53:48
+is if nanata sa kwan ang ang new section is not equal to current section so
+53:55
+ma-update ang current section to the new section. So unay may tabok. So kungcroll
+54:01
+ka padulong sa sectionotate
+54:07
+animate ang corresponding 3D object transition effect ng dynamic in this
+54:13
+case so save
+54:22
+okay ni kuan no isaha pa naka npm ata sige npm
+54:30
+Roo
+54:38
+ako i-remove sa kwanag na ang rotation na
+54:46
+lang
+54:55
+Bay lang ako saan-set
+55:04
+ako nalimtan no so ako lang ong i-remove ong rotation ko nagibuhatin no
+55:13
+sa bagay kung akong scrollag mukan siya nopas pass ang iang rotation
+55:22
+onong permanent rotation kung once na mag-scroll koangaspasang rotation so gibuhat anggered siya
+55:30
+triggered rotations and scroll sections in this case so angibuhat na karon sa gson isang
+55:38
+once na ma let's say reload no ba class isongimo na to na perman ent na
+55:47
+rotation na tick so siya so na siya permanent rotation na
+55:54
+somewhat ang x of y na ay slowly kay magano magtuyok
+56:00
+karon kay nag-add man ta certain kwan event listener na scroll once na na ay
+56:06
+kuan um mag-ne section na siya so naay
+56:11
+pasp na kw ano pag pag pag kwan sa iyang position
+56:18
+or kanang rotation no sa x y z soon class ang katon is ma-update
+56:26
+so certain naitabo na
+56:31
+siyapasok okay sootate
+56:37
+so na So kanino an
+56:45
+so kung balik na po aspas tuyok kung mag-update na po new section
+56:52
+so here no katod permanent rotation so kung mabalik
+56:57
+na po mabalik na po so ano ang gibuhat sa kaning gsapana
+57:04
+na section so saan na may kulang na to class ang
+57:09
+kwan na lang no wala pa nabad ang kaning
+57:15
+particles dapat siya p sa laing ano lain ng mga sections
+57:25
+so atong i-checkon scroll back pinabab ko mga sayok m
+57:36
+so nabuhat ang kuha lang nao is wala na to nabuhat
+57:41
+y na ang particles
+57:48
+no
+57:54
+siguro sirincrease position
+58:03
+let's check particles
+58:11
+ako so ako i-check ang kwan
+58:16
+ang code so dapat class kay ang sa to ang
+58:22
+particles kay makita sa every section so hm
+58:28
+balik sa particles particles na to
+58:35
+so 200 sakto na random coordinate siya
+58:43
+tumba consakto
+58:49
+man then nagcation
+58:56
+na ta particles sakto nabuhat no
+59:07
+so karon
+59:16
+nag-create for look Por lockon
+59:34
+nakuha na naon
+59:47
+aside no nalimpan siya
+59:54
+ah okay sige so na siya no
+59:59
+siguro magong kaning for loop at ka butang sa kwan
+1:00:06
+once na mag-scroll siya exist siya dito m
+1:00:16
+na yata ibutang ba na siya sa balhin koghin no para pente siya every section
+1:00:23
+na kwan ay isa
+1:00:29
+particles count so nag-create mo tag particles particles
+1:00:35
+plus sakto yatang gubatan
+1:00:48
+hmm ka hi sayo
+1:01:00
+naad team
+1:01:08
+ba kin
+1:01:19
+mm
+1:01:29
+kulang na to Anong wala man siya sis?
+1:01:44
+Sao nasa ko i-check class saong script ay saong kwan
+1:01:52
+n problem with regards to
+1:01:57
+sa camera na issue Mhm nga nung man siya m down kaya ako pao
+1:02:05
+naon at saka i-review ngano ka siya so try na to bag no
+1:02:19
+pasig sa akong pag plus star po no m nagkanwan mo particles
+1:02:28
+tong yeah Count ali mo
+1:02:37
+ay gagi so tama so ang problem class ba kay ang
+1:02:44
+next na kwan is katong ba nag object distance k ang pangbasehan na to kung
+1:02:51
+asan na ang next na section sa mesh sayono
+1:02:58
+ba nag-set object distance so
+1:03:04
+ang dapat mag-update siya no so let's say
+1:03:11
+um um object distance
+1:03:16
+minus sa random na object distance manual
+1:03:24
+nalimtan ba asa ka to ha
+1:03:31
+nalimtan ako butang ni sa manual class
+1:03:36
+mali
+1:03:42
+object distance side so
+1:03:48
+dapat siya maada na object distance siya so object distance random
+1:03:59
+beata sa try be ay ni saka sa ni saka naman noon pero
+1:04:07
+actually na siya so let's say na lang ko i try na let's
+1:04:13
+atong i-limit to 0.5 ang object distance
+1:04:19
+then minus na saimit na sa object distance na
+1:04:29
+section nagdeclare ba section
+1:04:36
+object distance resulta
+1:04:44
+na ni samot ni kwan na siya somehow na na siya effect no
+1:04:52
+so meaning dapat um atong iamit
+1:04:59
+ang length section
+1:05:08
+particles equation
+1:05:18
+section length
+1:05:23
+so section meshes length sa every mesh
+1:05:32
+so let's say katuluman class na tuluman ka buok so meaning katul magan mag
+1:05:39
+create particles so siya class no pwede actually pwede nam siya i-t lang na kide
+1:05:45
+man na three ka section pero nindot na base na pilay length meaning na size so
+1:05:53
+let's say three so siya whenay stars na
+1:05:58
+sa ubos nara okay nasulbad so moto no na wala na sa manual class
+1:06:06
+nalimtan na ako butang So check na lang no ah niyo lang i-follow
+1:06:14
+so nako nalimptan butang k gusto man ako may tabo na every
+1:06:19
+section na ay ah kaning particles soon so every particles while
+1:06:27
+siya so um particles na as you can say
+1:06:36
+particles Okay. So that's it for this um
+1:06:42
+liboglibog na activity. So just follow lang no sa with the sa well nakindot
+1:06:49
+activity kay makbag i-check kung may error sa may naitabo so kulang okay soon
+1:06:58
+class isay a scroll controlled camera so nacontrol
+1:07:03
+na to ang camera by means of scrolling thenay paralx effect sa atong uh
+1:07:09
+background thenay rotating image td objects then matrig animationsve
+1:07:20
+okay so that's all I hopearntivity
+1:07:29
+3.3 So, thank you very much.

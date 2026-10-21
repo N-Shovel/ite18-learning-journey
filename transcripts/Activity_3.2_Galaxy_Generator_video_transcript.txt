@@ -1,0 +1,1242 @@
+0:00
+Good day everyone. Welcome to activity 3.2 and this time we're going to level
+0:06
+up our particle system by creating a galaxy generator. So in the previous
+0:13
+activity so we learn how to use particles to simulate small points or
+0:19
+stars. So karon atong gamiton ni idea
+0:25
+para mag-create galaxy system. Okay. So um
+0:32
+okay so pwede na um pwede nustomize using katong kaning doo
+0:40
+or dgoi. So basically um this activity allows the
+0:46
+user to generate a unique galaxy. So each time by um twicking the parameters
+0:52
+no like count um size let's say radius
+0:58
+and so ba kung mag spiral na siya ka ng branches spin
+1:04
+let's say magag color no so meaning lang usa ka galaxy atong buhaton kundi usa ka
+1:12
+generator ng maka-create versions depende sa settings. Okay so
+1:20
+karon um ato lang i-check no ang atong ako lang
+1:25
+nian clas so atong i-check ang atong kwan kung niwong
+1:32
+node gs na mga modules per actually class katong 3.1 Paano
+1:37
+naman diagi ako rin-drag no actually pwede ram na siya pero depende na si
+1:42
+package Jason let's say kung nakay depend lang i-install lang ng npm
+1:48
+install so karon um here make sure na
+1:53
+namusin yung saktong working directory so let's npm
+2:00
+runeb ato i-check no itong setup
+2:06
+okay So here is just lang no ah pang-test lang kung nakong mga
+2:14
+dependencies. So natay cube in the middle of the scene to make sure our
+2:19
+environment is working. Okay. Now we need to remove this no um
+2:28
+cube of course so sa no saong test cube
+2:35
+so karon class kung inyong itana manual 3.2 to
+2:40
+we will create a function called the um generate galaxy
+2:48
+so cons ako lang ikwan class no ang
+2:55
+ako na lang ico-copy para
+3:03
+so here no naay call ano ah arrow function tawagon then siya in this case so ako
+3:09
+lang i-down no okay nagan tay isulod na kwan na mga parameters and loops no so
+3:18
+let's say we have this no function here called generate galaxy
+3:24
+so this function will handle the um creation and recreation of galaxies
+3:30
+everytime every time na parameters kayo mag-change so we will also create um parameters
+3:38
+object to store all or install store na to di no for our twickable values so
+3:46
+current class is we need to create um
+3:51
+mag-create pa katong let's say holder sa tanan
+3:56
+kwan no properties sa parameters no let's say mga parameters to holder sa mga parameters
+4:03
+no so magag object so cons parameters
+4:09
+is an object no so ako lang in na pagkabuhat
+4:15
+so here is okay so object na kano na-create na natin siya soon class is
+4:24
+mag-create taog ka ng mga um let's say
+4:29
+geometry inside thiso generate galaxy
+4:36
+kaya lang klase kay naay naay nam na maligag isda
+4:41
+so sorry for that noise no sige so
+4:47
+karon naman magkan geometry inside the
+4:55
+this function akoy inside
+5:03
+so here copy.
+5:09
+So what we have here is um
+5:14
+be okay. So kani siya class is same naapon idea
+5:22
+sa katong nag-generate ta particles no as you can see here
+5:28
+nag-random nag geometry nag since maghold
+5:38
+xy zong each vertex soate group
+5:48
+certain values no saong position okay sa
+5:53
+y zong maate siya particles na floating into
+6:01
+this space in this case no okay soon class um nag-add na ba
+6:08
+tat onong parameters okay i think kailangan pa magkan ano so kalimot ko
+6:13
+butang sa parameters so parameter um count ako pangremove sa class ha
+6:23
+so 1000 and okay and kumpleto na sige classong
+6:31
+same naman saong previous activity no so this line defines the variable inside
+6:38
+the parameter called count para pila ka 1000 points no of or 1000 vertices or
+6:46
+points ang ma-generate no sa atong galaxy so na to ginet ng 1000 ka book
+6:54
+atong stars no let's say or particles so generic galaxy is just a function na
+7:02
+everytime nag tawagon siya is mag generate siya new galaxy okay so diani
+7:10
+na function once na well there will be a new galaxy no base saong atong gina-set
+7:17
+or na gitwick na mga parameters so here is katong kwano nag-create empty
+7:24
+na geometry using buffer geometry here so ba k panghandle man po ni siya oongo
+7:33
+let's say ba maghimot custom geometry in this case then
+7:39
+so sa pair kaning ano positions
+7:44
+um just creating an array nahold sa tanan coordinates sa each
+7:50
+particle okay so three values no soon pa naman soay 3000 ka values or
+7:59
+size na karon saong aray okay so sa pa
+8:06
+okay kanina loop no sourani siya 1,000 times
+8:12
+So, so each loop represents one particle. So, magtuyok in loop huntod na
+8:18
+maka-reach siya sa 1,000 particles. No so well kwan na siya no self explanatory naman siya.
+8:25
+Then kaning cons i3 I 3. So since each
+8:31
+particle uses three numbers katong X Y Z niya. So we use I3 as a helper index to
+8:39
+um calculate the starting point of each particle's coordinate. So for example kung particle zero so ang
+8:47
+I3 kay zero no so ang position niyaon is 0
+8:57
+1 2 sunod ang particle one na ang position is
+9:04
+345 so inana no ang iyang siya panghelper lang na siya saong para sakto ang
+9:12
+pag-determine sa positions so gamit i3 para ma-track na to na asa
+9:19
+magsugod ang x y z value sa matag particle so morning na
+9:26
+so kani no ah in this case so pa kani no kaning positions
+9:33
+so kaning to localine dire na nag-assign random positions for each particle no so
+9:39
+nagamitag mat random in this case so nag-random na siya between 0 and 1 no so
+9:46
+karon g-subtract na siya 5 para ang range lang niya would be -5 to5
+9:54
+no so ang particles can appear both sides of the origin sa center let's say
+10:00
+kung x axis nasa siya sa -05 to5 lang ang iyang maximum range
+10:08
+karon lang class kay ato mang scale three sopread pa g siya no ma-extend pa
+10:14
+siya roughly ah three units in each direction so ma iang pasabutan
+10:20
+so um effectively so each particle will be placed randomly in a let's say a cube
+10:27
+no cube space let's say nana so sa pautal
+10:35
+no muna siya kanang ah gipangbutang na to ng random ang position sa matag
+10:41
+particle so ang mat that random siya
+10:47
+nagpasabot nga pwede siya ma-assign sa - 1.50 or 1.5 five
+10:54
+na coordinate range no soy ang naghatag sao scattered effect no sa atong mga um
+11:02
+points no in this case so karon atong get na attribute sa geometry na mag-adta
+11:07
+position na parameter in this case so position kaning three kno each vertex
+11:14
+has three components x y z m pasabot no soattach nao ang positions ar saong
+11:22
+geometry gamit ang kaning buffer attribute. So kini ng step kay importante no kay
+11:30
+aron ang 3GS ah makasabot ang 3GS kung asa ibutang
+11:35
+ang mga particles. Okay so isa pa ah okay next
+11:41
+karon mag kwan na po ato i-define ang material so
+11:46
+be sa nakaman tay parameter size no mag-create tag parameter size direi
+11:54
+so parameter size let's say ang katong kwan
+12:00
+ang sizes sa atong
+12:06
+Um let's say sa mga particles no let's say 0.02 02
+12:12
+oops so karon um magit lang tag material no since particles man siya so magag
+12:19
+points material so consercopy
+12:26
+so
+12:31
+ako lang isod nao ni siya sa sa
+12:38
+atong function no so karon um
+12:45
+naka-create namanag attribute ako another
+12:54
+sounction materal points materal
+13:01
+then sa atong i-combine no ang atong um
+13:09
+siya class na no sa na last time no na dapat
+13:16
+um kat sa transparency na issue ba kung magka katong sa camera ah nagpictas sa
+13:25
+katongo pagrender sa mga atong mga particles no so 12ong saong 3.1 one so
+13:32
+karon ba once natay material n geometry ato siyang i
+13:39
+iiman points no so siya i-combine so siya no
+13:45
+so kung i-try run hopefullyun so
+13:52
+okay so
+13:58
+inung kay nag class naman tay limit no bas atong gibuhat na positions na random
+14:06
+ba so meaning na siya certain scatter limit lang no
+14:12
+so morning ang resulta class namatayet na limits between negative negative to
+14:18
+positive ang ang resulta niya muna si cube so in each plane na let's say ang x Y z
+14:29
+kay certain limitang somehow cube ang tanw an k namatay mga limit
+14:35
+mo onong nasa random no ong mat random kan siya onong
+14:41
+direungod an na kwan kay na way around na to so pag-crate na to 1000 na so
+14:50
+nanay ang position either negative positive atong certain point
+14:57
+siya ang figure nag is mura siya um
+15:03
+cube okay so karon is na-create naman nao onong um let's say
+15:12
+ano naman to ong kuan so naka-create naman tao particles ano
+15:19
+no this case with certain kwan lang no umato
+15:26
+daw i-add ong ah sige kan sa in the meantime so karon um asan namanon sa kwan na ong
+15:36
+manual class so nagcate naag material na siya naet so
+15:43
+galaxy so i-add magway
+15:49
+since mga parameters akoad si count
+15:56
+So pag is not add
+16:03
+i-add na sila. So let's say
+16:10
+example 1 million I think okay 1 million
+16:16
+so step na actually siya pwede naman siya wala per
+16:24
+siyam ang name saong na actually kung wala na siyaang gawas so karon at siyang
+16:32
+i-save so helper per kwan controls here no
+16:38
+so karon task pa siya ma effect kay napamatay kulang no
+16:45
+siya para mag-change so mag-ata um function
+16:52
+or mag-ata o parameter na magregenerate siya soong on finish
+16:59
+chang okay so asan onong Okay so dire
+17:04
+class mag-add paog on finish change niya si atong it atong tawag onong generate
+17:12
+galaxy because since namatay update class iyang i-regenerate based sa katong parameters
+17:20
+na count onong ma-update ng yang loop na n so
+17:25
+on not on change on finish
+17:31
+okay this one no Then mag on finish na
+17:37
+on finish change karon
+17:44
+dapat uyay galaxy
+17:51
+so initialization na problem so meaning atong balhin ang
+17:58
+saagay tama kayalize na siya
+18:04
+sa nagbalhin somewhere ubos saong galaxy
+18:10
+ay kan galaxy ah na lang na siya
+18:16
+para initialization problem soon
+18:21
+Okay save then okay soon dapat mag siya okay as you can
+18:28
+see here ang number of particles na nak through time nack
+18:35
+problema lang class no kay dili mag change balik ang paubos no naay
+18:42
+problem ana pero magsab siya generate kung ako to napataason pero pagubos
+18:49
+kwan man naay certain problem no so maghimo na certain
+18:56
+um condition kung nanay certain
+19:08
+or soon going back here mag-add saong galaxy
+19:17
+se um here no ang among kuan and sa loop okay
+19:26
+here mag-add lang tao ka ng
+19:34
+keep statement okay katong gina clas okay si regenerate
+19:41
+unya kung mag-usab kuano pagamon dili mautro kay kuano kabantay mo kanina na
+19:50
+katong kong increase na ang kuan niin lang ong uban so ang onong i-dispose
+19:58
+na onong iyang na recent na ng generate no so kon maghimo tao kuan ah if
+20:06
+statementin na if ang points ako na ni copy class No para
+20:14
+so nagimot if statement importante ni step
+20:21
+para dili magdugang-dugang ang mga galaxies or mag-bugd na siya no kungod
+20:27
+na kayo particles and generate na kwan siya class one na sige siya
+20:33
+add no na cumulative na add piment ang once na nag-move ka slider at sige na
+20:38
+siya add new particles so Dapat magregenerate
+20:43
+or maggenerate bagong galaxy dapat i-dispose ong previous na naggenerate
+20:50
+soon ang purpose na if statement
+20:55
+so here okay
+21:02
+problemation
+21:08
+check ako sana i-check ha
+21:15
+certain issues sa atong statement
+21:23
+nakon hm
+21:29
+asan mo siya ni solo for k dapat
+21:38
+Ay okay na ah okay sige siguro at siya mur siya
+21:45
+sugod sa matawag siguro ang class
+21:50
+once na matawag ang certainete
+22:04
+magang
+22:22
+let's try initialization points
+22:29
+siguro no magimo na lang kwan ah para dili ko si gig error sa initialization
+22:35
+maghimo lang
+22:40
+let's say um mag let geometry
+22:46
+ano class magin helper kwan dili na siya sige error
+22:55
+napagpapon cannot access points before initialization
+23:02
+naman points n points nve
+23:11
+parameters okay na So geometry scene
+23:18
+ako pang-check okay nagkwan naman nag-declareas pangremove
+23:25
+sa paints ong nagcsan
+23:33
+okay this one initialization error
+23:41
+error positions is not defined positionm
+23:49
+positions position
+23:55
+ay wala mag-add na lang positions
+24:05
+na lang i think okay
+24:13
+alr so no na fix na na to so karon dapat
+24:18
+okay ang na generate so dapat once na mag-move ko kuan is uy
+24:25
+wa nag-edit we isa ha something wrong saongi
+24:32
+isaha ngano ka cannot access material before niation
+24:39
+finish change okay men let's check our code saka error
+24:52
+ngano siya generate galaxy
+24:58
+ay okay ako na daw na iubos tungod kay kung ano natawal siya una hindi siya
+25:06
+maenerate. So well na-fix ma-fix na ginatanon. So
+25:12
+okay be reload lang. So dapat
+25:18
+uy na problem sa ong no.
+25:24
+Mhm. Access material before initialization. Uy okay sige so natay problem sa atong
+25:33
+material nagi-initialize ito i-check
+25:40
+materialm [Musika] material material
+25:46
+ay okay nagmaterial so consaliz
+25:53
+this case okay let's Check
+25:58
+reload allr soong mag-utro class na magzero ko wala so
+26:07
+matong problema kanina class kung akong kwan no kung wala na to gibutang statement na
+26:14
+i-dispose sa sig increase stars
+26:19
+ma-retain langapon ong ong karon no kung akong i-move
+26:27
+na po nag-reta na onong 200,000 ka pinki akong i-zero to siya ma-retain na onong
+26:33
+last naongenerateong purpose sa if statement no so if if
+26:40
+points is not equal to null let's say naana siya daan ba katong ano i onong i-dispose niya i-remove niya sa scene so
+26:48
+onong nasa if statement katong kani
+26:54
+aman onong atong if statement no once na matawag na po siya balik
+27:02
+class pagload no kagerate galaxy sa base saong parameters naan
+27:07
+sa 1000 soon pagclick nawag
+27:18
+na kuan manal angan
+27:26
+not equal to nal man ang katong mga points karon iyang i-dispose
+27:33
+i-remove niya onong points na nasa onong scene mong mags regenerate so mate
+27:39
+purpose sa regenerate no makita na po na po bagon na na-regenerate na information
+27:46
+ang problema kay ong last time kay na-retain naman ong old na na-generate
+27:52
+so motong dapat iwan siya kanang i-remove so purpose an
+27:59
+okay so sa pa ato ng i-shape atong galaxy no based atong manual may beasaan
+28:06
+naman to sige so mag-una ta sa radius ' ba ka na
+28:14
+magag galaxy ang spiral shape man siya no so naman
+28:20
+kuan na radius na tay branch spin so ang radius no so here lang i-add
+28:29
+ang parameters na radi 5
+28:38
+[Musika] manual ng mag-add na ko gad
+28:45
+lang so goad parameter radius
+28:50
+on change okay soase 20 daw ang maximum radi
+28:59
+from 0 to 20 step 0.01 01 pagan sa slider
+29:04
+then class um mag-create na po
+29:11
+um another na for loop
+29:18
+positions count
+29:24
+update na loop no um
+29:31
+atong ib sa radius ang points so instead of this one
+29:42
+radius
+29:53
+Okay. So here nag parameters that radius naman. Okay
+30:02
+so here class um nagot noon nag
+30:07
+langupdate ako na sa pang update ni class para so dapat is radius na ang bas
+30:17
+let's say class na ang x axisdate
+30:31
+So ang kwan ni ba ang gibuhat naon class is
+30:37
+nagbaseon ang particles sa random radius sa katong galaxy ang iyang posison so
+30:44
+karon um what we have here isay radiuszereroer
+30:49
+na to so so kung nakataas onong radius class mas lapad ang galaxy kung gamay
+30:55
+mas compact siya tanwon so class Okay ato lang purpose sa let's say naay origin sa galaxy dili na to hilaptan ang
+31:03
+iyang y z in this case zero lang na siya p
+31:08
+ang p mag kwan kay radi so meaning ang katong kalap doon sa katong sa iyang x
+31:14
+axis dito t mag-bas sa iyang iyang pagka-spiral no so kung ato daw ni kwan
+31:20
+ah b daw ni i-try isa ka itsura nion
+31:27
+So in this case class nagkwan pa siya roon nag-line no k siya nag-base ang
+31:33
+tanan position saang i-set up na to na radius so radius is 5 so na kwan siya no
+31:41
+um na-limit siya diin tanan mga positions karon dito is
+31:47
+ang pinaka-maximum na position class is five no times na to parameters that
+31:53
+radius niya nag-random gmat that random siya no times certain
+31:59
+um value na radius ba sa mat random kay mag-random siya from 0 to 1 so meaning
+32:06
+kung umabot na siya one ang maximum g niya is katong radius na five no
+32:12
+okay pagtimes nianing kanis siya class no ba ang range sa mat random 0 to1 na
+32:19
+returns a pseudo random number between 0 and 1 so current class obviously kunget
+32:25
+na parameter na five which is which is five no ang radius
+32:30
+na ang maximum no soong sa result is dire five g five units no dire nagtapok
+32:38
+tanan ang mga from 0 to 5 in this case so kung magkataas imong radios obviously
+32:46
+nagkataas pod ang kuan no so okay isa pa sa pa may sunod is kung
+32:55
+karon naay radius sa atong galaxy ang next an class is ang branch
+33:02
+so para na ay kwan no ah to form a spiral arms ang kwan a certain
+33:10
+um sa ang galaxy ' ba ang galaxy kay naay
+33:16
+klase-klase na asa ang spin sa tanan particles let's say napaana di ang isa kay nap lahi pod naang
+33:24
+pagka ka direction no so let's say mag-create tag
+33:29
+branches no component sa isa ka galaxy no ang branches so
+33:36
+okay so karon is mag-create um here sa atong kwan um parameters
+33:45
+mag-add taog a before day no nag-add na ba kwan okay na na day so
+33:52
+parameters branches say three branches so meaning ang um kanina branches kay tulo kay
+34:00
+angold karon direction asa paulong ang mga particles no sa iyang orientation
+34:07
+pacounter clockwise siya clockwise depende sa mabuhat na spin later on no
+34:13
+so karon na tay branches so karon class is magimo lang tano
+34:20
+so gyad brand branches let's say based at manual
+34:26
+is minimum of two branches lang
+34:33
+of course no kay kung one branches lang man siya matawag na spiral dapat minimum
+34:39
+of two g na siya so let's say 20 step one branches okay good
+34:45
+so karon mag kuan ta um stag ni um
+34:52
+ato i-position ang atong branch asposition sa space no pero class we
+34:58
+need to use um cosine and s na mga kwan uh in this
+35:06
+case cosine and sin functions
+35:11
+para maka-generate o branch angle let's say um kung mag ako na tayo drawing
+35:21
+let's say no um ah let's say
+35:28
+ba ang galaxy kay compose of branches na siya many branches para
+35:34
+itsura sa galaxy karon kay karon na naman tay radius same radius no radius
+35:43
+ang galaxy cl is kong origin nag-compose na siya o mini branches ang galaxy or
+35:51
+ang spiral no So akong i kwan let's say magcate tree branches. So ka
+35:58
+branch na kung nag-create no para ma-determine na to kung let's say
+36:04
+naghimo na naman tay radius class na ang radius is kwan naman siya no same naman
+36:10
+dapat ni sila length or radius ang
+36:16
+pagcate branch angle based sa number of branches
+36:21
+ang branch angle branch angle siya
+36:28
+kay atong buat kay gusto na to maghim spiral na
+36:35
+nagalaxy na ang mga angle is samean
+36:41
+para galaxy ako
+36:53
+galaxy mag-add branch angle so
+37:00
+based sa number of branches na ano um atong up mag-create taog um
+37:10
+siya kanang tawag ka ng same na tanan dapat mga
+37:15
+angles na ma-produce no based sa number of branches balance niya ba dapat balance yan na number of angles and no
+37:22
+same angles dapat so let's say sa 360°
+37:27
+let's say circle no 360 de to pagdivide to ka radius dito sa circle na pantay
+37:34
+ang tanan angle purpose so karon is
+37:40
+atong equation here no so nagkantan taog um mony ang maghatag
+37:48
+spiral arms noag katong branches sa atongo sa galaxy nagtuyok
+37:54
+so karon kung at siyang class no um branch angle
+38:01
+ato na siyang i i i-update na ang atong
+38:08
+this one magbase naman let's say
+38:21
+random So magkan ah
+38:29
+ko sa ano sakto ang radius random
+38:40
+okay
+38:49
+So mag-base na ta an kasi kung h na to ikwan mag sa liog no
+38:58
+sa ibalik no sa
+39:06
+kasi na branch angle
+39:14
+okay position i3 okay ato na siang times o kwan tama ano
+39:20
+so ah mat cos br crunch angle times
+39:25
+radius unya um
+39:34
+ang next na is ang sign bale class ang gibuhat ni siya ginalaylah
+39:41
+direction ang each branch let's say sa
+39:47
+katong mga along axis oran vertex kay pa-follow siya paign wave nao direction
+39:56
+from sa man ang saign from zero to what will
+40:02
+be the highest value soang mag let's say mag-counterclockwise siya ang isa is mag
+40:07
+ah mag clockwise ang isa is mag-counterclockwise so money purpose an
+40:12
+so karon bato daw i-try roon sa k direction so kon is nanatay
+40:21
+naka-branch angle na siya so na here no nadivide na siya into
+40:27
+ang saka circle na ang radius kay maximum niya kay five
+40:34
+so na-divide na siya into this angle three bunches na
+40:40
+same equally splitted na angles so not three angles here So nagibuhat no
+40:49
+so karon class para ma-determine nao na mahimo na siya galaxy no bas sa katong
+40:55
+spin ang ang pagcate sa pagtuyok spiral
+41:03
+soonate [Musika]
+41:09
+parameters spin parametersin
+41:17
+say one lang no atong initial then mag-add na nag
+41:23
+soad parameter spin base sa atong manual it
+41:29
+should be 0.01 01 uya has spin
+41:35
+on change galaxy so spin
+41:41
+5 okay nag spin is ne 5 to5
+41:50
+okay so we need to modify each point angle by
+41:55
+radius [Musika] here soon class is since kailanganag
+42:04
+spin angle para ang katong mga position sa katong saong mga particles isfollow siya katong
+42:12
+asa siya patuyok so let's say i-add na to ang maghimo sa cons
+42:20
+ah cons con cons spin angle
+42:27
+base sa radius times the parameter speed.
+42:32
+So kung mas taas ang spin class no in this case mas twisted ang galaxy. Wala
+42:38
+siyang naglibot ba or nag-ikot ang mga stars palayo sa center. So purpose an so
+42:46
+karon kung ato naik ano so i-add na to ang spin angle.
+42:54
+So magchange behavior naivide na galaxy here
+43:02
+soon class ang mga points din class is certain nagfollow siya certain branch
+43:08
+angle pero nag siyaang nag-scatters na no
+43:14
+so hopefully may ang result so atong i-check no so karon class is ni-follow
+43:19
+na siya sinusoidal no uban is nagfollow siya cosine so siyang nag kwan siya no spin
+43:28
+along this method try number of spins okay 2.5 5
+43:34
+kap so naay somewhat galaxy na in this case
+43:40
+okay so ang spin niya no kay pa clockwise no in this case sa atongformma
+43:46
+na competition classockwise siya kung gusto ka counterockwise so magnyeul
+44:07
+So nagka-increase ah okay na certain part mo gapon no
+44:15
+siguro ang cosine siguro ang maotro let's try no kung negative
+44:21
+para siya reorient to other let's say
+44:30
+negative
+44:42
+Mm. direction
+44:50
+so ang branch anglean so meaning branch
+44:57
+angle siguro angongative so let's say
+45:02
+parain siya ba na of orientation ang cosine
+45:12
+ah nalahi So meaning kulang pa so i-change ong negative
+45:24
+[Musika] ay dili naana na siya nagkwan na siya
+45:32
+clockwise no kabantay mo nagkan na siya okay so negative lang ang branch angle
+45:38
+ang negative okay so gusto n mo ang kwan nian Ano mabantay naman ano no paana na
+45:45
+clockwise na so ang branch ang atong inegative okay so going back on positive
+45:55
+may na okay na ba so one na to no so here
+46:03
+okay
+46:08
+so karang class kay pa man nab pa Galaxy good no nagkwan naman sa iyang
+46:16
+branches no ato naman spin karon k gusto na
+46:22
+mag-random mag-random na ni siya positions niya ba ka-scatter kuan ang
+46:28
+mga points pero nag-follow siya certain direkson so karon magkan na taog itawag na random
+46:36
+randomness sa katong particles so though nagfollow siya direction so atong no is
+46:44
+um mag-create na po ta gitawag na umag
+46:50
+spin angle nobatina
+46:55
+so kon is magcate na po parameters na parameters
+47:01
+that um randomness randomness
+47:08
+2 no so atong i-add din mag
+47:14
+randomness so ang randomness na to is
+47:22
+okay zero 0 to 2 step okay saktoon
+47:29
+class is create
+47:38
+let's say kaning
+47:44
+updateong randomness mga um
+47:53
+random effect each particles so to make stars to make the stars look natural
+48:02
+nagrandom effect so parameters
+48:09
+So magnet um random variations. Let's say mag-create ko um
+48:18
+here. So ako na lang i-copy paste class para sa
+48:27
+kans lang akong random na
+48:34
+basis here. Nag-limit lang sa 0.5 no.
+48:40
+Soon so
+48:46
+here kini ang randomness ang naghatag pagatural saong galaxy kung
+48:54
+kay para mag kwan siya no na siyaollow na pattern atong kani pero
+49:00
+magrandomrandom ang mga katong mga values here so atong ikwan ron
+49:10
+mautro soon atong i-add
+49:17
+sa atong positions ang katong pag random na niya so meaning
+49:24
+lagi nagfollow lagi siya certain radius na katong maximum pero at mang i-position siya dito sa katong asa siya
+49:31
+pwede mo ah scattered pero nag-follow siya o kaning branch
+49:37
+angle spin angle so kan siya so meaning ang pagang at na
+49:44
+point is probably n here no so nag-follow langapon siya certain
+49:49
+radius though nagkanon siya kaang nagdependent
+49:55
+ka po siya sa branch angle kung asa siya i-position so karon is magrandom-random na siya dron dire so karon ah let's say
+50:04
+ako i-add si Ah random x dii okay pang x aaxis mo na
+50:09
+siya so okay random x sunod isa pa ang
+50:19
+karon kay zero siya random y
+50:24
+is random z okay so be to i-try na ni
+50:32
+okay so ako pasabot na nag nag-scatter na siya no ang katong each ah
+50:40
+ang katong particles sa randomize na additive na so nagp si branch angle soon
+50:50
+noong idag ang stars so siya then randomness okay kung depende sa
+50:57
+scattering na siya class no so karon ma ni ang result
+51:04
+soon classo mag-ata color sa kwan atong galaxy ba class kung magtatag galaxy no
+51:12
+kay grabe ka-light ang inside color no
+51:17
+sa sa galaxy palayo is pa-cold naang
+51:23
+padon nag dark so sana na siya pag himo na stunning na color no so meaning
+51:29
+mag-ata two colors pero by the way napatay somehow Ah
+51:36
+kulang no regarding the pagkanindot sa pagka kwan
+51:41
+sa randomness like pangit na pag kwan scattered siguro mag-attag ka onong
+51:48
+randomness power so before ko mag-add o color mag-add sa
+51:53
+tag random power no para naay control sa ka nindot ang certain randomness sa katong itong
+52:01
+pag-create niya katong pag-random sa mga positions So here nag-add lang tao
+52:07
+parameter na randomness power. So randomess power let's say 3 though
+52:15
+here magi randoness power max let's say 10
+52:23
+then sa pa ang okay karon is mag-add ta asan randomness
+52:32
+power dito sa um
+52:39
+sa random saan tox magstatement
+52:45
+here okay at
+52:55
+update random xo lang i-copy
+53:06
+random
+53:11
+sa lang ginig update sa haon
+53:27
+then this isly
+53:34
+um para ma-fix na ang randomness na issue
+53:41
+so kailan na to siya i-ad this one so in this case na kwan na no um
+53:52
+sa may Um
+54:03
+be yung sa book. Okay. Ang atong isincrease
+54:11
+na to ang iyang randomness na kwan from negative let's say magkakan po tag
+54:16
+negative na side then positive. So ang naglimit lang siya
+54:22
+to - 1 sa negative niya posi one to paano sa positive na side. So let's try
+54:31
+as naman toong kuan three let's try randomness okay pamatay
+54:38
+count ang randomness kay pataas na to.
+54:45
+So somehul
+54:51
+sample magincrease ang y
+54:57
+side na realistic naay ang pangit na
+55:03
+nagan
+55:09
+shapose No
+55:14
+kay para na tay
+55:26
+na siya mag-scattering na ano effect here no soang pag randomness power na to
+55:32
+mong somehow ang uban mga position sa let's say 5,172
+55:39
+na stars so ang uban na is magan direction is magutroutro
+55:45
+pero kaso lang siyaong branch angle so dako kayo ang iyang randomness na asa
+55:51
+siya magutang sa x y and z pero kung na inana ng galaxy no
+55:59
+so somehow siya ng realistic na galaxy na n pattern na spiral ano effect
+56:07
+where add mini branches so wag siya reduce
+56:13
+angagan sa galaxy so purpose random power na katong
+56:20
+position sa uban is above the sa iyang position naatay
+56:27
+random scale sa karandom sample na kay makaro ang
+56:33
+kuan so be atan lang maraming pa size na
+56:39
+spiral So okay karon kay um sa color na
+56:44
+putaron no so ' ba ang usual galaxy is kung nagabi katipoo no mas hayag k siya
+56:52
+kung nagkalayo is somehow nagdrading iyang color so ang sawa mo na to ni siya
+56:59
+pag kwan set upon so magcate o parameters na color here so
+57:06
+let's say na kaor na basihan no so Let's say kan lang saang training na sa at
+57:11
+manual. So let's say this one na tay um somewhat
+57:17
+orange then kung magkalayo na class outside color kung kay blue na siya.
+57:23
+Soon um points material so
+57:31
+kayong material nagset okay last time
+57:37
+so kay mag-add ba kung na to pag add o color sa mga
+57:43
+vertex ba nat iwan na property itong last time na ah
+57:51
+katong 3.1 na activity. So atong i-activate ang vertex
+57:56
+color ah vertex colors is true so ik
+58:01
+lang para
+58:07
+colors na i-add soon
+58:14
+sa atong kwan sao
+58:19
+sa atong let's say
+58:25
+onong geometry here no sa onong geometry mag at mag-add na um
+58:34
+colors no so let's say consorsqu
+58:41
+to itong holder sa ah atong na wala pa so magimo lang holder sa
+58:52
+tanan ay dapat siya sa loopulod so dapat
+58:59
+ma-create tag holder sa tanan colors rgb ba kay since three values man ang rb so
+59:06
+magkan na po tag flot array ah float 32 array no na nag-hold three values so
+59:12
+since magbase sa number of katong count soon mag
+59:19
+um magset attribute na so onong set attribute
+59:28
+ah wait na naman mag-create sa tao katong
+59:33
+i-target na to ang index sa katong h values ba katong coordinate let's sayong
+59:39
+i-target na index X
+59:45
+kayang color would be this one zero siya
+59:52
+ang starting ni ano ay colors colors colors.
+1:00:05
+Okay. Isa pa.
+1:00:12
+Soon nag-set namanag
+1:00:21
+isa ako sacheck sa nag-set na tag parameters side color outside
+1:00:27
+nagag colors na rgb an no red lang sa i-try no so in this case nagamit
+1:00:35
+sa inside so karon atong i-set tayo no pang-check
+1:00:41
+lang kas no kung mugana na atong vertex color no so geometry
+1:00:48
+so geometry set colors okay so karon class at-set no na red na 10 100
+1:00:57
+so karon dapat mo red mered iang color in this case
+1:01:02
+so karon ka nigana atong ano pag-set o color sa tanan mga particles
+1:01:08
+CL-et class na ang inside color is somewhat
+1:01:13
+katong sa orange then pauish na ang katong outside so na siya
+1:01:20
+so karon mag-create umong function
+1:01:27
+mag-create lang taog umong
+1:01:32
+magkano cons color inside
+1:01:40
+color inside is katong inside color
+1:01:45
+then color outside is katong outside color naong gi-set be nag-add na bao colors ako lang sa
+1:01:52
+ikwan ka sa um goi guiad add um
+1:02:01
+inside color outside color okay so karon
+1:02:10
+Okay. Sakto na. So
+1:02:20
+unya magkwan [Musika] ko sa kwan
+1:02:27
+asa ko iyon
+1:02:39
+here is na-add naman ong kaning ko ano
+1:02:44
+and data here
+1:02:51
+so na-set na na to isa naiss onong manual
+1:03:03
+asan naman ong kwan
+1:03:16
+ka lang class ha kung saang i-check at manual natin naiss
+1:03:21
+okay na-set na ang color outside against side
+1:03:26
+Soa
+1:03:39
+m
+1:03:51
+ka
+1:03:58
+okay so going back no be
+1:04:03
+na-add naman to ang kaning color inside here
+1:04:10
+na to siya ian mix no so kung na kay kwan class let's say ko
+1:04:18
+na lang i-add n lurp no um let's say ang idea na i-add ni siya cons mix color o
+1:04:25
+mixed color clone kaning kan siya sige at i-explain ano na siya soon class k
+1:04:33
+gusto na to ang effect kay ang inside color mo kwan siya atong orange
+1:04:39
+onapot ko maglayo-layo na siya sa kuan sa katong um origin sa atong galaxy
+1:04:48
+So magka-blue siya somewhat blue 'di ba? So kung naan siya center ang particle
+1:04:53
+inside color niya inside color siya kung padulong sa edge na mhift siya to outside color so ma ng
+1:05:01
+manang somehow color for tan certain gradients na may tabo
+1:05:08
+so kanino naantbuhaton na color inside atong copy gikuha gikan sa parametersay
+1:05:16
+mix color inside clone no so siya direcl
+1:05:22
+sa kaning um
+1:05:29
+ang kaning saing
+1:05:34
+mix color inside clone so i-copyor
+1:05:42
+[Musika] No
+1:05:48
+saong mga let's sayang nagkasig na mga particles i-clone ong
+1:05:58
+color inside color so this allows you toon
+1:06:08
+i-change ong every particles
+1:06:13
+original color inside variable So if we don't if we don't use thising
+1:06:21
+clone so any saong mix color niya is also magchange for
+1:06:29
+siya sa color inside soaming
+1:06:34
+aron maapektuhan original na color so nag-duplicate
+1:06:41
+lang color side aron makabuhatang bagong na variation in
+1:06:47
+this case so class ngamit
+1:06:52
+nagamit linear interpolation b i-try na to blend ang duha ka color
+1:06:58
+based sa values from 0 to one so ang interesting na part no para pagka
+1:07:05
+layo-layo nian na kwan class let's say kaang ah somehow na ka ng certain
+1:07:11
+changes sa pagkan baang pagreak from inner inner color to outside color no so
+1:07:21
+naay mag-blend na in between sa iya so gibuhati sa mixed color so karong class
+1:07:28
+ang nahimutang an class no kay murag naay certain gradient na mahimutang ano kan
+1:07:37
+siya na the way around on this one So okay at na itryon no
+1:07:47
+so onong kuan kailang class
+1:07:52
+so here kung ato na siyang i-reload isa hwag not patay nalimtan
+1:08:00
+ay okay katong pag-update sa color before then dire dapat na siya sa ah
+1:08:09
+mixed ah mix color. Rogenia
+1:08:15
+so ako na tanggalon.
+1:08:22
+So naman okay
+1:08:30
+so betrong kaasa
+1:08:36
+ong error an ah okay so going back here sa to sa i-check
+1:08:46
+m am t na kuan ni beat
+1:08:51
+na ano ni na-miss out
+1:09:07
+random y so hain
+1:09:13
+nagcan sa kulong [Musika]
+1:09:19
+mix color mix color ah mali na to ni
+1:09:26
+atong gigamit kayag
+1:09:34
+ong mix color
+1:09:40
+sa nasa ko i-check sa ong manual ka sa iong parameters inside material
+1:09:53
+soon x color ayong
+1:09:58
+nalintan na to kani dapat naka
+1:10:04
+cons
+1:10:09
+mix color okay nak naman siya
+1:10:16
+Ay wala na. Okay sakto tawag naman mixed colors.
+1:10:23
+Mixed color inside that clone. Okay. Asa ka nagor an
+1:10:35
+kaya ako ibalik sa
+1:10:44
+ah. Okay nat siguro so kan dapat is ang mixed color no at r
+1:10:52
+is color na g
+1:10:58
+siguro sa katotong diina so okay so what we have here is nanay
+1:11:05
+certain gradient no from orange na siya
+1:11:10
+na clone na siya no every kwan pero kaang palayo na siya class nao onong
+1:11:17
+interpolation no kung anam na siya kalayo
+1:11:22
+na ang ang ma-update na onong color niya based sa katong um
+1:11:29
+pag-mix color na niya no katong interpolation
+1:11:34
+so from here nagkwan na siya katong orange good no
+1:11:40
+kunga siya naginani siya class kod kay nag-overlay man na siya so kumb at na siyang ipangtuyok no paran na sila color
+1:11:48
+nag-glowing effect na siya kay tungod sa atong additive blending nga nasa onong material
+1:11:55
+so karon pag atong i-move ning kwan class no nagkalayo siya sa atong
+1:12:01
+certain origin na dire nagam nagkautro ang color from this gradient hantod siya
+1:12:08
+sa outside color na blue so kani siya so ang nahitabo
+1:12:13
+So akong daghan no para mahasize kinato then randomness power
+1:12:22
+let's say ano so randomness lang ik
+1:12:30
+so ang galaxy generator na onong naugna na roon no okay so here is theo how to
+1:12:40
+create uh galaxy in this case no so nag galaxy in this
+1:12:46
+case so nagcontact size so siya
+1:12:52
+okay so i-t lang mo mag lang twick lang p mag color no
+1:13:01
+blue star let say na ginasa yellow somewhat mm na
+1:13:08
+siya so we can play around ano with our helpers na nand okay and that's it so
+1:13:14
+you have a beautiful galaxy generator fully customizable animated and glowing
+1:13:21
+no so pwede mo i-tick tanan so gusto ka magtuyok-tuyok po ni siya so be ko atong
+1:13:28
+i-add na siya i-add um since naka-particles mo na siya no
+1:13:37
+okay so update lang no sa katongo kung gusto n mo I tay i-animate so imo lang i
+1:13:46
+particles no so sa may kwan na
+1:13:52
+okay so just play around lang no with our kwan atong gibuhat na activity
+1:13:59
+okay so that's all no i hope na na nam-learn aning ko ano kanina activity
+1:14:05
+activity 3.2 So next would be ang scroll based animation
+1:14:12
+soon is the galaxy generator. Thank you for your time and thank you foring this
+1:14:18
+recorded video. Have a good day.

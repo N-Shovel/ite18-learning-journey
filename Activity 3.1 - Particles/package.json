@@ -1,0 +1,20 @@
+{
+  "name": "activity-3-1-particles",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Activity 3.1 - Particles - ITE-18 Three.js activity (Nimrod P. Pala, ITE 18-FNHX1)",
+  "author": "Nimrod P. Pala",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "three": "^0.148.0",
+    "lil-gui": "^0.17.0"
+  },
+  "devDependencies": {
+    "vite": "^4.0.4"
+  }
+}
