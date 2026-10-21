@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ITE 18 Learning Journey</title>
+  <meta name="description" content="Every ITE 18 activity by Nimrod P. Pala, from JavaScript basics to Three.js physics, with live demos.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <p class="eyebrow" id="course"></p>
+    <h1>ITE 18 Learning Journey</h1>
+    <p class="lede" id="who"></p>
+    <dl class="stats" id="stats"></dl>
+    <nav class="jump" id="jump"></nav>
+  </header>
+
+  <main id="timeline"></main>
+
+  <footer class="foot">
+    <a id="repo-link" href="#">Source on GitHub</a>
+  </footer>
+
+  <template id="project-card">
+    <article class="card">
+      <a class="thumb" target="_blank" rel="noopener"></a>
+      <div class="body">
+        <p class="meta"><span class="code"></span><time></time></p>
+        <h3></h3>
+        <p class="summary"></p>
+        <ul class="tags"></ul>
+        <p class="links">
+          <a class="demo" target="_blank" rel="noopener">Live demo</a>
+          <a class="src" target="_blank" rel="noopener">Code</a>
+        </p>
+      </div>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
