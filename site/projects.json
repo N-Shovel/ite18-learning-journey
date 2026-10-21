@@ -17,10 +17,13 @@
           "title": "Campus Canteen Calculator",
           "date": "2026-09-12",
           "summary": "Order totals with student/staff pricing, receipts and input validation. Covers string vs number addition and type conversion.",
-          "tags": ["JavaScript", "Types", "Validation"],
+          "tags": [
+            "JavaScript",
+            "Types",
+            "Validation"
+          ],
           "type": "static",
-          "source": "javascript/canteen-calculator",
-          "thumb": "javascript/canteen-calculator/screenshots/T1_student_receipt.png"
+          "source": "javascript/canteen-calculator"
         },
         {
           "slug": "topic-2-task-dashboard",
@@ -28,10 +31,13 @@
           "title": "Study Task Dashboard",
           "date": "2026-09-12",
           "summary": "A task list rendered from data with filters and bulk actions, showing dynamic DOM rendering.",
-          "tags": ["DOM", "Events", "Arrays"],
+          "tags": [
+            "DOM",
+            "Events",
+            "Arrays"
+          ],
           "type": "static",
-          "source": "javascript/task-dashboard",
-          "thumb": "javascript/task-dashboard/screenshots/T1_initial_render.png"
+          "source": "javascript/task-dashboard"
         },
         {
           "slug": "landing-page",
@@ -39,7 +45,11 @@
           "title": "CollegeMemory Landing Page",
           "date": "2026-09-19",
           "summary": "A responsive college memory timeline with bento-style image galleries built with CSS Grid and Flexbox.",
-          "tags": ["HTML", "CSS Grid", "Flexbox"],
+          "tags": [
+            "HTML",
+            "CSS Grid",
+            "Flexbox"
+          ],
           "type": "static",
           "source": "javascript/landing-page"
         },
@@ -49,10 +59,13 @@
           "title": "Class Resource Loader",
           "date": "2026-09-21",
           "summary": "A simulated request with loading, failure and retry states, plus a trace of the call stack, microtasks and timers.",
-          "tags": ["Closures", "Event loop", "async/await"],
+          "tags": [
+            "Closures",
+            "Event loop",
+            "async/await"
+          ],
           "type": "static",
-          "source": "javascript/topic-4-resource-loader",
-          "thumb": "javascript/topic-4-resource-loader/screenshots/T4_success.png"
+          "source": "javascript/topic-4-resource-loader"
         },
         {
           "slug": "odin-rock-paper-scissors",
@@ -60,7 +73,10 @@
           "title": "Rock Paper Scissors",
           "date": "2026-09-23",
           "summary": "A game against the computer; first to 5 points wins.",
-          "tags": ["JavaScript", "Game logic"],
+          "tags": [
+            "JavaScript",
+            "Game logic"
+          ],
           "type": "static",
           "source": "javascript/odin-javascript-basics/rock-paper-scissors"
         },
@@ -70,7 +86,10 @@
           "title": "Etch-a-Sketch",
           "date": "2026-09-23",
           "summary": "A resizable drawing grid with black and rainbow modes that darkens on each pass.",
-          "tags": ["DOM", "Events"],
+          "tags": [
+            "DOM",
+            "Events"
+          ],
           "type": "static",
           "source": "javascript/odin-javascript-basics/etch-a-sketch"
         },
@@ -80,7 +99,10 @@
           "title": "Calculator",
           "date": "2026-09-23",
           "summary": "A calculator that chains operations and works with the mouse or keyboard.",
-          "tags": ["JavaScript", "Keyboard input"],
+          "tags": [
+            "JavaScript",
+            "Keyboard input"
+          ],
           "type": "static",
           "source": "javascript/odin-javascript-basics/calculator"
         }
@@ -97,7 +119,10 @@
           "title": "Basic Scene",
           "date": "2026-09-24",
           "summary": "The four parts every Three.js scene needs: a scene, a mesh, a perspective camera and a WebGL renderer.",
-          "tags": ["Three.js", "Scene"],
+          "tags": [
+            "Three.js",
+            "Scene"
+          ],
           "type": "vite",
           "source": "threejs/activity-1.1-1.5/Activity 1.1"
         },
@@ -107,7 +132,10 @@
           "title": "Local Server (Vite)",
           "date": "2026-09-24",
           "summary": "The same scene served through Vite, importing Three.js from node_modules and loading static assets.",
-          "tags": ["Vite", "Tooling"],
+          "tags": [
+            "Vite",
+            "Tooling"
+          ],
           "type": "vite",
           "source": "threejs/activity-1.1-1.5/Activity 1.2"
         },
@@ -117,7 +145,10 @@
           "title": "Transform Objects",
           "date": "2026-09-24",
           "summary": "Position, scale, rotation order, lookAt, AxesHelper and a Group of cubes transformed together.",
-          "tags": ["Vectors", "Transforms"],
+          "tags": [
+            "Vectors",
+            "Transforms"
+          ],
           "type": "vite",
           "source": "threejs/activity-1.1-1.5/Activity 1.3"
         },
@@ -127,7 +158,10 @@
           "title": "Animations",
           "date": "2026-09-24",
           "summary": "A frame-rate independent loop with delta time and THREE.Clock, circular motion and a GSAP tween.",
-          "tags": ["requestAnimationFrame", "GSAP"],
+          "tags": [
+            "requestAnimationFrame",
+            "GSAP"
+          ],
           "type": "vite",
           "source": "threejs/activity-1.1-1.5/Activity 1.4"
         },
@@ -137,10 +171,12 @@
           "title": "Cameras",
           "date": "2026-10-03",
           "summary": "A red cube you can rotate around with the mouse using OrbitControls with damping.",
-          "tags": ["Cameras", "OrbitControls"],
+          "tags": [
+            "Cameras",
+            "OrbitControls"
+          ],
           "type": "vite",
-          "source": "threejs/activity-1.5-1.12/Activity 1.5 - Cameras",
-          "thumb": "threejs/activity-1.5-1.12/Activity 1.5 - Cameras/screenshot.png"
+          "source": "threejs/activity-1.5-1.12/Activity 1.5 - Cameras"
         },
         {
           "slug": "activity-1-6",
@@ -148,10 +184,12 @@
           "title": "Fullscreen and Resizing",
           "date": "2026-10-03",
           "summary": "The scene fills the window, handles resizing and pixel ratio, and goes fullscreen on double-click.",
-          "tags": ["Resize", "Fullscreen"],
+          "tags": [
+            "Resize",
+            "Fullscreen"
+          ],
           "type": "vite",
-          "source": "threejs/activity-1.5-1.12/Activity 1.6 - Fullscreen and Resizing",
-          "thumb": "threejs/activity-1.5-1.12/Activity 1.6 - Fullscreen and Resizing/screenshot.png"
+          "source": "threejs/activity-1.5-1.12/Activity 1.6 - Fullscreen and Resizing"
         },
         {
           "slug": "activity-1-7",
@@ -159,10 +197,11 @@
           "title": "Geometries",
           "date": "2026-10-03",
           "summary": "Box and sphere geometries, then 50 random triangles built from a BufferGeometry.",
-          "tags": ["BufferGeometry"],
+          "tags": [
+            "BufferGeometry"
+          ],
           "type": "vite",
-          "source": "threejs/activity-1.5-1.12/Activity 1.7 - Geometries",
-          "thumb": "threejs/activity-1.5-1.12/Activity 1.7 - Geometries/screenshot.png"
+          "source": "threejs/activity-1.5-1.12/Activity 1.7 - Geometries"
         },
         {
           "slug": "activity-1-8",
@@ -170,10 +209,12 @@
           "title": "Debug UI",
           "date": "2026-10-03",
           "summary": "A control panel to move, hide, recolor and spin the cube.",
-          "tags": ["lil-gui", "Debugging"],
+          "tags": [
+            "lil-gui",
+            "Debugging"
+          ],
           "type": "vite",
-          "source": "threejs/activity-1.5-1.12/Activity 1.8 - Debug UI",
-          "thumb": "threejs/activity-1.5-1.12/Activity 1.8 - Debug UI/screenshot.png"
+          "source": "threejs/activity-1.5-1.12/Activity 1.8 - Debug UI"
         },
         {
           "slug": "activity-1-9",
@@ -181,10 +222,12 @@
           "title": "Textures",
           "date": "2026-10-03",
           "summary": "Images on a cube, ending with a Minecraft-style block.",
-          "tags": ["Textures", "UV"],
+          "tags": [
+            "Textures",
+            "UV"
+          ],
           "type": "vite",
-          "source": "threejs/activity-1.5-1.12/Activity 1.9 - Textures",
-          "thumb": "threejs/activity-1.5-1.12/Activity 1.9 - Textures/screenshot.png"
+          "source": "threejs/activity-1.5-1.12/Activity 1.9 - Textures"
         },
         {
           "slug": "activity-1-10",
@@ -192,10 +235,12 @@
           "title": "Materials",
           "date": "2026-10-03",
           "summary": "Every material from the handout, switchable from a menu.",
-          "tags": ["Materials", "Lighting"],
+          "tags": [
+            "Materials",
+            "Lighting"
+          ],
           "type": "vite",
-          "source": "threejs/activity-1.5-1.12/Activity 1.10 - Materials",
-          "thumb": "threejs/activity-1.5-1.12/Activity 1.10 - Materials/screenshot.png"
+          "source": "threejs/activity-1.5-1.12/Activity 1.10 - Materials"
         },
         {
           "slug": "activity-1-11",
@@ -203,10 +248,12 @@
           "title": "3D Text",
           "date": "2026-10-03",
           "summary": "\"Hello Three.js\" in 3D with 100 donuts around it.",
-          "tags": ["TextGeometry", "Matcaps"],
+          "tags": [
+            "TextGeometry",
+            "Matcaps"
+          ],
           "type": "vite",
-          "source": "threejs/activity-1.5-1.12/Activity 1.11 - 3D Text",
-          "thumb": "threejs/activity-1.5-1.12/Activity 1.11 - 3D Text/screenshot.png"
+          "source": "threejs/activity-1.5-1.12/Activity 1.11 - 3D Text"
         },
         {
           "slug": "activity-1-12",
@@ -214,10 +261,11 @@
           "title": "Go Live",
           "date": "2026-10-03",
           "summary": "Name and section in 3D, built for production and published online.",
-          "tags": ["Deployment"],
+          "tags": [
+            "Deployment"
+          ],
           "type": "vite",
-          "source": "threejs/activity-1.5-1.12/Activity 1.12 - Go Live",
-          "thumb": "threejs/activity-1.5-1.12/Activity 1.12 - Go Live/screenshot.png"
+          "source": "threejs/activity-1.5-1.12/Activity 1.12 - Go Live"
         }
       ]
     },
@@ -232,10 +280,12 @@
           "title": "Lights",
           "date": "2026-10-14",
           "summary": "All six light types and their helpers, switchable from the debug panel.",
-          "tags": ["Lights", "Helpers"],
+          "tags": [
+            "Lights",
+            "Helpers"
+          ],
           "type": "vite",
-          "source": "threejs/activity-2/Activity 2.1 - Lights",
-          "thumb": "threejs/activity-2/Activity 2.1 - Lights/screenshot.png"
+          "source": "threejs/activity-2/Activity 2.1 - Lights"
         },
         {
           "slug": "activity-2-2",
@@ -243,10 +293,12 @@
           "title": "Shadows",
           "date": "2026-10-14",
           "summary": "Real-time, baked and simple shadows, switchable from the debug panel.",
-          "tags": ["Shadow maps", "Baking"],
+          "tags": [
+            "Shadow maps",
+            "Baking"
+          ],
           "type": "vite",
-          "source": "threejs/activity-2/Activity 2.2 - Shadows",
-          "thumb": "threejs/activity-2/Activity 2.2 - Shadows/screenshot.png"
+          "source": "threejs/activity-2/Activity 2.2 - Shadows"
         },
         {
           "slug": "activity-2-3",
@@ -254,10 +306,13 @@
           "title": "Haunted House",
           "date": "2026-10-14",
           "summary": "A house, graves, fog, textures and floating ghost lights with shadows.",
-          "tags": ["Scene building", "Fog", "Textures"],
+          "tags": [
+            "Scene building",
+            "Fog",
+            "Textures"
+          ],
           "type": "vite",
-          "source": "threejs/activity-2/Activity 2.3 - Haunted House",
-          "thumb": "threejs/activity-2/Activity 2.3 - Haunted House/screenshot.png"
+          "source": "threejs/activity-2/Activity 2.3 - Haunted House"
         }
       ]
     },
@@ -272,10 +327,12 @@
           "title": "Particles",
           "date": "2026-10-21",
           "summary": "Points on a sphere, then thousands of random, colored and animated particles.",
-          "tags": ["Points", "Attributes"],
+          "tags": [
+            "Points",
+            "Attributes"
+          ],
           "type": "vite",
-          "source": "threejs/activity-3.1-3.3/Activity 3.1 - Particles",
-          "thumb": "threejs/activity-3.1-3.3/Activity 3.1 - Particles/screenshot.png"
+          "source": "threejs/activity-3.1-3.3/Activity 3.1 - Particles"
         },
         {
           "slug": "activity-3-2",
@@ -283,10 +340,12 @@
           "title": "Galaxy Generator",
           "date": "2026-10-21",
           "summary": "A procedural spiral galaxy with branches, spin, randomness and inside/outside colors.",
-          "tags": ["Procedural", "Debug UI"],
+          "tags": [
+            "Procedural",
+            "Debug UI"
+          ],
           "type": "vite",
-          "source": "threejs/activity-3.1-3.3/Activity 3.2 - Galaxy Generator",
-          "thumb": "threejs/activity-3.1-3.3/Activity 3.2 - Galaxy Generator/screenshot.png"
+          "source": "threejs/activity-3.1-3.3/Activity 3.2 - Galaxy Generator"
         },
         {
           "slug": "activity-3-3",
@@ -294,10 +353,13 @@
           "title": "Scroll Based Animation",
           "date": "2026-10-21",
           "summary": "A one-page site where the camera follows the scroll, with parallax and toon-shaded objects.",
-          "tags": ["Scroll", "Parallax", "GSAP"],
+          "tags": [
+            "Scroll",
+            "Parallax",
+            "GSAP"
+          ],
           "type": "vite",
-          "source": "threejs/activity-3.1-3.3/Activity 3.3 - Scroll Based Animation",
-          "thumb": "threejs/activity-3.1-3.3/Activity 3.3 - Scroll Based Animation/screenshot.png"
+          "source": "threejs/activity-3.1-3.3/Activity 3.3 - Scroll Based Animation"
         },
         {
           "slug": "activity-3-4",
@@ -305,10 +367,12 @@
           "title": "Physics",
           "date": "2026-10-21",
           "summary": "Spheres and boxes that fall, bounce and roll, synced between a physics world and the Three.js scene.",
-          "tags": ["Physics", "Collisions"],
+          "tags": [
+            "Physics",
+            "Collisions"
+          ],
           "type": "vite",
-          "source": "threejs/activity-3.4-3.6/Activity 3.4 - Physics",
-          "thumb": "threejs/activity-3.4-3.6/Activity 3.4 - Physics/screenshot.png"
+          "source": "threejs/activity-3.4-3.6/Activity 3.4 - Physics"
         },
         {
           "slug": "activity-3-5",
@@ -316,10 +380,13 @@
           "title": "Imported Models",
           "date": "2026-10-21",
           "summary": "glTF, binary, embedded and Draco models, plus an animated fox.",
-          "tags": ["GLTFLoader", "Draco", "AnimationMixer"],
+          "tags": [
+            "GLTFLoader",
+            "Draco",
+            "AnimationMixer"
+          ],
           "type": "vite",
-          "source": "threejs/activity-3.4-3.6/Activity 3.5 - Imported Models",
-          "thumb": "threejs/activity-3.4-3.6/Activity 3.5 - Imported Models/screenshot.png"
+          "source": "threejs/activity-3.4-3.6/Activity 3.5 - Imported Models"
         }
       ]
     }

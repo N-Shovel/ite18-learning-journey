@@ -6,10 +6,10 @@ cd "$(dirname "$0")/.."
 
 OUT=_site
 rm -rf "$OUT"
-mkdir -p "$OUT/demos" "$OUT/thumbs"
-cp site/index.html site/style.css site/app.js site/projects.json "$OUT/"
+mkdir -p "$OUT/demos"
+cp -r site/index.html site/style.css site/app.js site/projects.json site/thumbs "$OUT/"
 
-while IFS=$'\t' read -r -u 3 slug type src thumb; do
+while IFS=$'\t' read -r -u 3 slug type src; do
   echo "::group::$slug"
   if [ "$type" = vite ]; then
     (cd "$src" && npm ci --no-audit --no-fund && npx vite build --base=./)
@@ -17,8 +17,7 @@ while IFS=$'\t' read -r -u 3 slug type src thumb; do
   else
     cp -r "$src" "$OUT/demos/$slug"
   fi
-  [ -n "$thumb" ] && cp "$thumb" "$OUT/thumbs/$slug.png"
   echo "::endgroup::"
 done 3< <(node -e '
   for (const m of require("./site/projects.json").modules)
-    for (const p of m.projects) console.log([p.slug, p.type, p.source, p.thumb || ""].join("\t"))')
+    for (const p of m.projects) console.log([p.slug, p.type, p.source].join("\t"))')

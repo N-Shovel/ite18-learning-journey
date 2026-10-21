@@ -1,6 +1,7 @@
 // Renders the timeline from projects.json. Add a project there, not here.
 const fmt = new Intl.DateTimeFormat('en', { month: 'short', day: 'numeric', year: 'numeric' });
-const toDate = (iso) => new Date(iso + 'T00:00:00');
+const short = new Intl.DateTimeFormat('en', { month: 'short', day: 'numeric' });
+const toDate =(iso) => new Date(iso + 'T00:00:00');
 
 function renderHeader(data) {
   const projects = data.modules.flatMap((m) => m.projects);
@@ -15,7 +16,7 @@ function renderHeader(data) {
     [projects.length, 'activities'],
     [data.modules.length, 'modules'],
     [new Set(dates).size, 'days of work'],
-    [`${fmt.format(toDate(dates[0]))} – ${fmt.format(toDate(dates.at(-1)))}`, 'timeline'],
+    [`${short.format(toDate(dates[0]))} – ${short.format(toDate(dates.at(-1)))}`, 'timeline'],
   ];
   document.getElementById('stats').innerHTML = stats
     .map(([value, label]) => `<div><dt>${label}</dt><dd>${value}</dd></div>`)
@@ -32,12 +33,7 @@ function renderCard(project, repo) {
   const thumb = card.querySelector('.thumb');
 
   thumb.href = demo;
-  if (project.thumb) {
-    thumb.innerHTML = `<img src="thumbs/${project.slug}.png" alt="" loading="lazy">`;
-  } else {
-    thumb.classList.add('placeholder');
-    thumb.textContent = project.code;
-  }
+  thumb.innerHTML = `<img src="thumbs/${project.slug}.png" alt="" loading="lazy">`;
 
   card.querySelector('.code').textContent = project.code;
   const time = card.querySelector('time');

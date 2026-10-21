@@ -1,6 +1,7 @@
 # ITE 18 Learning Journey
 
 **Nimrod P. Pala** · ITE 18-FNHX1 · Caraga State University
+
 **Instructor:** James Earl D. Cubillas
 
 Every ITE 18 activity in one place, from JavaScript basics to Three.js physics and imported models.
