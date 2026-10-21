@@ -1,0 +1,21 @@
+{
+  "name": "activity-3-4-physics",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Activity 3.4 - Physics - ITE-18 Three.js activity (Nimrod P. Pala, ITE 18-FNHX1)",
+  "author": "Nimrod P. Pala",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "cannon-es": "^0.20.0",
+    "lil-gui": "^0.17.0",
+    "three": "^0.148.0"
+  },
+  "devDependencies": {
+    "vite": "^4.0.4"
+  }
+}
